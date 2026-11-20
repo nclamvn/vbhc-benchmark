@@ -1,0 +1,77 @@
+{
+ "chi_muc": {
+  "vanban.chinhphu.vn": 20253,
+  "thainguyen.gov.vn": 1500,
+  "hungyen.gov.vn": 2301,
+  "tracuuvanban.quangtri.gov.vn": 820
+ },
+ "chi_muc_tong": 24874,
+ "toan_van_vao": 6444,
+ "toan_van_giu": 6282,
+ "toan_van_loai": 162,
+ "ly_do_loai": {
+  "nội dung tệp không khớp trích yếu (có thể đính kèm nhầm, hoặc OCR quá kém)": 1,
+  "trích yếu nêu một người dân cụ thể (ông/bà + họ tên, không phải chức vụ công)": 23,
+  "độ tin OCR trung bình dưới 70": 49,
+  "tệp không phải PDF": 8,
+  "trùng tệp y hệt": 70,
+  "gần trùng (Jaccard ước lượng ≥0,9)": 11
+ },
+ "giu_theo_nguon": {
+  "vanban.chinhphu.vn": 5107,
+  "hungyen.gov.vn": 555,
+  "thainguyen.gov.vn": 620
+ },
+ "giu_theo_cap": {
+  "Trung ương": 5107,
+  "Tỉnh": 1175
+ },
+ "giu_theo_loai": {
+  "Công văn": 2490,
+  "Thông báo": 1352,
+  "Quyết định (cá biệt)": 1054,
+  "Công điện": 529,
+  "Nghị quyết (cá biệt)": 456,
+  "Chỉ thị": 262,
+  "Kế hoạch": 91,
+  "Báo cáo": 42,
+  "Hướng dẫn": 6
+ },
+ "giu_theo_nam": {
+  "2020": 867,
+  "2021": 838,
+  "2022": 805,
+  "2023": 774,
+  "2024": 1023,
+  "2025": 1107,
+  "2026": 868
+ },
+ "giu_theo_thoi_ky": {
+  "trước 01/7/2025": 4879,
+  "sau 01/7/2025": 1403
+ },
+ "boc_chu": {
+  "ocr_vie": 5408,
+  "text_layer": 874
+ },
+ "do_tin_ocr_tb": 92.3,
+ "so_ky_hieu_toan_van": {
+  "khop": 3753,
+  "khong_doc_duoc": 1840,
+  "khac": 340,
+  "gan_khop": 349
+ },
+ "ngay_khop": 3997,
+ "ten_tep_khop": 5589,
+ "da_che": {
+  "email": 22,
+  "so_dien_thoai": 90,
+  "ho_ten": 1323,
+  "dia_chi": 794,
+  "so_dinh_danh": 5,
+  "ngay_sinh": 14
+ },
+ "ky_tu": 38978039,
+ "con_sot_email": 1,
+ "co_nguon_100pct": true
+}

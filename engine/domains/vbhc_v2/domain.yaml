@@ -1,0 +1,29 @@
+domain: vbhc_v2
+entity_label: "Văn bản hành chính và quy phạm từ Cổng TTĐT Chính phủ và cổng 3 tỉnh (Thái Nguyên, Hưng Yên, Quảng Trị), ban hành từ 05/03/2020"
+
+schema:
+  type_field: loai_van_ban
+  fields:
+    - so_ky_hieu
+    - ngay_ban_hanh
+    - trich_yeu
+    - tep_dinh_kem
+    - loai_van_ban
+    - hinh_thuc
+    - co_quan_ky_hieu
+
+rollup_field: hinh_thuc
+
+universe:
+  estimate: 24874
+  basis: "Tổng số dòng chỉ mục từ 4 nguồn chụp ngày 20/11/2026 (Cổng Chính phủ 407 trang, Thái Nguyên 150 trang, Hưng Yên 120 trang, Quảng Trị 43 trang)"
+
+refresh_days:
+  tep_dinh_kem: 90
+  default: 365
+
+domain_gates:
+  no_inferred_fields: [so_ky_hieu, ngay_ban_hanh, trich_yeu, tep_dinh_kem]
+
+alias_map: {}
+ambiguous_clusters: []
