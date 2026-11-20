@@ -49,3 +49,15 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
 - **Chốt:** M0 đóng có điều kiện. Việc có hai người chấm trở thành điều kiện bắt buộc trước khi bắt đầu M3 (hạn: hết tuần 6).
 - **Lý do:** M1 (luật máy kiểm thể thức) và M2 (dữ liệu) không cần người chấm. Giữ điều kiện này ở M0 sẽ chặn hai mốc làm được ngay.
 - **Không giả lập:** không ghi nhận người chấm nào khi chưa có người thật nhận lời. Bộ hồ sơ mời (`docs/thu_moi_nguoi_cham.md`, `docs/mo_ta_cong_viec_nguoi_cham.md`, `docs/huong_dan_cham_v0.md`) đã sẵn sàng để gửi.
+
+## QĐ-06 · Người chấm 1: Nguyễn Cảnh Lâm
+
+- **Ngày:** 21/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm (tự nhận lời)
+- **Chốt:** Nguyễn Cảnh Lâm là người chấm 1. Người chấm 2 vẫn phải tìm từ bên ngoài.
+- **Rủi ro:** người chấm 1 cũng là chủ dự án và là người duyệt hướng dẫn chấm, nên dễ chấm theo ý định của chính mình thay vì theo văn bản hướng dẫn.
+- **Biện pháp:**
+  1. Người chấm 2 phải là người ngoài dự án, có chuyên môn văn thư, chưa đọc nhật ký quyết định.
+  2. Chấm mù: bài chấm không ghi tên mô hình hay nguồn sinh ra bài.
+  3. Người chấm 1 không sửa hướng dẫn chấm trong lúc đang chấm; mọi chỗ mơ hồ ghi lại và xử ở buổi phân xử.
+  4. Kappa dưới 0,7 thì người chấm 2 giữ quyền quyết ở câu lệch, kèm một người thứ ba nếu cần.
+- **Trạng thái cổng vào M3:** 1/2 người chấm.
