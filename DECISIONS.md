@@ -73,3 +73,13 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   3. Thêm trường `so_ky_hieu_chuan`; trường `so_ky_hieu` giữ nguyên văn trang nguồn.
 - **Kết quả:** 6.294 văn bản giữ lại (v2: 6.282), 150 loại (v2: 162), 1 ô tranh chấp (v2: 2). Build digest `30c98055d74a2ebe`.
 - **Còn mở:** tn-84190 và tn-84111 chờ xác minh bản chính thức; số của 218224 ghi theo xác nhận của người kiểm; lượt kiểm tay 100 mẫu thông tin cá nhân (cổng M2) chưa làm.
+
+## QĐ-08 · Chuyên gia mô phỏng cho giai đoạn pilot
+
+- **Ngày:** 21/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm (yêu cầu tăng tốc pilot vì việc cần người đang là điểm nghẽn)
+- **Chốt:** trong pilot, Claude làm thay các việc cần người (kiểm thông tin cá nhân, xác nhận luật thể thức, chấm). Mọi kết quả ghi nhãn "chuyên gia mô phỏng (AI)", không ghi dưới tên người.
+- **Giới hạn phải ghi kèm khi công bố:**
+  1. Số liệu chấm mô phỏng không phải chuẩn vàng do người chấm; độ đồng thuận giữa hai lượt AI không thay được độ đồng thuận giữa hai người.
+  2. AI vừa dựng luật vừa chấm nên thiếu độc lập; lượt chấm chạy tách phiên, chấm mù.
+  3. Các cổng M2, M3 ghi "đạt ở mức pilot (mô phỏng)". Đạt chính thức cần người kiểm lại một phần mẫu.
+- **Liên quan:** nới QĐ-05 cho riêng pilot; QĐ-06 vẫn áp cho bản chính thức.
