@@ -83,3 +83,24 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   2. AI vừa dựng luật vừa chấm nên thiếu độc lập; lượt chấm chạy tách phiên, chấm mù.
   3. Các cổng M2, M3 ghi "đạt ở mức pilot (mô phỏng)". Đạt chính thức cần người kiểm lại một phần mẫu.
 - **Liên quan:** nới QĐ-05 cho riêng pilot; QĐ-06 vẫn áp cho bản chính thức.
+
+## QĐ-09 · Bộ che và loại giấy phép (áp cho bản v4)
+
+- **Ngày:** 21/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm, theo đề xuất từ lượt kiểm mô phỏng
+- **Chốt:**
+  1. Không che tên cán bộ khi ngay sau tên là chức vụ hoặc văn bản là quyết định nhân sự (đúng QĐ-03).
+  2. Giữ văn bản vinh danh liệt sĩ (1636/QĐ-TTg).
+  3. Vá luật che: bắt cả mẫu "ông/bà" bị dấu phẩy, ngoặc kép chen trước tên.
+  4. Tên tắt người soạn thảo ở dòng "Lưu:" để nguyên.
+  5. Giấy phép (ký hiệu GP, GPMT...) là văn bản công khai, giữ trong bộ dữ liệu, tách thành loại "Giấy phép" theo chữ viết tắt trong ký hiệu. Loại này nằm ngoài năm loại của QĐ-02 nên không vào bộ đánh giá.
+
+## QĐ-10 · Mô hình cơ sở và cách chạy (M4–M5)
+
+- **Ngày:** 21/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm giao Claude quyết ở vai tổng công trình sư
+- **Máy:** MacBook Pro 16 inch, M1 Max, 32 GB. Chạy bằng MLX, mô hình lượng tử hóa 4-bit.
+- **Chốt:**
+  1. Ba mốc so sánh không tinh chỉnh: một mô hình mở đa ngữ cỡ 8 tỉ tham số (dự kiến Qwen3-8B), một mô hình cùng cỡ của hãng khác (dự kiến Gemma), một mô hình chuyên Đông Nam Á (dự kiến SeaLLMs). Tên bản cụ thể chốt lúc tải, theo bản mới nhất có sẵn cho MLX.
+  2. Một mô hình tinh chỉnh: QLoRA trên mô hình ở mục 1 có điểm tốt nhất, dùng tập huấn luyện của dự án.
+  3. Chia tập theo cụm mẫu: các văn bản gần trùng mẫu (trường gan_trung_mau_voi) phải nằm cùng một phía, để mô hình không được chấm trên mẫu đã học.
+  4. Ba nhiệm vụ: soạn văn bản từ yêu cầu; tìm lỗi thể thức; trích số, ngày, cơ quan, trích yếu.
+- **Điều kiện xin lùi:** nếu một lượt tinh chỉnh trên máy này quá 12 giờ, hoặc mô hình tinh chỉnh không hơn mốc không tinh chỉnh, báo đầu mối trước 28/11.
