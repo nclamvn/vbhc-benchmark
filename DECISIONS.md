@@ -63,3 +63,13 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   3. Chấm mù: bài không ghi nguồn sinh ra.
   4. Đầu mối không chấm.
 - **Trạng thái cổng vào M3:** 0/2 người chấm được chỉ định đích danh.
+
+## QĐ-07 · Ba luật sửa sau lượt kiểm đầu tiên (bản v3)
+
+- **Ngày:** 21/11/2026 · **Đề xuất:** người kiểm (tệp `meta/Ket-qua-kiem-VBHC-v2.xlsx`, 17 nhận định; chưa ghi tên) · **Áp dụng:** Claude, theo ủy thác · **Trạng thái:** chờ đầu mối duyệt
+- **Chốt:**
+  1. Khử gần trùng chỉ loại khi hai văn bản vừa gần trùng nội dung vừa cùng số ký hiệu và cùng ngày. Văn bản định kỳ chung mẫu được giữ.
+  2. Văn bản có nhiều tệp đính kèm: lấy PDF có số trong tên trùng số ký hiệu; không có thì lấy PDF đầu tiên.
+  3. Thêm trường `so_ky_hieu_chuan`; trường `so_ky_hieu` giữ nguyên văn trang nguồn.
+- **Kết quả:** 6.294 văn bản giữ lại (v2: 6.282), 150 loại (v2: 162), 1 ô tranh chấp (v2: 2). Build digest `30c98055d74a2ebe`.
+- **Còn mở:** tn-84190 và tn-84111 chờ xác minh bản chính thức; số của 218224 ghi theo xác nhận của người kiểm; lượt kiểm tay 100 mẫu thông tin cá nhân (cổng M2) chưa làm.
