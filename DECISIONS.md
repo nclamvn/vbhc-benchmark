@@ -146,3 +146,10 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
 - **Rủi ro đã biết:**
   - Che tên người ký làm giảm độ giống văn bản thật. Điểm thể thức T1 có thể giảm nhẹ.
   - Bộ kiểm trung thực chỉ thấy lỗi viện dẫn có số hiệu. Nó không thấy nội dung bịa không có số hiệu.
+- **Sự cố lượt 1 (24/11, 19:45 đến 22:20):**
+  - **Hiện tượng:** ở vòng 500, cả train loss lẫn val loss thành `nan`.
+  - **Nguyên nhân:** hai ví dụ T3 có lời yêu cầu dài 3.383 và 3.447 token, vượt max-seq-length 3.072. Khi bị cắt, chúng mất cả phần trả lời nên không còn token nào để tính loss. Bộ dựng có giới hạn theo số ký tự, nhưng không bắt được hai ví dụ này vì văn bản OCR nhiễu tách ra nhiều token hơn.
+  - **Sửa:**
+    - Bộ dựng lọc bằng tokenizer, bỏ mọi ví dụ quá 3.000 token.
+    - Lượt 2 tiếp từ checkpoint vòng 250 của lượt 1 (val loss 1,022 trên toàn tập thẩm định), chạy thêm 1.750 vòng, LR cosine từ 2e-5.
+    - Val loss lượt 2 đo trên 60 ví dụ đầu của tập thẩm định để rút thời gian, nên không so trực tiếp được với con số 1,022.

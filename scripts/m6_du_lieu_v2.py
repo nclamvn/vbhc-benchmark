@@ -83,6 +83,11 @@ def cu(p):
     t2 = [r for r in R if r['messages'][1]['content'].startswith('Văn bản dưới đây có thể có MỘT lỗi')]
     t3 = [r for r in R if r['messages'][1]['content'].startswith('Đọc văn bản và trả về JSON')]
     return t2, t3
+# 4. Bỏ ví dụ dài quá 3.000 token (tokenizer họ Qwen). Ví dụ dài hơn max-seq-length 3072 bị cắt cụt mất phần trả lời,
+#    không còn token nào để tính loss và làm loss thành nan (sự cố M6 lượt 1, vòng 500).
+from transformers import AutoTokenizer
+TOK = AutoTokenizer.from_pretrained(os.environ.get('VBHC_TOKENIZER', '/home/claude/m4/qwen25_05b'))
+def vua(r): return len(TOK(TOK.apply_chat_template(r['messages'], tokenize=False))['input_ids']) <= 3000
 TK = {}
 for s, nguon, n3 in (('train', 'm3/train.jsonl.xz', 600), ('valid', 'm3/valid.jsonl', 80)):
     t2, t3 = cu(nguon); rng.shuffle(t3)
@@ -92,6 +97,7 @@ for s, nguon, n3 in (('train', 'm3/train.jsonl.xz', 600), ('valid', 'm3/valid.js
     for d in p1[:10**6 if s == 'train' else 40]:
         c = BY[d]; sach, bo = lam_sach(c['text']); tra, n = che(sach, c['so_ky_hieu_chuan']); n['dong_bo'] = bo; tong.update(n)
         T1.append(msg(de_T1(c), tra))
+    t2 = [r for r in t2 if vua(r)]; t3 = [r for r in t3 if vua(r)]; T1 = [r for r in T1 if vua(r)]
     rows = t2 + t3[:n3] + T1; rng.shuffle(rows)
     open(f'{O}/{s}.jsonl', 'w', encoding='utf-8').write(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows))
     TK[s] = {'tong': len(rows), 'T1': len(T1), 'T2': len(t2), 'T3': min(n3, len(t3)), 'T1_theo_loai': dict(collections.Counter(BY[d]['loai_van_ban'] for d in p1[:len(T1)])),

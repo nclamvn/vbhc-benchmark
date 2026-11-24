@@ -1,0 +1,8 @@
+# M6 lượt 2: tiếp từ checkpoint vòng 250 của lượt 1 (val loss 1,022, trước khi loss thành nan). Không khởi động lại LR.
+lora_parameters:
+  rank: 16
+  dropout: 0.05
+  scale: 20.0
+lr_schedule:
+  name: cosine_decay
+  arguments: [2.0e-5, 1750, 1.0e-6]
