@@ -17,8 +17,13 @@ with open(a.ra, 'a', encoding='utf-8') as f:
     for d in D:
         if d['id'] in xong: continue
         m = [{'role': 'system', 'content': d['he_thong']}, {'role': 'user', 'content': d['de']}]
-        try: p = tok.apply_chat_template(m, add_generation_prompt=True, tokenize=False, enable_thinking=False)   # tắt chế độ suy nghĩ ở các mô hình có hỗ trợ
-        except TypeError: p = tok.apply_chat_template(m, add_generation_prompt=True, tokenize=False)
+        p = None
+        for mm in (m, [{'role': 'user', 'content': d['he_thong'] + '\n\n' + d['de']}]):   # mẫu không nhận vai system (một số bản Gemma): gộp vào lời người dùng
+            try: p = tok.apply_chat_template(mm, add_generation_prompt=True, tokenize=False, enable_thinking=False); break   # tắt chế độ suy nghĩ ở mô hình có hỗ trợ
+            except TypeError:
+                try: p = tok.apply_chat_template(mm, add_generation_prompt=True, tokenize=False); break
+                except Exception: continue
+            except Exception: continue
         t1 = time.time(); tl = generate(model, tok, prompt=p, max_tokens=TOI_DA[d['nhiem_vu']], verbose=False)
         f.write(json.dumps({'id': d['id'], 'tra_loi': tl, 'giay': round(time.time() - t1, 1)}, ensure_ascii=False) + '\n'); f.flush(); n += 1
         if n % 10 == 0: print(f'{n + len(xong)}/{len(D)} mục, {round((time.time() - t0) / n, 1)} giây mỗi mục', flush=True)
