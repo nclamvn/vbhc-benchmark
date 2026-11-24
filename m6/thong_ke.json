@@ -1,0 +1,36 @@
+{
+ "train": {
+  "tong": 2004,
+  "T1": 804,
+  "T2": 600,
+  "T3": 600,
+  "T1_theo_loai": {
+   "Công văn": 500,
+   "Quyết định (cá biệt)": 83,
+   "Thông báo": 163,
+   "Công điện": 58
+  },
+  "da_che": {
+   "van_ban": 1801,
+   "ten": 400,
+   "dong_bo": 3666
+  }
+ },
+ "valid": {
+  "tong": 155,
+  "T1": 40,
+  "T2": 35,
+  "T3": 80,
+  "T1_theo_loai": {
+   "Công văn": 21,
+   "Thông báo": 12,
+   "Công điện": 2,
+   "Quyết định (cá biệt)": 5
+  },
+  "da_che": {
+   "van_ban": 102,
+   "ten": 25,
+   "dong_bo": 185
+  }
+ }
+}

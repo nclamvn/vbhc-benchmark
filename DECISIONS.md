@@ -118,3 +118,31 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   3. Kịch bản chọn mô hình để tinh chỉnh bằng bộ chấm 1.0, ra Llama-3.1-8B (56,4 so với Qwen3-8B 56,0). Chấm lại bằng bộ chấm 1.1 thì Qwen3-8B cao hơn (60,5 so với 59,0). Chênh 1,5 điểm, nằm trong mức nhiễu của bộ 285 mục; giữ lượt tinh chỉnh Llama, không chạy lại.
   4. Lượt nhỏ cắt văn bản dài ở giữa để vừa 1.024 token khi huấn luyện, và chỉ giữ 94/269 ví dụ T1 vừa trọn khung. Lúc chấm không cắt.
 - **Bộ chấm 1.1 (24/11/2026):** chỉ số `dung_ngay` của T1 chỉ kiểm giá trị ngày, không phân biệt hoa thường. Bản 1.0 bắt buộc chữ "ngày" viết thường, nên cho 0 điểm với bài viết đúng ngày nhưng mở đầu bằng "Ngày". Cách trình bày ngày vẫn do luật L05, L15 chấm. Mọi hệ được chấm lại bằng bản 1.1.
+
+## QĐ-12 · M6: ưu tiên chất lượng mô hình
+
+- **Ngày:** 24/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm giao Claude quyết ở vai tổng công trình sư ("chất lượng mô hình là ưu tiên cao nhất")
+- **Căn cứ:** M5 cho thấy tinh chỉnh dạy được khuôn văn bản nhưng không giảm bịa. Qwen3-8B gốc đứng đầu về nội dung (4,69/8 khi chấm mù mô phỏng).
+- **Chốt:**
+  1. **Đo bịa bằng máy** (`scripts/kiem_trung_thuc.py`, phần bổ sung của bộ chấm 1.2; không đổi `tong_hop`). Có bốn nhóm lỗi:
+     - viện dẫn văn bản trung ương 2020–2026 sai so với chỉ mục 24.874 văn bản;
+     - người ký sai vai;
+     - tên bộ đã hợp nhất hoặc cấp huyện xuất hiện sau mốc;
+     - lặp.
+
+     Kết quả thử trên chính 41 văn bản thật: 97,6% bài sạch, 98,6% viện dẫn kiểm được là đúng. Đó là mức báo nhầm của bộ kiểm.
+  2. **Tập huấn luyện v2** (`scripts/m6_du_lieu_v2.py`, thư mục `m6/`). Bộ kiểm tra giữ nguyên.
+     - **Lọc T1:** dùng độ nhiễu chữ (≤ 2%) thay cho độ tin OCR. Bỏ các dòng do dấu chữ ký số và con dấu sinh ra. Cho phép vi phạm L11 và L12 (L11 báo nhầm khi người đứng đầu tự ký; L12 chưa có căn cứ). Kết quả: T1 tăng từ 269 lên 804 ví dụ.
+     - **Che chi tiết không suy ra được từ lời yêu cầu bằng "…":** gồm số, ngày văn bản viện dẫn không phải quy phạm trung ương, và họ tên người ký. Mục đích là dạy mô hình để trống thay vì bịa.
+     - **Cân lại các nhiệm vụ:** T3 600 (đã bão hòa), T2 600, T1 804.
+  3. **Mô hình:** Qwen3-8B 4-bit, QLoRA rank 16 trên 16 lớp, LR 2e-5 cosine có khởi động 100 vòng, khoảng 1 lượt dữ liệu (2.000 vòng).
+     - Chấm toàn bộ tập thẩm định mỗi 250 vòng. **Chọn checkpoint có val loss thấp nhất**, không lấy checkpoint cuối.
+     - Bài học từ M5: val loss của Llama thấp nhất ở vòng 300/600.
+  4. **Điều kiện nhận:** mô hình v2 phải không thua Qwen3-8B gốc ở cả hai chỉ số:
+     - `tong_hop` máy;
+     - tỷ lệ bài sạch theo bộ kiểm trung thực.
+
+     Sau đó mới chấm mù nội dung. Nếu thua, báo đầu mối kèm phân tích và không công bố là mô hình cơ sở.
+- **Rủi ro đã biết:**
+  - Che tên người ký làm giảm độ giống văn bản thật. Điểm thể thức T1 có thể giảm nhẹ.
+  - Bộ kiểm trung thực chỉ thấy lỗi viện dẫn có số hiệu. Nó không thấy nội dung bịa không có số hiệu.

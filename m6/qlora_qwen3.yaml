@@ -1,0 +1,10 @@
+# M6 · QLoRA Qwen3-8B (QĐ-12). Các tham số chính truyền qua dòng lệnh trong scripts/chay_m6_mac.sh; tệp này giữ phần dòng lệnh không đặt được.
+lora_parameters:
+  rank: 16
+  dropout: 0.05
+  scale: 20.0
+lr_schedule:
+  name: cosine_decay
+  warmup: 100
+  warmup_init: 1.0e-7
+  arguments: [2.0e-5, 2000, 1.0e-6]

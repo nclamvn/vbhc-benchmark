@@ -3,3 +3,4 @@ __pycache__/
 engine/domains/*/snapshots/
 engine/domains/*/claims.jsonl
 data/
+m6/train.jsonl
