@@ -1,0 +1,8 @@
+# M6 lượt 3: tiếp từ checkpoint vòng 250 lượt 2 (đã qua 500 vòng, nhưng chỉ trên 250 ví dụ đầu, lặp hai lần). LR cosine 1,5e-5 → 1e-6.
+lora_parameters:
+  rank: 16
+  dropout: 0.05
+  scale: 20.0
+lr_schedule:
+  name: cosine_decay
+  arguments: [1.5e-5, 1500, 1.0e-6]

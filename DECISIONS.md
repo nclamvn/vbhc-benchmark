@@ -153,3 +153,12 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
     - Bộ dựng lọc bằng tokenizer, bỏ mọi ví dụ quá 3.000 token.
     - Lượt 2 tiếp từ checkpoint vòng 250 của lượt 1 (val loss 1,022 trên toàn tập thẩm định), chạy thêm 1.750 vòng, LR cosine từ 2e-5.
     - Val loss lượt 2 đo trên 60 ví dụ đầu của tập thẩm định để rút thời gian, nên không so trực tiếp được với con số 1,022.
+- **Sự cố lượt 2 (24/11, 22:26 đến 25/11, 03:00):**
+  - **Hiện tượng:** `nan` lại xuất hiện ở đúng vị trí dữ liệu như lượt 1.
+  - **Nguyên nhân:** kịch bản chỉ giải nén `train.jsonl.xz` khi chưa có `train.jsonl`. Máy Mac còn tệp cũ chưa lọc từ lượt 1 nên dùng lại tệp đó. Nhật ký xác nhận: số token tích lũy trùng từng dòng với lượt 1, và vẫn có cảnh báo câu dài 3.570 token.
+  - **Hệ quả:** checkpoint tốt nhất hiện có là vòng 250 của lượt 2. Nó đã qua 500 vòng nhưng chỉ học 250 ví dụ đầu, mỗi ví dụ hai lần. Val loss là 0,872 trên 60 ví dụ.
+  - **Sửa:**
+    - Kịch bản luôn giải nén lại.
+    - Lượt 3 tiếp từ checkpoint trên với LR cosine 1,5e-5, chạy 1.500 vòng.
+    - Val ở vòng 1 của lượt 3 chính là của checkpoint xuất phát. Vì vậy, nếu huấn luyện thêm không giúp gì, việc chọn checkpoint sẽ giữ lại checkpoint xuất phát.
+  - **Kết quả chấm của checkpoint lượt 2** được giữ làm bản v2, để đo xem lượt 3 có thêm giá trị không.
