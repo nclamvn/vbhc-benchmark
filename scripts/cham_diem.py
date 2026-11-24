@@ -1,4 +1,4 @@
-"""Chấm điểm VBHC-Bench bản pilot. Dùng: python3 scripts/cham_diem.py <tệp trả lời .jsonl> [tệp đáp án]
+"""Chấm điểm VBHC-Bench bản pilot (bộ chấm 1.1, 24/11/2026: sửa chỉ số dung_ngay của T1 chỉ kiểm giá trị ngày). Dùng: python3 scripts/cham_diem.py <tệp trả lời .jsonl> [tệp đáp án]
 Tệp trả lời: mỗi dòng {"id": ..., "tra_loi": "<chuỗi mô hình trả về>"}.
 T2: đúng mã lỗi. T3: số ký hiệu, ngày, loại khớp tuyệt đối; trích yếu tính F1 theo từ. T1: phần máy chấm được (thể thức, đúng số, ngày, bám trích yếu);
 phần chất lượng nội dung của T1 cần người chấm theo hướng dẫn chấm, không nằm trong điểm này."""
@@ -27,7 +27,7 @@ def cham(tl, G):
     d = {'text': s, 'so_ky_hieu_chuan': g['so_ky_hieu_chuan'], 'loai_van_ban': g['loai_van_ban']}
     k = v2.kiem(d); y, m, dd = g['ngay_ban_hanh'].split('-')
     r = {'the_thuc': sum(1 for x in k.values() if not x) / len(k), 'dung_so': float(ch(g['so_ky_hieu_chuan']) in ch(v1.vung_dau(nfc(s)))),
-         'dung_ngay': float(bool(re.search(rf'ngày\s+0?{int(dd)}\s+tháng\s+0?{int(m)}\s+năm\s+{y}', v1.vung_dau(nfc(s))))),
+         'dung_ngay': float(bool(re.search(rf'ngày\s+0?{int(dd)}\s+tháng\s+0?{int(m)}\s+năm\s+{y}|\b0?{int(dd)}\s*/\s*0?{int(m)}\s*/\s*{y}\b', v1.vung_dau(nfc(s))[:1500], re.I))),   # bản 1.1: chỉ kiểm GIÁ TRỊ ngày, không phân biệt hoa thường; cách trình bày do luật L05, L15 chấm
          'bam_trich_yeu': (lambda a, b: len(a & b) / len(a) if a else 0.0)(set(tu(g['trich_yeu'])), set(tu(s))), 'do_dai_hop_ly': float(600 <= len(s) <= 12000)}
     r['diem'] = sum(r.values()) / 5; r['luat_sai'] = sorted(x for x, e in k.items() if e); return r
 if __name__ == '__main__':

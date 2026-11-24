@@ -104,3 +104,17 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   3. Chia tập theo cụm mẫu: các văn bản gần trùng mẫu (trường gan_trung_mau_voi) phải nằm cùng một phía, để mô hình không được chấm trên mẫu đã học.
   4. Ba nhiệm vụ: soạn văn bản từ yêu cầu; tìm lỗi thể thức; trích số, ngày, cơ quan, trích yếu.
 - **Điều kiện xin lùi:** nếu một lượt tinh chỉnh trên máy này quá 12 giờ, hoặc mô hình tinh chỉnh không hơn mốc không tinh chỉnh, báo đầu mối trước 28/11.
+
+## QĐ-11 · Chạy M4–M5 không chờ người, hai máy song song
+
+- **Ngày:** 24/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm (phép thử: AI tự đi hết quy trình huấn luyện, đầu mối chỉ là người duyệt cuối; cho phép toàn quyền dùng máy Mac)
+- **Chốt:**
+  1. Lượt nhỏ trên máy của Claude (2 nhân CPU, 7 GB, không GPU): Qwen2.5-0.5B-Instruct, chấm gốc, tinh chỉnh LoRA, chấm lại.
+  2. Lượt lớn trên máy Mac M1 Max 32 GB bằng MLX, chạy bằng một lệnh duy nhất (`scripts/chay_tat_ca_mac.sh`). Đầu mối chỉ dán lệnh; kết quả ghi vào `~/Documents/vbhc-ketqua`, Claude tự đọc.
+  3. Chấm nội dung T1 do chuyên gia mô phỏng (AI) làm theo `docs/huong_dan_cham_T1.md`, chấm mù (QĐ-08).
+- **Sai lệch so với QĐ-10, ghi lại:**
+  1. SeaLLMs không có bản MLX công khai: thay bằng Gemma-3-12B.
+  2. Gemma-3-12B không chạy được vì ổ cứng Mac đầy (còn 2 GB trống trên 461 GB). Bảng điểm chỉ có hai mô hình 8B chưa tinh chỉnh.
+  3. Kịch bản chọn mô hình để tinh chỉnh bằng bộ chấm 1.0, ra Llama-3.1-8B (56,4 so với Qwen3-8B 56,0). Chấm lại bằng bộ chấm 1.1 thì Qwen3-8B cao hơn (60,5 so với 59,0). Chênh 1,5 điểm, nằm trong mức nhiễu của bộ 285 mục; giữ lượt tinh chỉnh Llama, không chạy lại.
+  4. Lượt nhỏ cắt văn bản dài ở giữa để vừa 1.024 token khi huấn luyện, và chỉ giữ 94/269 ví dụ T1 vừa trọn khung. Lúc chấm không cắt.
+- **Bộ chấm 1.1 (24/11/2026):** chỉ số `dung_ngay` của T1 chỉ kiểm giá trị ngày, không phân biệt hoa thường. Bản 1.0 bắt buộc chữ "ngày" viết thường, nên cho 0 điểm với bài viết đúng ngày nhưng mở đầu bằng "Ngày". Cách trình bày ngày vẫn do luật L05, L15 chấm. Mọi hệ được chấm lại bằng bản 1.1.
