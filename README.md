@@ -59,3 +59,7 @@ Bản chụp toàn văn trong gói là bản đã che thông tin cá nhân, gi�
 ## Giấy phép
 
 Mã nguồn theo Apache 2.0 (`LICENSE`). Dữ liệu dự án theo CC BY 4.0, có ghi nguồn bắt buộc cho từng cổng (`LICENSE-DATA.md`).
+
+## Kết quả pilot M4–M5 (24/11/2026)
+
+Xem `docs/m4_m5_bao_cao.md`. Llama-3.1-8B tinh chỉnh QLoRA đạt tổng hợp 67,3, cao nhất điểm máy. Khi chấm nội dung T1 (mô phỏng AI, mù), Qwen3-8B gốc đứng đầu với 4,69/8. Luật viết tay vẫn thắng T2 với 95,7.

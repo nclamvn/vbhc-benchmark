@@ -1,0 +1,65 @@
+{"ma":"P001","A":0,"B":0,"C":0,"D":1,"ghi_chu":"Chép lại yêu cầu, không có văn bản; ghi sai người ký 'Chủ tịch nước'"}
+{"ma":"P002","A":0,"B":0,"C":0,"D":1,"ghi_chu":"Lặp phần Quốc hiệu nhiều lần, không có nội dung; tự thêm địa danh Vĩnh Phúc, 'Văn phòng Chủ tịch' sai"}
+{"ma":"P003","A":0,"B":1,"C":0,"D":0,"ghi_chu":"Phần đầu đúng, Kính gửi các bộ hợp lý, rồi bịa hàng loạt tên công ty và lặp"}
+{"ma":"P004","A":1,"B":1,"C":1,"D":0,"ghi_chu":"Kết luận về xuất khẩu gạo hợp việc nhưng chung chung, lặp đoạn; bịa 'theo đề nghị của Phó Thủ tướng Vũ Đức Đam'"}
+{"ma":"P005","A":1,"B":1,"C":1,"D":2,"ghi_chu":"Khung quyết định hợp lý, để trống có đánh dấu chỗ thiếu; thiếu căn cứ, xưng 'tôi quyết định' sai giọng, các điều lặp ý"}
+{"ma":"P006","A":0,"B":0,"C":0,"D":2,"ghi_chu":"Không soạn, xin thêm thông tin"}
+{"ma":"P007","A":1,"B":1,"C":1,"D":1,"ghi_chu":"Thông báo đúng việc nhưng nội dung chung chung, dùng 'Kính gửi' không hợp với thông báo"}
+{"ma":"P008","A":1,"B":1,"C":0,"D":0,"ghi_chu":"Bịa tổng mức đầu tư 10.000 tỷ và thời gian 36 tháng; lặp câu 'chịu trách nhiệm'"}
+{"ma":"P009","A":2,"B":2,"C":2,"D":1,"ghi_chu":"Công văn đúng việc, giao việc rõ, đúng công thức; tự thêm tên một Phó Chủ nhiệm VPCP vào nơi nhận"}
+{"ma":"P010","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Lạc sang một chương trình mục tiêu quốc gia không có thật; ghi người ký là Chủ tịch nước; bịa nghị quyết 164/NQ-CP; lặp"}
+{"ma":"P011","A":2,"B":2,"C":1,"D":0,"ghi_chu":"Đúng việc, giao việc từng bộ hợp lý; bịa văn bản 1234 của Bộ NN và một 'Phó Thủ tướng Phạm Gia Túc' không có thật; các mục lặp ý"}
+{"ma":"P012","A":1,"B":0,"C":0,"D":0,"ghi_chu":"Đầu văn bản ghi 'CHỦ TỊCH'; chỉ thị lại chia Điều và có Kính gửi; viết sai dịch tả lợn châu Phi là FMD; lặp"}
+{"ma":"P013","A":0,"B":1,"C":0,"D":1,"ghi_chu":"Phần đầu công điện đúng, rồi lặp danh sách các bộ, không có nội dung"}
+{"ma":"P014","A":2,"B":1,"C":2,"D":2,"ghi_chu":"Công điện đúng việc, giao việc rõ, văn phong tốt; giao cho Bộ LĐTBXH, Bộ GTVT, Bộ NN&PTNT, tên các bộ đã hợp nhất trước 11/2025"}
+{"ma":"P015","A":2,"B":1,"C":1,"D":2,"ghi_chu":"Công điện đúng việc; vẫn gửi Bộ GTVT dù 4/2025 đã hợp nhất; các mục lặp cụm từ"}
+{"ma":"P016","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Ghi người ký là Chủ tịch nước, bịa buổi làm việc 30/7, lặp 'Bộ Y tế' hàng trăm lần"}
+{"ma":"P017","A":1,"B":1,"C":1,"D":1,"ghi_chu":"Công điện đúng việc nhưng chia mục I, II, III như kế hoạch; dòng người ký méo chữ; tự đặt thời hạn; gọi tên Bộ NN&PTNT đã hợp nhất"}
+{"ma":"P018","A":2,"B":1,"C":1,"D":2,"ghi_chu":"Công điện giao việc rõ cho từng bộ; dòng người ký méo chữ; vẫn giao Bộ GTVT đã hợp nhất; lặp cụm"}
+{"ma":"P019","A":2,"B":1,"C":2,"D":0,"ghi_chu":"Khung quyết định đầy đủ, để trống có đánh dấu; nhưng căn cứ bịa sai: gán NĐ 30/2020 và NĐ 15/2020 nội dung không đúng, dùng Luật Đất đai 2013 đã hết hiệu lực"}
+{"ma":"P020","A":1,"B":1,"C":1,"D":0,"ghi_chu":"Công điện lại có căn cứ và chia Điều như nghị định; mô tả sai NĐ 30/2020; bịa 'NĐ 15/2020 về phòng chống dịch'"}
+{"ma":"P021","A":2,"B":1,"C":2,"D":0,"ghi_chu":"Quyết định đúng việc, cấu trúc tốt; căn cứ mô tả sai NĐ 30/2020; bịa QĐ 123, tờ trình 456 của UBND huyện Đại Từ, cấp huyện đã bỏ từ 7/2025"}
+{"ma":"P022","A":1,"B":2,"C":2,"D":1,"ghi_chu":"Thông báo đúng giọng, mạch lạc nhưng nội dung chung chung, không có kết quả cụ thể"}
+{"ma":"P023","A":0,"B":0,"C":0,"D":1,"ghi_chu":"Không soạn, chép lại yêu cầu và xin thêm thông tin; câu 'Bản quyền thuộc VPCP' vô nghĩa"}
+{"ma":"P024","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Không có văn bản; bịa QĐ 159; lặp một mệnh đề hàng chục lần"}
+{"ma":"P025","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Quyết định của Sở mà viết như ý kiến Thủ tướng; bịa Nghị quyết 169/NQ-CP; lặp"}
+{"ma":"P026","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Lặp một câu; 'UBND tỉnh Long Thành' không có; năm 2023 ghi Thủ tướng Nguyễn Xuân Phúc là sai"}
+{"ma":"P027","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Người ký 'Thứ trưởng Bộ Chính trị' vô nghĩa; bịa cuộc họp trực tuyến 13/11; nội dung chung chung, lặp"}
+{"ma":"P028","A":1,"B":0,"C":0,"D":0,"ghi_chu":"Chỉ thị lại có căn cứ, 'CÔNG BỐ', tự gọi là 'Nghị định này'; tiêu đề sai 'châu Âu'; mô tả sai NĐ 30/2020; bịa TT 12/2021"}
+{"ma":"P029","A":1,"B":2,"C":0,"D":1,"ghi_chu":"Kính gửi và mở đầu công điện đúng, rồi lặp một chuỗi từ hàng chục lần"}
+{"ma":"P030","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Một câu tường thuật; ghi Nguyễn Xuân Phúc là Chủ tịch nước khi văn bản năm 2020 gọi ông là Thủ tướng"}
+{"ma":"P031","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Bịa một chuỗi quyết định 103–116 lồng nhau, không có văn bản"}
+{"ma":"P032","A":1,"B":1,"C":0,"D":0,"ghi_chu":"Có phần quyết định nhưng lặp số, ngày; chức danh 'Sở trưởng' sai; bịa 'Luật Ban hành văn bản quy định chi tiết' và mô tả sai NĐ 30/2020"}
+{"ma":"P033","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Không phải quyết định; bịa dự án triển khai từ 2020, thu hút nhà đầu tư quốc tế; lặp"}
+{"ma":"P034","A":1,"B":0,"C":1,"D":0,"ghi_chu":"Thủ tướng 'phê duyệt' bằng công văn; Kính gửi gần như mọi bộ; viện dẫn sai 'Điều 12 NĐ 30/2020 về vốn nhà nước'"}
+{"ma":"P035","A":1,"B":1,"C":1,"D":0,"ghi_chu":"Thông báo đúng việc nhưng chung chung; thêm căn cứ không cần và mô tả sai NĐ 30/2020 'về cơ chế một cửa'"}
+{"ma":"P036","A":0,"B":0,"C":0,"D":1,"ghi_chu":"Lặp phần đầu nhiều lần, không có nội dung"}
+{"ma":"P037","A":1,"B":0,"C":1,"D":0,"ghi_chu":"Đặt sai cơ quan ban hành thành Sở NN&PTNT; căn cứ bịa: Luật Môi trường 41/2014, NĐ 30/2020 mô tả sai, NĐ 155/2018 sai nội dung"}
+{"ma":"P038","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Sai cơ quan (Bộ trưởng Bộ Công Thương), lại viết như tờ trình xin chấp thuận; không có nội dung"}
+{"ma":"P039","A":2,"B":1,"C":1,"D":0,"ghi_chu":"Công văn đúng việc, giao việc rõ; bịa công văn 10823/BKHĐT và thời hạn 31/12; dòng 'Văn phòng Chính phục', 'Độc giả' sai"}
+{"ma":"P040","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Viết như bản tin; gán cho Chủ tịch nước, gọi công điện là quyết định"}
+{"ma":"P041","A":0,"B":0,"C":0,"D":1,"ghi_chu":"Viết như đơn xin của cấp dưới gửi Thủ tướng, ngược vai; nhiều chỗ để trống đánh dấu"}
+{"ma":"P042","A":2,"B":1,"C":2,"D":0,"ghi_chu":"Quyết định đúng việc, cấu trúc tốt; căn cứ bịa: 'Luật Bảo vệ nguồn nước 2017' không có, NĐ 30/2020 mô tả sai, QĐ 22/2022 tự đặt; vẫn dùng Sở NN&PTNT"}
+{"ma":"P043","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Lặp trích yếu, gắn sai vào 'Sở Xây dựng TP.HCM'"}
+{"ma":"P044","A":1,"B":0,"C":1,"D":1,"ghi_chu":"Công văn mà lại 'quyết định' và chia Điều; Kính gửi thêm SCIC và một công ty tự nghĩ ra"}
+{"ma":"P045","A":2,"B":2,"C":2,"D":1,"ghi_chu":"Thông báo kết luận đúng việc, đúng giọng VPCP, mạch lạc; tự thêm địa điểm Hà Nội và ngày họp trùng ngày ký"}
+{"ma":"P046","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Người ký 'Thứ trưởng Bộ Chính trị', 'Thượng nghị sĩ Nguyễn Văn Lợi' bịa; nội dung chung chung"}
+{"ma":"P047","A":0,"B":1,"C":1,"D":2,"ghi_chu":"Chỉ có khung, không có nội dung kết luận; thêm 'V/v' vào thông báo"}
+{"ma":"P048","A":2,"B":2,"C":1,"D":1,"ghi_chu":"Công điện đúng việc, đúng tên các bộ sau hợp nhất; tự nêu ngày xảy ra lũ 20/11 và danh sách tỉnh (dùng tỉnh cũ trước sáp nhập 7/2025); lặp trích yếu"}
+{"ma":"P049","A":2,"B":1,"C":1,"D":2,"ghi_chu":"Công điện đúng việc, nội dung cụ thể; chia mục 'Mục đích, yêu cầu' như kế hoạch, không giao rõ cho từng bộ"}
+{"ma":"P050","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Viết như bản tin họp báo; gán cho Thủ tướng Nguyễn Xuân Phúc năm 2024; giao Bộ Y tế việc dịch tả lợn"}
+{"ma":"P051","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Lặp một mệnh đề bịa (QĐ 169), không có văn bản"}
+{"ma":"P052","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Người ký 'Chủ tịch nước Nguyễn Xuân Phúc' năm 2025; bịa NQ 169; Thủ tướng tự 'xem xét' trong công điện của mình; lặp"}
+{"ma":"P053","A":1,"B":1,"C":1,"D":0,"ghi_chu":"Thông báo đúng việc nhưng bịa các cuộc họp ngày 8, 10, 12, 14/5 mà không có nội dung thật"}
+{"ma":"P054","A":1,"B":2,"C":2,"D":1,"ghi_chu":"Đúng giọng thông báo của UBND, mạch lạc; nội dung chung chung, không nêu kết quả cụ thể nào"}
+{"ma":"P055","A":0,"B":0,"C":1,"D":2,"ghi_chu":"Viết như lời 'kính đề nghị' của cấp dưới gửi lên, ngược vai Thủ tướng; liệt kê chung chung"}
+{"ma":"P056","A":1,"B":1,"C":0,"D":1,"ghi_chu":"Có quyết định và nhiệm vụ hội đồng, nhưng lặp phần đầu; đặt địa danh 'Hà Nội' cho Sở của Thái Nguyên"}
+{"ma":"P057","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Viết như báo cáo gửi lên Thủ tướng, ngược vai; bịa phiên họp thứ 16 Quốc hội khóa XIV năm 2024; chen chữ tiếng Anh, tiếng Trung"}
+{"ma":"P058","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Người ký 'Chủ tịch nước Nguyễn Xuân Phúc, Chủ tịch Hồ Chí Minh'; lặp trích yếu"}
+{"ma":"P059","A":0,"B":0,"C":0,"D":1,"ghi_chu":"Không phải quyết định; lặp một câu"}
+{"ma":"P060","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Bịa Nghị quyết 169/NQ-CP và lặp"}
+{"ma":"P061","A":2,"B":1,"C":1,"D":1,"ghi_chu":"Công văn đúng việc, yêu cầu rõ; công văn không cần căn cứ, mô tả NĐ 30/2020 gần đúng; tự đặt thời hạn 10/01/2021; thiếu 'Kính gửi' đúng cách"}
+{"ma":"P062","A":1,"B":2,"C":1,"D":1,"ghi_chu":"Đúng giọng thông báo nhưng toàn câu chung chung, không có kết quả nào"}
+{"ma":"P063","A":0,"B":0,"C":0,"D":1,"ghi_chu":"Chỉ lặp trích yếu"}
+{"ma":"P064","A":2,"B":1,"C":2,"D":1,"ghi_chu":"Công văn đúng việc, văn phong tốt; diễn giải sai CHKQT thành 'cửa khẩu quốc tế'; Kính gửi quá rộng"}
+{"ma":"P065","A":0,"B":0,"C":0,"D":0,"ghi_chu":"Đầu văn bản 'CHỦ TỊCH'; bịa hàng loạt luật sửa đổi Luật Tổ chức Chính phủ; lặp"}

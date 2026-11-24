@@ -1,0 +1,52 @@
+{
+ "qwen25_05b_goc": {
+  "n": 13,
+  "A": 0.0,
+  "B": 0.0,
+  "C": 0.08,
+  "D": 0.62,
+  "tong_8": 0.69,
+  "ty_le_dat_6_tro_len": 0,
+  "so_bai_D0": 7
+ },
+ "qwen25_05b_tinh_chinh": {
+  "n": 13,
+  "A": 0.0,
+  "B": 0.0,
+  "C": 0.0,
+  "D": 0.08,
+  "tong_8": 0.08,
+  "ty_le_dat_6_tro_len": 0,
+  "so_bai_D0": 12
+ },
+ "qwen3_8b_goc": {
+  "n": 13,
+  "A": 1.54,
+  "B": 1.0,
+  "C": 1.46,
+  "D": 0.69,
+  "tong_8": 4.69,
+  "ty_le_dat_6_tro_len": 46,
+  "so_bai_D0": 6
+ },
+ "llama31_8b_goc": {
+  "n": 13,
+  "A": 1.23,
+  "B": 1.0,
+  "C": 0.77,
+  "D": 0.62,
+  "tong_8": 3.62,
+  "ty_le_dat_6_tro_len": 8,
+  "so_bai_D0": 7
+ },
+ "llama31_8b_tinh_chinh": {
+  "n": 13,
+  "A": 0.85,
+  "B": 1.0,
+  "C": 0.62,
+  "D": 0.85,
+  "tong_8": 3.31,
+  "ty_le_dat_6_tro_len": 23,
+  "so_bai_D0": 4
+ }
+}

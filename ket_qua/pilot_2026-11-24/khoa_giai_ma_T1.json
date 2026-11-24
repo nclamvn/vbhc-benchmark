@@ -1,0 +1,262 @@
+{
+"P001": {
+"he": "qwen25_05b_goc",
+"id": "T1-0028"
+},
+"P002": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0019"
+},
+"P003": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0005"
+},
+"P004": {
+"he": "llama31_8b_goc",
+"id": "T1-0012"
+},
+"P005": {
+"he": "llama31_8b_goc",
+"id": "T1-0019"
+},
+"P006": {
+"he": "qwen25_05b_goc",
+"id": "T1-0010"
+},
+"P007": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0018"
+},
+"P008": {
+"he": "llama31_8b_goc",
+"id": "T1-0005"
+},
+"P009": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0020"
+},
+"P010": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0005"
+},
+"P011": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0010"
+},
+"P012": {
+"he": "llama31_8b_goc",
+"id": "T1-0041"
+},
+"P013": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0028"
+},
+"P014": {
+"he": "qwen3_8b_goc",
+"id": "T1-0035"
+},
+"P015": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0025"
+},
+"P016": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0028"
+},
+"P017": {
+"he": "llama31_8b_goc",
+"id": "T1-0035"
+},
+"P018": {
+"he": "llama31_8b_goc",
+"id": "T1-0025"
+},
+"P019": {
+"he": "qwen3_8b_goc",
+"id": "T1-0019"
+},
+"P020": {
+"he": "qwen3_8b_goc",
+"id": "T1-0028"
+},
+"P021": {
+"he": "llama31_8b_goc",
+"id": "T1-0008"
+},
+"P022": {
+"he": "qwen3_8b_goc",
+"id": "T1-0018"
+},
+"P023": {
+"he": "qwen25_05b_goc",
+"id": "T1-0020"
+},
+"P024": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0008"
+},
+"P025": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0009"
+},
+"P026": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0010"
+},
+"P027": {
+"he": "qwen25_05b_goc",
+"id": "T1-0018"
+},
+"P028": {
+"he": "qwen3_8b_goc",
+"id": "T1-0041"
+},
+"P029": {
+"he": "llama31_8b_goc",
+"id": "T1-0028"
+},
+"P030": {
+"he": "qwen25_05b_goc",
+"id": "T1-0012"
+},
+"P031": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0018"
+},
+"P032": {
+"he": "llama31_8b_goc",
+"id": "T1-0009"
+},
+"P033": {
+"he": "qwen25_05b_goc",
+"id": "T1-0019"
+},
+"P034": {
+"he": "qwen3_8b_goc",
+"id": "T1-0005"
+},
+"P035": {
+"he": "llama31_8b_goc",
+"id": "T1-0026"
+},
+"P036": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0008"
+},
+"P037": {
+"he": "qwen3_8b_goc",
+"id": "T1-0009"
+},
+"P038": {
+"he": "qwen25_05b_goc",
+"id": "T1-0008"
+},
+"P039": {
+"he": "llama31_8b_goc",
+"id": "T1-0020"
+},
+"P040": {
+"he": "qwen25_05b_goc",
+"id": "T1-0035"
+},
+"P041": {
+"he": "qwen25_05b_goc",
+"id": "T1-0005"
+},
+"P042": {
+"he": "qwen3_8b_goc",
+"id": "T1-0008"
+},
+"P043": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0019"
+},
+"P044": {
+"he": "llama31_8b_goc",
+"id": "T1-0010"
+},
+"P045": {
+"he": "qwen3_8b_goc",
+"id": "T1-0012"
+},
+"P046": {
+"he": "qwen25_05b_goc",
+"id": "T1-0026"
+},
+"P047": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0012"
+},
+"P048": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0035"
+},
+"P049": {
+"he": "qwen3_8b_goc",
+"id": "T1-0025"
+},
+"P050": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0041"
+},
+"P051": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0026"
+},
+"P052": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0035"
+},
+"P053": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0026"
+},
+"P054": {
+"he": "qwen3_8b_goc",
+"id": "T1-0026"
+},
+"P055": {
+"he": "qwen25_05b_goc",
+"id": "T1-0025"
+},
+"P056": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0009"
+},
+"P057": {
+"he": "qwen25_05b_goc",
+"id": "T1-0041"
+},
+"P058": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0025"
+},
+"P059": {
+"he": "qwen25_05b_goc",
+"id": "T1-0009"
+},
+"P060": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0012"
+},
+"P061": {
+"he": "qwen3_8b_goc",
+"id": "T1-0020"
+},
+"P062": {
+"he": "llama31_8b_goc",
+"id": "T1-0018"
+},
+"P063": {
+"he": "qwen25_05b_tinh_chinh",
+"id": "T1-0020"
+},
+"P064": {
+"he": "qwen3_8b_goc",
+"id": "T1-0010"
+},
+"P065": {
+"he": "llama31_8b_tinh_chinh",
+"id": "T1-0041"
+}
+}

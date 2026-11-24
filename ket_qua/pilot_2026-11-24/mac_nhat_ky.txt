@@ -1,0 +1,208 @@
+=== bắt đầu 2026-11-24 14:30:55
+mlx-lm 0.32.2 thiết bị Device(gpu, 0)
+Apple M1 Max
+34359738368
+xong /Users/os/Documents/vbhc-ketqua/thu.jsonl
+=== mốc qwen3_8b 2026-11-24 14:35:35
+=== bắt đầu 2026-11-24 15:59:28
+mlx-lm 0.32.2 thiết bị Device(gpu, 0)
+Apple M1 Max
+34359738368
+xong /Users/os/Documents/vbhc-ketqua/thu.jsonl
+=== mốc qwen3_8b 2026-11-24 15:59:37
+xong /Users/os/Documents/vbhc-ketqua/qwen3_8b.jsonl
+=== mốc llama31_8b 2026-11-24 16:07:46
+xong /Users/os/Documents/vbhc-ketqua/llama31_8b.jsonl
+=== mốc gemma3_12b 2026-11-24 17:02:19
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "/Users/os/Documents/vbhc-benchmark/scripts/chay_mlx.py", line 14, in <module>
+    model, tok = load(a.model, adapter_path=a.adapter) if a.adapter else load(a.model)
+                                                                         ~~~~^^^^^^^^^
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/mlx_lm/utils.py", line 688, in load
+    model_path = _download(path_or_hf_repo, revision=revision)
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/mlx_lm/utils.py", line 286, in _download
+    snapshot_download(
+    ~~~~~~~~~~~~~~~~~^
+        path_or_hf_repo,
+        ^^^^^^^^^^^^^^^^
+        revision=revision,
+        ^^^^^^^^^^^^^^^^^^
+        allow_patterns=allow_patterns,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_http.py", line 276, in _inner
+    return fn(*args, **kwargs)
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/_snapshot_download.py", line 541, in snapshot_download
+    hf_thread_map(
+    ~~~~~~~~~~~~~^
+        _inner_hf_hub_download,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        tqdm_class=tqdm_class,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/utils/tqdm.py", line 441, in hf_thread_map
+    results[future_to_index[future]] = future.result()
+                                       ~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 447, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+    raise self._exception
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/_snapshot_download.py", line 521, in _inner_hf_hub_download
+    hf_hub_download(  # type: ignore
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        repo_id,
+        ^^^^^^^^
+    ...<14 lines>...
+        dry_run=dry_run,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_http.py", line 276, in _inner
+    return fn(*args, **kwargs)
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/file_download.py", line 1047, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+        # Destination
+    ...<15 lines>...
+        dry_run=dry_run,
+    )
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/file_download.py", line 1285, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        incomplete_path=Path(blob_path + ".incomplete"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        tqdm_class=tqdm_class,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/file_download.py", line 2017, in _download_to_tmp_and_move
+    xet_get(
+    ~~~~~~~^
+        incomplete_path=tmp_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        tqdm_class=tqdm_class,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/os/Documents/vbhc-benchmark/.venv/lib/python3.14/site-packages/huggingface_hub/file_download.py", line 589, in xet_get
+    with session.new_file_download_group(
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        endpoint=connection_info.endpoint,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        progress_callback=progress.update_progress,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as group:
+    ^
+RuntimeError: Task error: File reconstruction error: IO Error: No space left on device (os error 28)
+LỖI khi chạy gemma3_12b
+Traceback (most recent call last):
+  File "/Users/os/Documents/vbhc-benchmark/scripts/cham_diem.py", line 35, in <module>
+    P = {json.loads(l)['id']: json.loads(l).get('tra_loi', '') for l in open(sys.argv[1], encoding='utf-8')}
+                                                                        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/os/Documents/vbhc-ketqua/gemma3_12b.jsonl'
+=== mô hình tốt nhất: mlx-community/Meta-Llama-3.1-8B-Instruct-4bit  2026-11-24 17:04:33
+Loading pretrained model
+Loading datasets
+Training
+╭─ mlx_lm.lora ────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│    model           mlx-community/Meta-Llama-3.1-8B-Instruct-4bit                                                     │
+│    type            lora · 8 layers · rank 8                                                                          │
+│    dataset         m3                                                                                                │
+│    optimizer       adam · lr 1.0e-05                                                                                 │
+│    batch · iters   1 · 600                                                                                           │
+│    max seq         3,072                                                                                             │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+Trainable parameters: 0.065% (5.243M/8030.261M)
+  iter   train_loss     tok/s     tokens
+     1    val 1.262    79.98s
+    10    0.913 ▼       21      1.1k
+    20    0.324 ▼       33      2.9k
+    30    0.420 ▲       48      6.0k
+    40    0.266 ▼       40      8.0k
+    50    0.157 ▼       12      8.6k
+    60    0.335 ▲       21      9.9k
+    70    0.267 ▼       19     11.1k
+    80    0.292 ▲       33     13.0k
+    90    0.244 ▼       43     15.3k
+   100    val 1.271    109.13s
+   100    0.175 ▼       11     16.0k
+  save  0000100_adapters.safetensors
+   110    0.161 ▼       32     17.9k
+   120    0.457 ▲       65     21.9k
+   130    0.065 ▼       17     22.5k
+   140    0.204 ▲       18     23.6k
+   150    0.398 ▲       56     26.5k
+   160    0.297 ▼       25     27.6k
+   170    0.301 ▲       32     29.5k
+   180    0.185 ▼       37     31.5k
+   190    0.393 ▲       48     33.8k
+   200    val 1.138    98.62s
+   200    0.529 ▲       68     36.9k
+  save  0000200_adapters.safetensors
+   210    0.639 ▲       88     43.1k
+   220    0.173 ▼       11     43.6k
+   230    0.119 ▼       36     45.7k
+   240    0.230 ▲       33     47.5k
+   250    0.509 ▲       55     50.7k
+   260    0.285 ▼       26     52.2k
+   270    0.327 ▲       44     55.0k
+   280    0.326 ▼       34     57.3k
+   290    0.355 ▲       52     60.4k
+   300    val 0.771    127.27s
+   300    0.329 ▼       39     62.3k
+  save  0000300_adapters.safetensors
+   310    0.126 ▼       12     62.8k
+   320    0.257 ▲       53     66.4k
+   330    0.251 ▼       36     68.7k
+   340    0.213 ▼       20     70.5k
+   350    0.218 ▲       18     71.8k
+   360    0.170 ▼        6     72.2k
+   370    0.071 ▼        8     72.9k
+   380    0.311 ▲       28     75.7k
+   390    0.109 ▼        8     76.4k
+   400    val 1.058    136.90s
+   400    0.117 ▲        7     77.0k
+  save  0000400_adapters.safetensors
+   410    0.583 ▲       35     79.8k
+   420    0.435 ▼       42     83.5k
+   430    0.479 ▲       42     87.5k
+   440    0.252 ▼       15     88.6k
+   450    0.359 ▲       31     91.5k
+   460    0.582 ▲       69     98.3k
+   470    0.371 ▼       29    100.7k
+   480    0.180 ▼       26    102.9k
+   490    0.089 ▼        5    103.5k
+   500    val 0.899    111.34s
+   500    0.165 ▲       30    105.9k
+  save  0000500_adapters.safetensors
+   510    0.336 ▲       30    108.0k
+   520    0.235 ▼       25    110.0k
+   530    0.276 ▲       33    112.7k
+   540    0.263 ▼       24    114.0k
+   550    0.355 ▲       49    117.6k
+   560    0.237 ▼       29    119.0k
+   570    0.290 ▲       56    122.7k
+   580    0.127 ▼        9    123.2k
+   590    0.072 ▼       12    123.8k
+   600    val 1.072    95.84s
+   600    0.132 ▲       10    124.6k
+  save  0000600_adapters.safetensors
+train ██████████████████████████████ 100% ·   600/600
+xong /Users/os/Documents/vbhc-ketqua/tinh_chinh.jsonl
+=== XONG 2026-11-24 19:18:30
