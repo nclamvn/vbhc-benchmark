@@ -16,6 +16,6 @@ def L15(t, d):  # ngày < 10 và tháng 1, 2 phải có số 0
     if not m: return None
     dd, mm = m.groups()
     return f'Ngày tháng thiếu số 0 ở trước: {m.group(0)}' if (len(dd) == 1 and int(dd) < 10) or (len(mm) == 1 and int(mm) < 3) else None
-LUAT = dict(_L1, L13=(L13, 'Hoa thường của Tiêu ngữ', 'PL I mục II.1'), L14=(L14, 'Chữ viết tắt tên loại trong ký hiệu', 'PL I mục II.3; PL III'), L15=(L15, 'Số 0 trong ngày tháng', 'PL I mục II.4'))
+LUAT = dict(_L1, L13=(L13, 'Hoa thường của Tiêu ngữ', 'PL I Phần I mục II.1.b'), L14=(L14, 'Chữ viết tắt tên loại trong ký hiệu', 'PL I Phần I mục II.3.b'), L15=(L15, 'Số 0 trong ngày tháng', 'PL I Phần I mục II.4.b'))
 def kiem(d):
     t = nfc(d['text']); return {k: f(t, d) for k, (f, _, _) in LUAT.items()}

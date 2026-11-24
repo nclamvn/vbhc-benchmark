@@ -56,11 +56,11 @@ def L11(t, d):
 def L12(t, d):
     if re.search(r'[/⁄]\s*\.(?!\w)', t): return None
     return 'Thiếu dấu kết thúc nội dung "./."' if du_trang(d) else KXD
-LUAT = {'L01': (L01, 'Quốc hiệu', 'Điều 8 k1a; PL I mục II.1'), 'L02': (L02, 'Tiêu ngữ', 'Điều 8 k1a; PL I mục II.1'),
-        'L03': (L03, 'Có dòng Số', 'Điều 8 k1c; PL I mục II.3'), 'L04': (L04, 'Cấu trúc ký hiệu', 'PL I mục II.3'),
-        'L05': (L05, 'Địa danh, thời gian', 'Điều 8 k1d; PL I mục II.4'), 'L06': (L06, 'Tên loại', 'Điều 8 k1đ; PL I mục II.5'),
-        'L07': (L07, 'Trích yếu công văn', 'PL I mục II.5'), 'L08': (L08, 'Kính gửi', 'PL I mục II.9'),
-        'L09': (L09, 'Nơi nhận', 'Điều 8 k1i; PL I mục II.9'), 'L10': (L10, 'Lưu VT', 'PL I mục II.9'),
-        'L11': (L11, 'Quyền hạn, chức vụ người ký', 'Điều 8 k1g; PL I mục II.7'), 'L12': (L12, 'Kết thúc nội dung', 'PL I mục II.6')}
+LUAT = {'L01': (L01, 'Quốc hiệu', 'PL I Phần I mục II.1'), 'L02': (L02, 'Tiêu ngữ', 'PL I Phần I mục II.1.b'),
+        'L03': (L03, 'Có dòng Số', 'PL I Phần I mục II.3.c'), 'L04': (L04, 'Cấu trúc ký hiệu', 'PL I Phần I mục II.3.b'),
+        'L05': (L05, 'Địa danh, thời gian', 'PL I Phần I mục II.4.b'), 'L06': (L06, 'Tên loại', 'PL I Phần I mục II.5.b'),
+        'L07': (L07, 'Trích yếu công văn', 'PL I Phần I mục II.5.b'), 'L08': (L08, 'Kính gửi', 'PL I Phần I mục II.9'),
+        'L09': (L09, 'Nơi nhận', 'PL I Phần I mục II.9'), 'L10': (L10, 'Lưu VT', 'PL I Phần I mục II.9.d'),
+        'L11': (L11, 'Quyền hạn, chức vụ người ký', 'PL I Phần I mục II.7.b'), 'L12': (L12, 'Kết thúc nội dung', 'CHƯA XÁC MINH: không tìm thấy trong Phụ lục I; có thể chỉ là mẫu trình bày')}
 def kiem(d):
     t = nfc(d['text']); return {k: f(t, d) for k, (f, _, _) in LUAT.items()}

@@ -5,7 +5,7 @@ Chia tập theo CỤM MẪU: văn bản gần trùng mẫu (gan_trung_mau_voi) l
 import json, re, random, sys, copy, collections, hashlib, os
 sys.path.insert(0, 'scripts'); import the_thuc_nd30 as v1, the_thuc_nd30_v2 as v2
 SEED = 2026; rng = random.Random(SEED); O = 'm3'
-C = [json.loads(l) for l in open('data/stage4_v4/corpus.jsonl', encoding='utf-8')]
+C = [json.loads(l) for l in open(os.environ.get('VBHC_TOAN_VAN', 'data/stage4_v4/corpus.jsonl'), encoding='utf-8')]  # người ngoài: đặt VBHC_TOAN_VAN=<đường dẫn toan_van_v4.jsonl tải từ Drive>
 BY = {c['docid']: c for c in C}
 NAM_LOAI = ['Công văn', 'Thông báo', 'Quyết định (cá biệt)', 'Công điện', 'Chỉ thị']
 # ---------- cụm mẫu (union-find)

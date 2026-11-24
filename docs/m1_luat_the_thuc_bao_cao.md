@@ -11,25 +11,27 @@
 
 ## 15 luật
 
-| Mã | Kiểm gì | Căn cứ (NĐ 30/2020) |
+| Mã | Kiểm gì | Căn cứ (Phụ lục I, Phần I của NĐ 30/2020) |
 | --- | --- | --- |
-| L01 | Có Quốc hiệu đầy đủ | Điều 8; Phụ lục I |
-| L02 | Có Tiêu ngữ | Điều 8; Phụ lục I |
-| L03 | Có dòng "Số:" | Điều 8; Phụ lục I |
-| L04 | Ký hiệu đúng cấu trúc số/chữ viết tắt | Phụ lục I |
-| L05 | Có địa danh, ngày tháng năm ở phần đầu | Điều 8; Phụ lục I |
-| L06 | Dòng tên loại viết hoa (văn bản có tên loại) | Điều 8; Phụ lục I |
-| L07 | Công văn có trích yếu "V/v" | Phụ lục I |
-| L08 | Công văn có "Kính gửi" | Phụ lục I |
-| L09 | Có "Nơi nhận" | Điều 8; Phụ lục I |
-| L10 | Nơi nhận có "Lưu: VT" | Phụ lục I |
-| L11 | Có quyền hạn, chức vụ người ký | Điều 8; Phụ lục I |
-| L12 | Nội dung kết thúc bằng "./." | Phụ lục I |
-| L13 | Tiêu ngữ viết hoa đúng | Phụ lục I |
-| L14 | Ký hiệu mang đúng chữ viết tắt tên loại | Phụ lục I; Phụ lục III |
-| L15 | Ngày dưới 10 và tháng 1, 2 có số 0 ở trước | Phụ lục I |
+| L01 | Có Quốc hiệu đầy đủ | Mục II.1 |
+| L02 | Có Tiêu ngữ | Mục II.1.b |
+| L03 | Có dòng "Số:" | Mục II.3.c: sau từ "Số" có dấu hai chấm |
+| L04 | Ký hiệu đúng cấu trúc | Mục II.3.b |
+| L05 | Có địa danh, ngày tháng năm ở phần đầu | Mục II.4.b |
+| L06 | Dòng tên loại viết hoa | Mục II.5.b: tên loại trình bày bằng chữ in hoa |
+| L07 | Công văn có trích yếu "V/v" | Mục II.5.b |
+| L08 | Công văn có "Kính gửi" | Mục II.9 |
+| L09 | Có "Nơi nhận" | Mục II.9 |
+| L10 | Nơi nhận có "Lưu: VT" | Mục II.9.d |
+| L11 | Có quyền hạn người ký (TM., KT., TL., TUQ.) và chức vụ | Mục II.7.b |
+| L12 | Nội dung kết thúc bằng "./." | **Chưa xác minh.** Không tìm thấy trong Phụ lục I; có thể chỉ là cách trình bày theo mẫu |
+| L13 | Tiêu ngữ: chữ cái đầu mỗi cụm viết hoa | Mục II.1.b |
+| L14 | Ký hiệu mang chữ viết tắt tên loại | Mục II.3.b |
+| L15 | Ngày dưới 10 và tháng 1, 2 có số 0 ở trước | Mục II.4.b |
 
-Số điều khoản chi tiết trong cột căn cứ cần người đối chiếu lại với văn bản gốc của Nghị định trước khi công bố.
+Cột căn cứ đã đối chiếu ngày 24/11/2026 với bản Phụ lục I đăng trên trang của Trường ĐHSP Hà Nội 2 (hcmyu.hpu2.edu.vn) và bản của Thư viện Pháp luật. Đây là bản đăng lại, chưa phải Công báo. L12 chưa tìm được căn cứ: trước khi công bố phải tìm ra điều khoản, hoặc hạ L12 thành luật khuyến nghị và loại khỏi điểm chính.
+
+**Phát hiện thêm khi đối chiếu:** mục II.3.c còn yêu cầu số văn bản nhỏ hơn 10 phải có số 0 ở trước (ví dụ "Số: 05/..."). Bộ luật chưa kiểm điều này.
 
 ## Phép thử 1 · lỗi cài (đo độ bắt lỗi)
 
