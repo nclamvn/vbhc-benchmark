@@ -18,6 +18,8 @@ MH="mlx-community/Qwen3-8B-4bit"; AD="$KQ/adapter"
 if [ ! -f "$AD/adapters.safetensors" ]; then
   caffeinate -i mlx_lm.lora --model "$MH" --train --data m6 -c m6/qlora_qwen3.yaml --iters 2000 --batch-size 1 --num-layers 16 \
     --max-seq-length 3072 --grad-checkpoint --mask-prompt --steps-per-report 50 --steps-per-eval 250 --val-batches -1 --save-every 250 --adapter-path "$AD" \
+  || { echo "=== tệp cấu hình không nhận, chạy lại với LR cố định 2e-5"; caffeinate -i mlx_lm.lora --model "$MH" --train --data m6 --learning-rate 2e-5 --iters 2000 --batch-size 1 --num-layers 16 \
+    --max-seq-length 3072 --grad-checkpoint --mask-prompt --steps-per-report 50 --steps-per-eval 250 --val-batches -1 --save-every 250 --adapter-path "$AD"; } \
   || { echo "LỖI khi tinh chỉnh"; exit 1; }
 fi
 # 2. chọn checkpoint có val loss thấp nhất (đọc từ nhật ký)
