@@ -43,8 +43,18 @@ Tệp lớn nằm trên Google Drive, thư mục `VBHC_Dataset_v1_2026-11-20/Von
 | --- | --- | --- |
 | Chấm điểm, bảng điểm, dựng lại các mốc không mô hình | Có | Chạy được |
 | Dựng lại bộ đánh giá từ toàn văn | Cần `toan_van_v4.jsonl` từ Drive | Ra đúng từng byte như `m3/` (`VBHC_TOAN_VAN=<tệp> python3 scripts/m3_dung_bo.py`) |
-| Kiểm lại registry bằng engine | Cần thêm bản chụp nguồn (`snapshots/`) | **Chưa làm được:** gói bản chụp đầy đủ chưa được đưa lên Drive |
+| Kiểm lại registry bằng engine | Cần gói bản chụp `goi_snap_v4.tar.xz.phan00`–`phan15` từ Drive | Ra đúng build digest `e2d15831dda6bf98`, 0 cổng cắn |
 | Cào lại từ đầu | Cần mạng và các cổng còn giữ trang cũ | Chưa diễn tập |
+
+Lệnh kiểm lại registry:
+
+```bash
+cd engine && xz -dk domains/vbhc_v4/claims.jsonl.xz
+cat <thư mục tải về>/goi_snap_v4.tar.xz.phan* | xz -dc | tar -C domains/vbhc_v4 -xf -
+python3 refinery.py domains/vbhc_v4 | tail -2   # phải ra build digest e2d15831dda6bf98 và VALIDATION PASSED
+```
+
+Bản chụp toàn văn trong gói là bản đã che thông tin cá nhân, giống tệp toàn văn công bố.
 
 ## Giấy phép
 

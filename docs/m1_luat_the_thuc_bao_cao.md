@@ -33,6 +33,10 @@ Cột căn cứ đã đối chiếu ngày 24/11/2026 với bản Phụ lục I �
 
 **Phát hiện thêm khi đối chiếu:** mục II.3.c còn yêu cầu số văn bản nhỏ hơn 10 phải có số 0 ở trước (ví dụ "Số: 05/..."). Bộ luật chưa kiểm điều này.
 
+Đo trên bộ v4: có 85 văn bản mà số trong chỉ mục nhỏ hơn 10 và dòng "Số:" đọc được khớp số đó. 58 văn bản ghi có số 0, 27 văn bản không có (phần lớn là thông báo của Văn phòng Chính phủ, ví dụ "Số: 2/TB-VPCP"). Có ca chỉ mục ghi "01" mà văn bản in "1".
+
+Đề xuất thêm luật L16 trong một tệp luật riêng (bản 3), không sửa bản 2. Lý do: bộ đánh giá M3 dựng từ bản 2 (chọn văn bản "không lỗi" là văn bản đạt mọi luật bản 2); sửa bản 2 sẽ làm bộ đánh giá không dựng lại được đúng như cũ.
+
 ## Phép thử 1 · lỗi cài (đo độ bắt lỗi)
 
 Mỗi bộ gồm 20 văn bản thật đã đạt mọi luật, mỗi văn bản được cài đúng một lỗi thuộc 11 kiểu.
