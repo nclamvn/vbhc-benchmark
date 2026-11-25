@@ -18,9 +18,11 @@ def chuan(k):
     k = k.upper().replace('ND-', 'NĐ-').replace('QD-', 'QĐ-').replace('Đ', 'Đ')
     return re.sub(r'\s+', '', k)
 
-def nap_chi_muc(p):
+def nap_chi_muc(p='m3/chi_muc_kiem_trung_thuc.csv.xz'):
+    import lzma
     I = collections.defaultdict(list)
-    for r in csv.DictReader(open(p, encoding='utf-8-sig')):
+    f = lzma.open(p, 'rt', encoding='utf-8-sig') if p.endswith('.xz') else open(p, encoding='utf-8-sig')
+    for r in csv.DictReader(f):
         I[chuan(r['so_ky_hieu_chuan'])].append((r['ngay_ban_hanh'], r['trich_yeu']))
     return I
 

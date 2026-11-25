@@ -1,0 +1,172 @@
+[
+ {
+  "he": "Qwen3-8B v4 tinh chỉnh (mô hình cơ sở)",
+  "ma": "qwen3_8b_tinh_chinh_v4",
+  "tong_hop": 71.8,
+  "T1": 94.8,
+  "T1_the_thuc": 80.7,
+  "T2": 21.3,
+  "T3": 99.3,
+  "sach_11": 39.0,
+  "lap_11": 39.0,
+  "T1_12": 96.7,
+  "T1_the_thuc_12": 93.5,
+  "sach_12": 63.4,
+  "lap_12": 0.0,
+  "noi_dung": [
+   [
+    4.92,
+    "M6b, phạt lặp"
+   ]
+  ]
+ },
+ {
+  "he": "Qwen3-8B v3 tinh chỉnh",
+  "ma": "qwen3_8b_tinh_chinh_v3",
+  "tong_hop": 71.3,
+  "T1": 94.5,
+  "T1_the_thuc": 80.2,
+  "T2": 20.2,
+  "T3": 99.2,
+  "sach_11": 48.8,
+  "lap_11": 29.3,
+  "T1_12": 97.9,
+  "T1_the_thuc_12": 89.4,
+  "sach_12": 65.9,
+  "lap_12": 2.4,
+  "noi_dung": [
+   [
+    3.85,
+    "M6, tham lam"
+   ]
+  ]
+ },
+ {
+  "he": "Llama-3.1-8B tinh chỉnh",
+  "ma": "llama31_8b_tinh_chinh",
+  "tong_hop": 67.3,
+  "T1": 86.6,
+  "T1_the_thuc": 74.5,
+  "T2": 17.0,
+  "T3": 98.2,
+  "sach_11": 41.5,
+  "lap_11": 41.5,
+  "T1_12": 93.6,
+  "T1_the_thuc_12": 81.1,
+  "sach_12": 58.5,
+  "lap_12": 7.3,
+  "noi_dung": [
+   [
+    3.31,
+    "M5, tham lam"
+   ]
+  ]
+ },
+ {
+  "he": "Qwen3-8B v2 tinh chỉnh",
+  "ma": "qwen3_8b_tinh_chinh_v2",
+  "tong_hop": 66.7,
+  "T1": 93.7,
+  "T1_the_thuc": 78.9,
+  "T2": 7.4,
+  "T3": 98.9,
+  "sach_11": 41.5,
+  "lap_11": 36.6,
+  "noi_dung": [
+   [
+    2.23,
+    "M6, tham lam"
+   ]
+  ]
+ },
+ {
+  "he": "Luật viết tay (không mô hình)",
+  "ma": "moc_luat",
+  "tong_hop": 60.8,
+  "T1": 0.0,
+  "T1_the_thuc": 0.0,
+  "T2": 95.7,
+  "T3": 86.7,
+  "noi_dung": []
+ },
+ {
+  "he": "Qwen3-8B gốc",
+  "ma": "qwen3_8b_goc",
+  "tong_hop": 60.5,
+  "T1": 86.5,
+  "T1_the_thuc": 65.5,
+  "T2": 9.6,
+  "T3": 85.5,
+  "sach_11": 31.7,
+  "lap_11": 4.9,
+  "T1_12": 85.2,
+  "T1_the_thuc_12": 64.1,
+  "sach_12": 41.5,
+  "lap_12": 0.0,
+  "noi_dung": [
+   [
+    4.69,
+    "M5, tham lam"
+   ],
+   [
+    3.92,
+    "M6b, phạt lặp"
+   ]
+  ]
+ },
+ {
+  "he": "Llama-3.1-8B gốc",
+  "ma": "llama31_8b_goc",
+  "tong_hop": 59.0,
+  "T1": 79.9,
+  "T1_the_thuc": 58.5,
+  "T2": 12.8,
+  "T3": 84.3,
+  "sach_11": 51.2,
+  "lap_11": 17.1,
+  "T1_12": 85.8,
+  "T1_the_thuc_12": 60.2,
+  "sach_12": 70.7,
+  "lap_12": 4.9,
+  "noi_dung": [
+   [
+    3.62,
+    "M5, tham lam"
+   ]
+  ]
+ },
+ {
+  "he": "Qwen2.5-0.5B tinh chỉnh",
+  "ma": "qwen25_05b_tinh_chinh",
+  "tong_hop": 56.4,
+  "T1": 55.9,
+  "T1_the_thuc": 45.7,
+  "T2": 18.1,
+  "T3": 95.2,
+  "sach_11": 14.6,
+  "lap_11": 70.7,
+  "noi_dung": [
+   [
+    0.08,
+    "M5, tham lam"
+   ]
+  ]
+ },
+ {
+  "he": "Qwen2.5-0.5B gốc",
+  "ma": "qwen25_05b_goc",
+  "tong_hop": 29.9,
+  "T1": 64.3,
+  "T1_the_thuc": 43.9,
+  "T2": 4.3,
+  "T3": 21.1,
+  "sach_11": 48.8,
+  "lap_11": 29.3,
+  "noi_dung": [
+   [
+    0.69,
+    "M5, tham lam"
+   ]
+  ]
+ }
+]
