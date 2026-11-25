@@ -1,5 +1,6 @@
 """M6 · Tập huấn luyện v2 (QĐ-12). Bộ kiểm tra m3/test_* giữ nguyên, chỉ đổi dữ liệu huấn luyện và thẩm định.
 
+(25/11) Sửa: phần đầu ký hiệu nhận cả chữ thường ("TTr"), trước đó "…/TTr-…" chỉ che số mà để lộ ngày (246 chỗ).
 1. T1 lọc theo độ nhiễu chữ thay vì độ tin OCR: tỷ lệ âm tiết không có trong từ vựng lấy từ văn bản có lớp chữ (xuất hiện ≥ 3 lần) phải ≤ 2%.
    Cho phép vi phạm L11 (quyền hạn người ký: người đứng đầu tự ký thì không ghi TM./KT.) và L12 (./., chưa có căn cứ), không cho phép luật khác.
 2. T1 thay chi tiết không suy ra được từ lời yêu cầu bằng dấu "…": số và ngày của văn bản viện dẫn không phải văn bản quy phạm trung ương
@@ -56,8 +57,8 @@ def t1_ok_v2(c):
     return len(t) <= 8000 and nhieu(t) <= 0.02   # 8000 ký tự ≈ 3000 token Qwen, vừa max-seq-length 3072
 
 GIU = re.compile(r'^(NĐ-CP|NQ-CP|QĐ-TTg|QH1[3-5]|UBTVQH1[3-5]|TT-[A-ZĐa-z]+|TTLT-[A-ZĐa-z-]+)$')
-KH = re.compile(r'(?<![\d/…])(\d{1,5})/(?:(\d{4})/)?([A-ZĐ]{1,8}\d{0,2}(?:-[A-ZĐa-zđ0-9]{1,12}){0,3})')
-NGAY = re.compile(r'(\s*(?:,\s*)?ngày\s*)(\d{1,2})(\s*tháng\s*)(\d{1,2})(\s*năm\s*)(\d{4})|(\s*(?:,\s*)?ngày\s*)(\d{1,2}/\d{1,2}/\d{4})', re.I)
+KH = re.compile(r'(?<![\d/…])(\d{1,5})/(?:(\d{4})/)?([A-ZĐ][A-ZĐa-zđ]{0,7}\d{0,2}(?:-[A-ZĐa-zđ0-9]{1,12}){0,3})')
+NGAY = re.compile(r'(\s*(?:,\s*)?ngày\s*)(\S{1,2})(\s*tháng\s*)(\S{1,2})(\s*n\S{1,3}\s*)(\S{4})|(\s*(?:,\s*)?ngày\s*)(\d{1,2}/\d{1,2}/\d{4})', re.I)  # nới cho chữ số OCR lỗi (3l, §, năp)
 TEN = re.compile(r'(^|\s{3,})([A-ZĐ][a-zà-ỹđ]+(?:[ \t][A-ZĐ][a-zà-ỹđ]+){1,3})[ \t]*$', re.M)
 def che(t, kh_ban_than):
     n = {'van_ban': 0, 'ten': 0}

@@ -162,3 +162,10 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
     - Lượt 3 tiếp từ checkpoint trên với LR cosine 1,5e-5, chạy 1.500 vòng.
     - Val ở vòng 1 của lượt 3 chính là của checkpoint xuất phát. Vì vậy, nếu huấn luyện thêm không giúp gì, việc chọn checkpoint sẽ giữ lại checkpoint xuất phát.
   - **Kết quả chấm của checkpoint lượt 2** được giữ làm bản v2, để đo xem lượt 3 có thêm giá trị không.
+- **Kết quả bản v2 (checkpoint vòng 250 lượt 2, 25/11 04:05):**
+  - **Điểm máy:** tổng hợp 66,7 (Qwen3 gốc 60,5). T1 máy 93,7, thể thức 78,9. T3 98,9. T2 7,4, thấp hơn bản gốc 9,6: bản v2 luôn trả `ngay_thieu_so_0`.
+  - **Bộ kiểm trung thực:** 41,5% bài sạch (gốc 31,7%), nên đạt hai điều kiện nhận của QĐ-12.
+  - **Hai điểm yếu:**
+    - **Bài bị lặp:** 36,6%, bản gốc chỉ 4,9%.
+    - **Viện dẫn NĐ 30/2020:** vẫn bịa ngày. Phần lớn 147 lỗi sai ngày là NĐ 30/2020 bị lặp trong các bài lặp.
+  - **Lỗi dữ liệu phát hiện thêm:** ký hiệu có chữ thường ("…/TTr-") chỉ bị che số, ngày vẫn lộ (246 chỗ). Mô hình học theo nên vẫn bịa ngày tờ trình. Đã sửa trước lượt 3: còn 41 chỗ lộ, đều do ký hiệu OCR lỗi.

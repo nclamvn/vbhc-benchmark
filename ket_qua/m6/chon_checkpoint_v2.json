@@ -1,0 +1,14 @@
+{
+ "val_loss_luot2_60vd": {
+  "1": 0.982,
+  "250": 0.872,
+  "500": NaN,
+  "750": NaN,
+  "1000": NaN,
+  "1250": NaN,
+  "1500": NaN,
+  "1750": NaN
+ },
+ "chon_vong_luot2": 250,
+ "tuong_ung_vong_tong": 500
+}
