@@ -214,3 +214,18 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   - **Quyết định:** v4 chỉ là mô hình cơ sở khi dùng kèm giải mã chống lặp.
 - **Giao thức 1.3:** phạt lặp 1,1 cộng với dừng khi một đoạn từ 60 ký tự lặp lại (`scripts/chan_lap.py`). Đã áp vào kịch bản chạy thử `thu_v4.py` và vào `chay_mlx.py --chan-lap-khoi`. Bảng 1.3 cho 5 hệ 8B chờ chạy `scripts/chay_p13_mac.sh`.
 - **Hướng nâng chất lượng (đề xuất, chưa triển khai):** cào thêm có mục tiêu; tra cứu căn cứ khi soạn (giao thức 2.0, bảng riêng); làm sạch nơi nhận và khối ký; huấn luyện ưu tiên chống bịa. Chi tiết ở phần trả lời ngày 26/11 và `docs/de_xuat_nang_chat_luong.md`.
+
+## QĐ-15 · M7 nâng chất lượng: tra cứu trước, dò quy mô song song
+
+- **Ngày:** 26/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm ("hãy thiết kế milestone nâng chất lượng mô hình sau đó triển khai"). Phương án B được chọn: tra cứu căn cứ khi soạn, trước khi nâng cỡ mô hình.
+- **Căn cứ:** v4 bịa viện dẫn vì phải nhớ số hiệu và ngày. Tăng cỡ mô hình giảm bịa chậm và tốn kém. Đưa danh sách văn bản có thật vào lời yêu cầu thì mô hình chỉ cần chọn và chép.
+- **Nội dung:** kế hoạch `docs/m7_ke_hoach.md`, các bước 7.0 đến 7.7.
+  - Giao thức 2.0 là bảng riêng, không thay bảng 1.x, vì đề bài khác (có thêm tư liệu).
+  - Bộ tra cứu chỉ dùng chỉ mục công khai và tập huấn luyện. Độ phủ công bố cùng kết quả: 65,9% ở k=8.
+  - Dò quy mô (14B, 30B-A3B gốc) chạy cùng đợt, để quyết định có nâng cỡ ở M8 hay không.
+- **Điều kiện nhận v5:**
+  1. Bài sạch T1 theo 2.0 cao hơn cả Qwen3 gốc có tra cứu và v4 có tra cứu.
+  2. Viện dẫn sai mỗi bài không quá một nửa của v4 theo giao thức 1.3.
+  3. Thể thức T1 không thấp hơn v4 theo 1.3 quá 3 điểm.
+  4. Chấm mù nội dung không thua Qwen3 gốc có tra cứu.
+- **Rủi ro đã biết:** khoảng một phần ba căn cứ đúng không có trong tư liệu. Mô hình có thể học chép thừa căn cứ không liên quan từ danh sách. Bộ kiểm trung thực không bắt được lỗi này, nên chấm mù nội dung là bắt buộc.

@@ -1,0 +1,32 @@
+{
+ "train": {
+  "tong": 1537,
+  "T1": 737,
+  "T2": 300,
+  "T3": 300,
+  "T4": 200,
+  "T1_xu_ly": {
+   "ho_ten": 2162,
+   "ho_ten_noi_nhan": 185,
+   "rac_na": 11,
+   "che": 285,
+   "giu": 238,
+   "bo_qua_3000_token": 67
+  }
+ },
+ "valid": {
+  "tong": 114,
+  "T1": 34,
+  "T2": 30,
+  "T3": 30,
+  "T4": 20,
+  "T1_xu_ly": {
+   "ho_ten": 109,
+   "rac_na": 1,
+   "ho_ten_noi_nhan": 6,
+   "che": 12,
+   "giu": 12,
+   "bo_qua_3000_token": 6
+  }
+ }
+}

@@ -8,11 +8,16 @@ from mlx_lm import load, generate
 ap = argparse.ArgumentParser(); ap.add_argument('--model', required=True); ap.add_argument('--ra', required=True)
 ap.add_argument('--adapter'); ap.add_argument('--de', default='m3/test_de.jsonl'); ap.add_argument('--gioi-han', type=int, default=0)
 ap.add_argument('--nhiem-vu', default=''); ap.add_argument('--phat-lap', type=float, default=0); ap.add_argument('--cua-so-lap', type=int, default=64); ap.add_argument('--chan-lap-khoi', action='store_true')
+ap.add_argument('--tra-cuu', action='store_true', help='giao thức 2.0: T1 kèm tư liệu tra cứu (scripts/tra_cuu.py)')
 a = ap.parse_args(); os.makedirs(os.path.dirname(a.ra) or '.', exist_ok=True)
 D = [json.loads(l) for l in open(a.de, encoding='utf-8')]
 if a.gioi_han:  # lấy đều ba nhiệm vụ để thử nhanh
     D = [x for nv in ['T1', 'T2', 'T3'] for x in [d for d in D if d['nhiem_vu'] == nv][:a.gioi_han]]
 if a.nhiem_vu: D = [d for d in D if d['nhiem_vu'] in a.nhiem_vu.split(',')]
+if a.tra_cuu:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import tra_cuu; TC = tra_cuu.TraCuu()
+    for d in D:
+        if d['nhiem_vu'] == 'T1': d['de'] = tra_cuu.lam_giau_de(d['de'], TC, 8)
 xong = {json.loads(l)['id'] for l in open(a.ra, encoding='utf-8')} if os.path.exists(a.ra) else set()
 model, tok = load(a.model, adapter_path=a.adapter) if a.adapter else load(a.model)
 TOI_DA = {'T1': 1800, 'T2': 48, 'T3': 320}; t0 = time.time(); n = 0
