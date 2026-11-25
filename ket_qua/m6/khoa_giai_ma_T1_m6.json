@@ -1,0 +1,106 @@
+{
+ "Q001": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0028"
+ },
+ "Q002": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0020"
+ },
+ "Q003": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0041"
+ },
+ "Q004": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0026"
+ },
+ "Q005": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0025"
+ },
+ "Q006": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0019"
+ },
+ "Q007": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0012"
+ },
+ "Q008": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0020"
+ },
+ "Q009": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0018"
+ },
+ "Q010": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0026"
+ },
+ "Q011": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0028"
+ },
+ "Q012": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0005"
+ },
+ "Q013": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0005"
+ },
+ "Q014": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0009"
+ },
+ "Q015": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0010"
+ },
+ "Q016": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0008"
+ },
+ "Q017": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0041"
+ },
+ "Q018": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0018"
+ },
+ "Q019": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0009"
+ },
+ "Q020": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0012"
+ },
+ "Q021": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0008"
+ },
+ "Q022": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0035"
+ },
+ "Q023": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0010"
+ },
+ "Q024": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0019"
+ },
+ "Q025": {
+  "he": "qwen3_8b_tinh_chinh_v3",
+  "id": "T1-0025"
+ },
+ "Q026": {
+  "he": "qwen3_8b_tinh_chinh_v2",
+  "id": "T1-0035"
+ }
+}

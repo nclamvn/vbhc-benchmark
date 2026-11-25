@@ -169,3 +169,7 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
     - **Bài bị lặp:** 36,6%, bản gốc chỉ 4,9%.
     - **Viện dẫn NĐ 30/2020:** vẫn bịa ngày. Phần lớn 147 lỗi sai ngày là NĐ 30/2020 bị lặp trong các bài lặp.
   - **Lỗi dữ liệu phát hiện thêm:** ký hiệu có chữ thường ("…/TTr-") chỉ bị che số, ngày vẫn lộ (246 chỗ). Mô hình học theo nên vẫn bịa ngày tờ trình. Đã sửa trước lượt 3: còn 41 chỗ lộ, đều do ký hiệu OCR lỗi.
+- **Kết quả bản v3 (vòng 1.000 lượt 3, 25/11 14:50):**
+  - **Điểm máy:** tổng hợp 71,3, cao nhất từ trước đến nay. 48,8% bài sạch.
+  - **Chấm mù nội dung:** 3,85/8, thua Qwen3 gốc (4,69).
+  - **Kết luận:** v3 chưa phải mô hình cơ sở cho phần soạn văn bản. Bảng công bố ghi cả hai hệ. Báo cáo ở `docs/m6_bao_cao.md`.

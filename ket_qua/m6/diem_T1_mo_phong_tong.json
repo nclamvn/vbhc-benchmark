@@ -1,0 +1,22 @@
+{
+ "qwen3_8b_tinh_chinh_v2": {
+  "n": 13,
+  "A": 1.0,
+  "B": 0.62,
+  "C": 0.31,
+  "D": 0.31,
+  "tong_8": 2.23,
+  "ty_le_dat_6_tro_len": 8,
+  "so_bai_D0": 9
+ },
+ "qwen3_8b_tinh_chinh_v3": {
+  "n": 13,
+  "A": 1.15,
+  "B": 1.15,
+  "C": 0.92,
+  "D": 0.62,
+  "tong_8": 3.85,
+  "ty_le_dat_6_tro_len": 23,
+  "so_bai_D0": 5
+ }
+}
