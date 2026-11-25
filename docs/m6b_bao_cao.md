@@ -59,3 +59,20 @@ Chấm trên 13 đề như M5, 26 bài, xáo bằng seed 626262.
 - Mỗi hệ có 13 đề, và mức chênh chưa có ý nghĩa thống kê.
 - Ba phiên chấm (M5, M6, M6b) được so trong cùng bảng, nhưng thang điểm giữa các phiên có thể lệch. Vì vậy so sánh chính thức chỉ dùng hai hệ chấm trong cùng phiên M6b.
 - Checkpoint được chọn theo val loss trên 60 ví dụ, mà chuỗi val loss dao động mạnh (0,92–1,08).
+
+## 6. Đính chính ngày 26/11: bộ kiểm lặp bỏ sót lặp nguyên khối (QĐ-14)
+
+Khi chạy thử mô hình trên Mac, một bài công điện lặp nguyên khối hai mục suốt 18 lần mà bảng đo vẫn ghi "0% bài lặp". Bộ kiểm cũ chỉ đếm chuỗi 8 âm tiết. Bộ kiểm mới tính thêm trường hợp một đoạn từ 60 ký tự xuất hiện lại. Nó cũng bắt tên 29 tỉnh đã sáp nhập từ 01/7/2025 và tên Thừa Thiên Huế từ 01/01/2025. Chạy trên 41 văn bản thật vẫn cho 97,6% bài sạch, 0% bài lặp. Số liệu sau khi tính lại (cột trái giao thức 1.1, cột phải giao thức 1.2):
+
+| Hệ | Bài sạch | Bài lặp |
+|---|---|---|
+| Qwen3-8B v4 | 22,0 / 51,2 | 56,1 / 14,6 |
+| Qwen3-8B v3 | 24,4 / 48,8 | 56,1 / 22,0 |
+| Qwen3-8B gốc | 31,7 / 41,5 | 7,3 / 0 |
+| Llama-3.1-8B tinh chỉnh | 24,4 / 46,3 | 68,3 / 34,1 |
+| Llama-3.1-8B gốc | 26,8 / 46,3 | 53,7 / 41,5 |
+
+**Hệ quả cho kết luận:**
+- **Theo giao thức 1.1, v4 không còn đạt điều kiện bài sạch** (22,0 so với 31,7 của Qwen3 gốc).
+- **Theo giao thức 1.2, v4 vẫn đạt** (51,2 so với 41,5), nhưng vẫn còn 14,6% bài lặp nguyên khối.
+- **v4 vẫn là mô hình cơ sở, chỉ khi dùng kèm cách giải mã chống lặp.** Kịch bản chạy thử đã thêm cơ chế dừng khi lặp nguyên đoạn (giao thức 1.3, `scripts/chan_lap.py`). Bảng 1.3 sẽ có sau khi chạy `scripts/chay_p13_mac.sh`.

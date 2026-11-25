@@ -1,4 +1,4 @@
-"""Chạy thử mô hình cơ sở của pilot: Qwen3-8B 4-bit + adapter v4, giải mã theo giao thức 1.2 (phạt lặp 1,1, cửa sổ 64).
+"""Chạy thử mô hình cơ sở của pilot: Qwen3-8B 4-bit + adapter v4, giải mã theo giao thức 1.3 (phạt lặp 1,1, cửa sổ 64, dừng khi lặp nguyên đoạn).
 Dùng trên Mac Apple Silicon có mlx-lm:
   python3 scripts/thu_v4.py                         → hỏi từng trường rồi soạn văn bản (T1)
   python3 scripts/thu_v4.py --tu-do                 → gõ lời yêu cầu tự do (ngoài khuôn bộ đo, chất lượng không được đo)
@@ -8,6 +8,7 @@ Lưu ý: mô hình vẫn có thể bịa căn cứ, họ tên, ngày ban hành v
 import argparse, os, sys
 from mlx_lm import load, stream_generate
 from mlx_lm.sample_utils import make_logits_processors
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from chan_lap import khoi_lap
 HE = 'Bạn là trợ lý soạn thảo và rà soát văn bản hành chính Việt Nam theo Nghị định 30/2020/NĐ-CP.'   # trùng lời hệ thống lúc huấn luyện
 LOAI = ['Công văn', 'Thông báo', 'Quyết định (cá biệt)', 'Công điện', 'Chỉ thị']
 ap = argparse.ArgumentParser()
@@ -40,7 +41,10 @@ while True:
     if not u: break
     p = tok.apply_chat_template([{'role': 'system', 'content': HE}, {'role': 'user', 'content': u}], add_generation_prompt=True, tokenize=False, enable_thinking=False)
     print('\n' + '─' * 60)
+    viet = ''
     for r in stream_generate(model, tok, p, max_tokens=a.toi_da, logits_processors=xu_ly):
-        print(r.text, end='', flush=True)
+        viet += r.text; print(r.text, end='', flush=True)
+        if '\n' in r.text and khoi_lap(viet) is not None:
+            print('\n[Đã dừng: mô hình bắt đầu lặp lại nguyên một đoạn ở trên. Phần sau đoạn lặp bị bỏ, văn bản có thể thiếu phần cuối.]'); break
     print('\n' + '─' * 60 + '\nBản nháp do máy sinh. Kiểm lại căn cứ, số hiệu, ngày, họ tên và tên cơ quan trước khi dùng.')
     if input('\nSoạn văn bản khác? (c/k): ').strip().lower() != 'c': break

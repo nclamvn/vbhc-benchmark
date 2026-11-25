@@ -68,6 +68,10 @@ def kiem_trich_dan(bai, I, ngay_vb, kh_ban_than):
         out.append((kh, 'dung'))
     return out
 
+# Nghị quyết 202/2025/QH15: từ 01/7/2025 còn 34 đơn vị cấp tỉnh; 29 tên dưới đây không còn là tỉnh. Huế thành thành phố trực thuộc trung ương từ 01/01/2025.
+TINH_CU = ['Hà Giang', 'Yên Bái', 'Bắc Kạn', 'Vĩnh Phúc', 'Hòa Bình', 'Bắc Giang', 'Thái Bình', 'Hải Dương', 'Hà Nam', 'Nam Định', 'Quảng Bình',
+           'Quảng Nam', 'Kon Tum', 'Bình Định', 'Ninh Thuận', 'Đắk Nông', 'Bình Thuận', 'Phú Yên', 'Bình Dương', 'Bà Rịa', 'Bình Phước', 'Long An',
+           'Sóc Trăng', 'Hậu Giang', 'Bến Tre', 'Trà Vinh', 'Tiền Giang', 'Bạc Liêu', 'Kiên Giang']
 BO_CU = ['Bộ Kế hoạch và Đầu tư', 'Bộ Giao thông vận tải', 'Bộ Giao thông Vận tải', 'Bộ Lao động - Thương binh và Xã hội',
          'Bộ Lao động – Thương binh và Xã hội', 'Bộ Thông tin và Truyền thông', 'Bộ Tài nguyên và Môi trường',
          'Bộ Nông nghiệp và Phát triển nông thôn', 'Bộ Nông nghiệp và Phát triển Nông thôn']
@@ -91,14 +95,28 @@ def kiem_khac(bai, co_quan, ngay_vb):
             if t: break
     if ngay_vb and ngay_vb >= '2025-07-01' and re.search(r'(UBND|Ủy ban nhân dân|Uỷ ban nhân dân)\s+(các\s+)?huyện', bai):
         t.append('cap_huyen')
+    if ngay_vb and ngay_vb >= '2025-07-01':
+        cd = [m.end() for m in RE_KH.finditer(bai)]
+        for ten in TINH_CU:
+            # chỉ tính khi tên đứng sau chữ "tỉnh" trong cùng vế câu (tên cũ còn sống làm tên phường, xã, công ty)
+            m = next((m for m in re.finditer(r'(?<!\w)' + re.escape(ten) + r'(?!\w)', bai)
+                      if re.search(r'(?i)\btỉnh\b(?:(?!\b(?:xã|phường|thị trấn|công ty|huyện)\b)[^.;])*$', bai[max(0, m.start() - 200):m.start()])
+                      and not re.match(r'\s*\(?\s*(cũ|trước đây)', bai[m.end():m.end() + 14]) and not any(0 <= m.start() - e <= 160 for e in cd)), None)
+            if m: t.append('tinh_cu:' + ten); break
+    if ngay_vb and ngay_vb >= '2025-01-01' and re.search(r'Thừa Thiên\s*[-–]?\s*Huế', bai):
+        t.append('tinh_cu:Thừa Thiên Huế')
     return v, t
 
 def lap(bai):
+    """Lặp ngắn (một chuỗi 8 âm tiết chiếm từ 20% bài) hoặc lặp nguyên khối (từ 26/11: một đoạn từ 60 ký tự xuất hiện lại,
+    sau khi bỏ số thứ tự đầu đoạn; giao thức phạt lặp 1.2 không chặn được kiểu này)."""
     w = re.findall(r'\w+', bai.lower())
     if len(w) < 40: return False
     g = collections.Counter(tuple(w[i:i + 8]) for i in range(len(w) - 7))
-    top = g.most_common(1)[0][1]
-    return top * 8 / len(w) >= 0.2
+    if g.most_common(1)[0][1] * 8 / len(w) >= 0.2: return True
+    doan = [re.sub(r'\s+', ' ', re.sub(r'^\s*(\d+|[a-zđ])[.)]\s*', '', x.strip().lower())) for x in re.split(r'\n\s*\n', bai)]
+    c = collections.Counter(x for x in doan if len(x) >= 60)
+    return bool(c) and c.most_common(1)[0][1] >= 2
 
 def cham(I, DA, TL, tham_chieu=False):
     hang = []

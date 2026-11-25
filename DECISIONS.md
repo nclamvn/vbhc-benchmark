@@ -204,3 +204,13 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   - **Bộ kiểm trung thực không chấm viện dẫn luật, nghị quyết Quốc hội nữa (QH14/QH15).** Lý do: chỉ mục thiếu một số luật (ví dụ 254/2025/QH15), và văn bản thật hay dẫn ngày Quốc hội thông qua thay vì ngày ký công bố. Bỏ phần này thì tỷ lệ báo nhầm trên văn bản thật vẫn là 97,6% bài sạch. Trong bảng xếp hạng chỉ đổi một ô: tỷ lệ bài sạch của Llama gốc theo giao thức 1.2, từ 70,7% lên 73,2%.
   - **Bảng xếp hạng** `BANG_XEP_HANG.md` được tính lại từ tệp trả lời bằng `scripts/bang_xep_hang.py`.
   - **Kiểm tái lập** `scripts/kiem_tai_lap.sh` chạy từ bản clone sạch, và khớp từng byte ở mọi bước: bảng xếp hạng, bộ M3, tập v2, tập v4.
+
+## QĐ-14 · Đính chính bộ kiểm lặp, giao thức 1.3, hướng nâng chất lượng
+
+- **Ngày:** 26/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm ("triển khai ngay theo đề xuất"). Căn cứ là lượt chạy thử 6 bài do đầu mối gõ trên Mac.
+- **Đính chính bảng đo:** bộ kiểm lặp được bổ sung phần bắt lặp nguyên khối. Bộ kiểm thời điểm được bổ sung 29 tỉnh đã sáp nhập (Nghị quyết 202/2025/QH15, từ 01/7/2025) và Thừa Thiên Huế (từ 01/01/2025). Mức báo nhầm trên văn bản thật không đổi (97,6% bài sạch). Bảng xếp hạng đã tính lại.
+  - **v4 theo giao thức 1.1:** bài sạch giảm từ 39,0% xuống 22,0%, thua Qwen3 gốc (31,7%).
+  - **v4 theo giao thức 1.2:** bài sạch giảm từ 63,4% xuống 51,2%, vẫn hơn Qwen3 gốc (41,5%).
+  - **Quyết định:** v4 chỉ là mô hình cơ sở khi dùng kèm giải mã chống lặp.
+- **Giao thức 1.3:** phạt lặp 1,1 cộng với dừng khi một đoạn từ 60 ký tự lặp lại (`scripts/chan_lap.py`). Đã áp vào kịch bản chạy thử `thu_v4.py` và vào `chay_mlx.py --chan-lap-khoi`. Bảng 1.3 cho 5 hệ 8B chờ chạy `scripts/chay_p13_mac.sh`.
+- **Hướng nâng chất lượng (đề xuất, chưa triển khai):** cào thêm có mục tiêu; tra cứu căn cứ khi soạn (giao thức 2.0, bảng riêng); làm sạch nơi nhận và khối ký; huấn luyện ưu tiên chống bịa. Chi tiết ở phần trả lời ngày 26/11 và `docs/de_xuat_nang_chat_luong.md`.
