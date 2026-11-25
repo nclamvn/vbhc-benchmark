@@ -1,0 +1,49 @@
+{
+ "train": {
+  "tong": 2124,
+  "T1": 804,
+  "T1_bo_dong_co_quan": 261,
+  "T2": 600,
+  "T2_theo_ma": {
+   "KHONG_LOI": 60,
+   "quoc_hieu_viet_tat": 60,
+   "tieu_ngu_hoa_sai": 60,
+   "so_thieu_hai_cham": 60,
+   "ky_hieu_dao": 5,
+   "ngay_dang_so": 60,
+   "ngay_thieu_so_0": 60,
+   "ten_loai_viet_thuong": 3,
+   "thieu_noi_nhan": 60,
+   "luu_sai": 60,
+   "thieu_ket_thuc": 60,
+   "cong_van_thieu_trich_yeu": 52
+  },
+  "T3": 300,
+  "T4": 420,
+  "T4_truoc_moc_03_2025": 221,
+  "T4_tu_moc": 199
+ },
+ "valid": {
+  "tong": 160,
+  "T1": 40,
+  "T1_bo_dong_co_quan": 12,
+  "T2": 60,
+  "T2_theo_ma": {
+   "KHONG_LOI": 6,
+   "quoc_hieu_viet_tat": 6,
+   "tieu_ngu_hoa_sai": 6,
+   "so_thieu_hai_cham": 6,
+   "ngay_dang_so": 6,
+   "ngay_thieu_so_0": 6,
+   "cong_van_thieu_trich_yeu": 5,
+   "thieu_noi_nhan": 6,
+   "luu_sai": 6,
+   "thieu_ket_thuc": 6,
+   "ky_hieu_dao": 1
+  },
+  "T3": 30,
+  "T4": 30,
+  "T4_truoc_moc_03_2025": 20,
+  "T4_tu_moc": 10
+ }
+}

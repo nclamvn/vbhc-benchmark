@@ -173,3 +173,25 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   - **Điểm máy:** tổng hợp 71,3, cao nhất từ trước đến nay. 48,8% bài sạch.
   - **Chấm mù nội dung:** 3,85/8, thua Qwen3 gốc (4,69).
   - **Kết luận:** v3 chưa phải mô hình cơ sở cho phần soạn văn bản. Bảng công bố ghi cả hai hệ. Báo cáo ở `docs/m6_bao_cao.md`.
+
+## QĐ-13 · M6b: sửa ba lỗi còn lại của bản v3
+
+- **Ngày:** 25/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm ("triển khai trọn vẹn"), Claude đề xuất ở vai tổng công trình sư.
+- **Chốt:**
+  1. **Giao thức chấm 1.2 cho phần soạn văn bản (T1):** giải mã có phạt lặp (`repetition_penalty` 1,1, cửa sổ 64 token).
+     - Chạy lại cho mọi hệ 8B: Qwen3 gốc, Llama gốc, Llama tinh chỉnh M5, Qwen3 v3, Qwen3 v4.
+     - Giao thức 1.1 (tham lam) vẫn giữ làm bảng chính. Hai bảng công bố song song, không trộn.
+     - Mô hình 0,5B không chạy lại vì đó là hệ chạy trên CPU, ghi rõ là thiếu.
+  2. **Tập huấn luyện v4** (`scripts/m6_du_lieu_v4.py`, thư mục `m6b/`):
+     - **T1:** bỏ dòng "Cơ quan: …" của dấu chữ ký số. Dòng này có ở 261/804 mục tiêu, và bản v3 chép nó vào bài.
+     - **T2 đối chứng:** 60 văn bản, mỗi văn bản sinh đủ các phiên bản lỗi cài, tổng cộng 600 ví dụ. Bản v3 trả `thieu_ket_thuc` cho 71/94 câu.
+     - **T4 phụ, mốc thời gian bộ máy (420 ví dụ):** ngày lấy từ văn bản thật trong tập huấn luyện, đáp án suy tất định từ ba mốc:
+       - Nghị quyết 176/2025/QH15: cơ cấu Chính phủ mới từ 01/3/2025.
+       - Bỏ cấp huyện từ 01/7/2025.
+       - Nhiệm kỳ Thủ tướng: Nguyễn Xuân Phúc đến 05/4/2021, Phạm Minh Chính từ 05/4/2021. Chỉ dùng ngày trước 2026, vì sau mốc hiểu biết của Claude không chắc.
+     - **T3:** 300 ví dụ.
+  3. **Mô hình v4:** tiếp từ bản v3, chạy 2.100 vòng, LR khởi động 50 vòng rồi cosine 1e-5. Chọn checkpoint theo val loss trên 60 ví dụ. Vòng 1 là bản v3, để luôn có điểm so.
+  4. **Điều kiện nhận v4:** như QĐ-12, cộng thêm một điều kiện: chấm mù nội dung T1 phải không thua Qwen3 gốc. Khi đó v4 mới được gọi là mô hình cơ sở cho T1.
+- **Rủi ro đã biết:**
+  - Chưa rõ T4 có chuyển sang phần soạn văn bản hay không. Đây chính là điều lượt này cần đo.
+  - Phạt lặp có thể làm câu chữ kém tự nhiên, vì tiếng Việt lặp âm tiết nhiều. Vì vậy bảng 1.1 vẫn được giữ.

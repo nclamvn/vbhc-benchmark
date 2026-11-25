@@ -4,3 +4,4 @@ engine/domains/*/snapshots/
 engine/domains/*/claims.jsonl
 data/
 m6/train.jsonl
+m6b/train.jsonl

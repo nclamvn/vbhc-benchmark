@@ -1,0 +1,10 @@
+# M6b (QĐ-13): tiếp từ bản v3 (vòng 1.000 lượt 3) trên tập v4, khoảng một lượt dữ liệu. LR khởi động 50 vòng rồi cosine 1e-5 → 1e-6.
+lora_parameters:
+  rank: 16
+  dropout: 0.05
+  scale: 20.0
+lr_schedule:
+  name: cosine_decay
+  warmup: 50
+  warmup_init: 1.0e-7
+  arguments: [1.0e-5, 2100, 1.0e-6]
