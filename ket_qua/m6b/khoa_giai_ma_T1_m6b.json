@@ -1,0 +1,106 @@
+{
+ "R001": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0035"
+ },
+ "R002": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0019"
+ },
+ "R003": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0018"
+ },
+ "R004": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0010"
+ },
+ "R005": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0035"
+ },
+ "R006": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0028"
+ },
+ "R007": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0018"
+ },
+ "R008": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0026"
+ },
+ "R009": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0010"
+ },
+ "R010": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0008"
+ },
+ "R011": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0028"
+ },
+ "R012": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0041"
+ },
+ "R013": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0020"
+ },
+ "R014": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0005"
+ },
+ "R015": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0041"
+ },
+ "R016": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0012"
+ },
+ "R017": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0025"
+ },
+ "R018": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0005"
+ },
+ "R019": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0009"
+ },
+ "R020": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0012"
+ },
+ "R021": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0020"
+ },
+ "R022": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0025"
+ },
+ "R023": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0008"
+ },
+ "R024": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0026"
+ },
+ "R025": {
+  "he": "qwen3_8b_tinh_chinh_v4_p12",
+  "id": "T1-0009"
+ },
+ "R026": {
+  "he": "qwen3_8b_goc_p12",
+  "id": "T1-0019"
+ }
+}

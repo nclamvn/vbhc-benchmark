@@ -1,0 +1,27 @@
+{
+ "qwen3_8b_goc_p12": {
+  "n": 13,
+  "A": 1.31,
+  "B": 0.69,
+  "C": 1.31,
+  "D": 0.62,
+  "tong_8": 3.92,
+  "ty_le_dat_6_tro_len": 23,
+  "so_bai_D0": 7
+ },
+ "qwen3_8b_tinh_chinh_v4_p12": {
+  "n": 13,
+  "A": 1.46,
+  "B": 1.46,
+  "C": 1.46,
+  "D": 0.54,
+  "tong_8": 4.92,
+  "ty_le_dat_6_tro_len": 38,
+  "so_bai_D0": 7
+ },
+ "doi_dau_theo_de": {
+  "v4_thang": 8,
+  "hoa": 1,
+  "v4_thua": 4
+ }
+}

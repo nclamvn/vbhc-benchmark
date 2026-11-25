@@ -63,3 +63,7 @@ Mã nguồn theo Apache 2.0 (`LICENSE`). Dữ liệu dự án theo CC BY 4.0, c�
 ## Kết quả pilot M4–M5 (24/11/2026)
 
 Xem `docs/m4_m5_bao_cao.md`. Llama-3.1-8B tinh chỉnh QLoRA đạt tổng hợp 67,3, cao nhất điểm máy. Khi chấm nội dung T1 (mô phỏng AI, mù), Qwen3-8B gốc đứng đầu với 4,69/8. Luật viết tay vẫn thắng T2 với 95,7.
+
+## Mô hình cơ sở của pilot (25/11/2026)
+
+Mô hình cơ sở là Qwen3-8B tinh chỉnh QLoRA bản v4, sinh văn bản theo giao thức 1.2 (phạt lặp 1,1 cho phần soạn văn bản). Bản này đạt tổng hợp máy 71,8, và chấm mù nội dung T1 được 4,92/8 so với 3,92 của Qwen3 gốc. Đây là chấm mô phỏng bằng AI, mỗi hệ 13 đề. Phần tìm lỗi thể thức (T2) nên dùng luật viết tay. Xem `docs/m6b_bao_cao.md`.

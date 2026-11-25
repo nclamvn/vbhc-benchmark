@@ -195,3 +195,8 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
 - **Rủi ro đã biết:**
   - Chưa rõ T4 có chuyển sang phần soạn văn bản hay không. Đây chính là điều lượt này cần đo.
   - Phạt lặp có thể làm câu chữ kém tự nhiên, vì tiếng Việt lặp âm tiết nhiều. Vì vậy bảng 1.1 vẫn được giữ.
+- **Kết quả M6b (25/11 23:07):**
+  - **Giao thức 1.2** làm giảm lặp ở mọi hệ đã tinh chỉnh: v3 từ 29% xuống 2%, Llama tinh chỉnh từ 41% xuống 7%.
+  - **v4 (vòng 900):** tổng hợp 71,8. Chấm mù nội dung theo 1.2 trong cùng phiên được 4,92/8, so với 3,92 của Qwen3 gốc, thắng 8/13 đề (chưa có ý nghĩa thống kê).
+  - **Không cải thiện:** T2 đối chứng không sửa được thiên lệch (81/94 câu `thieu_ket_thuc`). T4 chỉ làm giảm nhẹ lỗi thời điểm.
+  - **Quyết định:** v4 + giao thức 1.2 là **mô hình cơ sở của pilot**. Bảng công bố ghi đủ ba điểm yếu: bịa, tên bộ theo thời điểm, và T2. Báo cáo ở `docs/m6b_bao_cao.md`.
