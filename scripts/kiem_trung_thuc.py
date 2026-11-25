@@ -49,9 +49,11 @@ def kiem_trich_dan(bai, I, ngay_vb, kh_ban_than):
         nam_xet = int(nam) if nam else (int(ngay[:4]) if ngay else None)
         if nam_xet is None or not 2020 <= nam_xet <= 2026:
             out.append((kh, 'khong_kiem_duoc')); continue
+        if re.match(r'^(UBTV)?QH1[45]$', ky):   # luật, nghị quyết Quốc hội: chỉ mục thiếu một số luật, và văn bản hay dẫn ngày thông qua thay vì ngày ký công bố
+            out.append((kh, 'khong_kiem_duoc')); continue
         ung = [x for x in I.get(kh, []) if x[0][:4] == str(nam_xet)] if not nam else I.get(kh, [])
         if not ung:  # chỉ mục chỉ đủ với nghị định và luật; loại khác vắng mặt không chứng minh là bịa
-            out.append((kh, 'khong_co' if re.match(r'^(NĐ-CP|QH1[45])$', ky) else 'khong_kiem_duoc')); continue
+            out.append((kh, 'khong_co' if re.match(r'^NĐ-CP$', ky) else 'khong_kiem_duoc')); continue
         if ngay and not any(x[0] == ngay for x in ung):
             out.append((kh, 'sai_ngay')); continue
         that = [x for x in ung if not ngay or x[0] == ngay]

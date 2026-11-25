@@ -22,7 +22,7 @@ Cấu hình: `repetition_penalty` 1,1, cửa sổ 64 token, chỉ áp cho T1. B�
 
 | Hệ | T1 | T1 thể thức | Bài sạch | Bài lặp |
 |---|---|---|---|---|
-| Llama-3.1-8B gốc | 85,8 | 60,2 | 70,7% | 4,9% |
+| Llama-3.1-8B gốc | 85,8 | 60,2 | 73,2% | 4,9% |
 | Qwen3-8B v3 tinh chỉnh | 97,9 | 89,4 | 65,9% | 2,4% |
 | Qwen3-8B v4 tinh chỉnh (mô hình cơ sở) | 96,7 | 93,5 | 63,4% | 0,0% |
 | Llama-3.1-8B tinh chỉnh | 93,6 | 81,1 | 58,5% | 7,3% |

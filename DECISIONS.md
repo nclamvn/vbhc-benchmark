@@ -200,3 +200,7 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   - **v4 (vòng 900):** tổng hợp 71,8. Chấm mù nội dung theo 1.2 trong cùng phiên được 4,92/8, so với 3,92 của Qwen3 gốc, thắng 8/13 đề (chưa có ý nghĩa thống kê).
   - **Không cải thiện:** T2 đối chứng không sửa được thiên lệch (81/94 câu `thieu_ket_thuc`). T4 chỉ làm giảm nhẹ lỗi thời điểm.
   - **Quyết định:** v4 + giao thức 1.2 là **mô hình cơ sở của pilot**. Bảng công bố ghi đủ ba điểm yếu: bịa, tên bộ theo thời điểm, và T2. Báo cáo ở `docs/m6b_bao_cao.md`.
+- **Đóng gói (25/11 23:30):**
+  - **Bộ kiểm trung thực không chấm viện dẫn luật, nghị quyết Quốc hội nữa (QH14/QH15).** Lý do: chỉ mục thiếu một số luật (ví dụ 254/2025/QH15), và văn bản thật hay dẫn ngày Quốc hội thông qua thay vì ngày ký công bố. Bỏ phần này thì tỷ lệ báo nhầm trên văn bản thật vẫn là 97,6% bài sạch. Trong bảng xếp hạng chỉ đổi một ô: tỷ lệ bài sạch của Llama gốc theo giao thức 1.2, từ 70,7% lên 73,2%.
+  - **Bảng xếp hạng** `BANG_XEP_HANG.md` được tính lại từ tệp trả lời bằng `scripts/bang_xep_hang.py`.
+  - **Kiểm tái lập** `scripts/kiem_tai_lap.sh` chạy từ bản clone sạch, và khớp từng byte ở mọi bước: bảng xếp hạng, bộ M3, tập v2, tập v4.
