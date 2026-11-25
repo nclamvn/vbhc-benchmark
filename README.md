@@ -67,3 +67,9 @@ Xem `docs/m4_m5_bao_cao.md`. Llama-3.1-8B tinh chỉnh QLoRA đạt tổng hợp
 ## Mô hình cơ sở của pilot (25/11/2026)
 
 Mô hình cơ sở là Qwen3-8B tinh chỉnh QLoRA bản v4, sinh văn bản theo giao thức 1.2 (phạt lặp 1,1 cho phần soạn văn bản). Bản này đạt tổng hợp máy 71,8, và chấm mù nội dung T1 được 4,92/8 so với 3,92 của Qwen3 gốc. Đây là chấm mô phỏng bằng AI, mỗi hệ 13 đề. Phần tìm lỗi thể thức (T2) nên dùng luật viết tay. Xem `docs/m6b_bao_cao.md`.
+
+## Bảng xếp hạng và tái lập
+
+- Bảng xếp hạng là [BANG_XEP_HANG.md](BANG_XEP_HANG.md), tính lại bằng `python3 scripts/bang_xep_hang.py`.
+- Kiểm tái lập từ bản clone sạch bằng `bash scripts/kiem_tai_lap.sh`. Thêm `VBHC_TOAN_VAN=<toan_van_v4.jsonl>` để dựng lại cả bộ đo và tập huấn luyện. Kết quả kiểm ngày 25/11/2026: khớp từng byte ở mọi bước.
+- Nhật ký quyết định nằm ở [DECISIONS.md](DECISIONS.md), từ QĐ-01 đến QĐ-13.
