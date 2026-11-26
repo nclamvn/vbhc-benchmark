@@ -1,0 +1,11 @@
+{
+ "val_loss_v6_60vd": {
+  "1": 0.962,
+  "200": 0.986,
+  "400": 0.886,
+  "600": 0.732,
+  "800": 0.934
+ },
+ "chon_vong": 600,
+ "ghi_chu": "v\u00f2ng 1 = b\u1ea3n v5 \u0111o tr\u00ean t\u1eadp th\u1ea9m \u0111\u1ecbnh v6"
+}
