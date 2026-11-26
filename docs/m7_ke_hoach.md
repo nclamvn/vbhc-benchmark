@@ -46,3 +46,12 @@ Xem `docs/de_xuat_nang_chat_luong.md`.
 - **7.3 giao thức 2.0:** `chay_mlx.py --tra-cuu`. Cả 41 đề T1 đều được làm giàu, đề dài nhất 1.109 token.
 - **7.4 tập v5:** 1.537 ví dụ (T1 737, T2 300, T3 300, T4 200). Khi dựng T1, văn bản đó bị loại khỏi láng giềng đồng viện dẫn của chính nó, để điều kiện giống lúc kiểm tra. 285 viện dẫn trung ương không có trong tư liệu bị che, 238 được giữ. Bỏ 67 bài quá 3.000 token sau khi thêm tư liệu.
 - **Phần Mac:** `scripts/chay_m7_mac.sh` gồm 7.0, 1.3, 2.0 và 7.5, khoảng 10–11 giờ.
+
+## Kết quả Mac M7 (26/11, 20:05) và quyết định M7b
+
+- **Giao thức 1.3, T1:** v4 63,4% bài sạch, 1,46 viện dẫn sai mỗi bài; Qwen3-8B gốc 41,5%; Llama gốc 73,2%; Llama tinh chỉnh 65,9%; v3 63,4%.
+- **Dò quy mô (1.3, bản gốc):** Qwen3-14B 65,9% bài sạch, 70% viện dẫn đúng số và ngày; Qwen3-30B-A3B 58,5%, 35%. Cả hai trùng 0 căn cứ với văn bản thật: dẫn văn bản nổi tiếng nhưng không liên quan.
+- **Giao thức 2.0 (có tra cứu):** Qwen3-8B gốc 36,6% bài sạch, độ chính xác căn cứ 12%; Qwen3-14B gốc 63,4%, 15%; v4 78,0%, 21%, phủ căn cứ thật 49%.
+- **v5:** tổng hợp 1.1 là 75,3 (v4 71,8), T2 29,8. Theo 2.0: 90,2% bài sạch, 0 viện dẫn sai, thể thức 90,9. Nhưng phủ căn cứ thật chỉ 1,8%: v5 chọn đúng văn bản theo mô tả rồi để "…" cho số và ngày, kể cả khi văn bản có trong tư liệu (10/12 chỗ). Nguyên nhân là lỗi dựng dữ liệu v5 (văn bản cần dẫn thường vắng trong tư liệu khi huấn luyện).
+- **Giao thức 2.1 (thử):** `scripts/dien_can_cu.py` điền số và ngày tất định khi mô tả khớp đúng một văn bản trong tư liệu. v5 + 2.1: 90,2% bài sạch, độ chính xác căn cứ 53,8%, phủ 12,3%.
+- **Quyết định:** chưa nhận v5. Làm M7b (QĐ-16).

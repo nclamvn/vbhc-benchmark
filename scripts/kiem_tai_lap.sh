@@ -22,6 +22,10 @@ if [ -n "${VBHC_TOAN_VAN:-}" ]; then
   python3 scripts/tra_cuu.py --dung > /dev/null && python3 scripts/m7_du_lieu_v5.py > /dev/null
   cmp -s m7/dong_vien_dan.json /tmp/goc_m7_dvd.json && echo "   KHỚP m7/dong_vien_dan.json" || { echo "   LỆCH m7/dong_vien_dan.json"; LOI=1; }
   for p in train valid; do cmp -s m7/$p.jsonl /tmp/goc_m7_$p.jsonl && echo "   KHỚP m7/$p.jsonl" || { echo "   LỆCH m7/$p.jsonl"; LOI=1; }; done
+  echo "6. Dựng lại tập v6 (M7b), so từng byte"
+  cp m7b/valid.jsonl /tmp/goc_m7b_valid.jsonl; xz -dc m7b/train.jsonl.xz > /tmp/goc_m7b_train.jsonl
+  python3 scripts/m7b_du_lieu_v6.py > /dev/null
+  for p in train valid; do cmp -s m7b/$p.jsonl /tmp/goc_m7b_$p.jsonl && echo "   KHỚP m7b/$p.jsonl" || { echo "   LỆCH m7b/$p.jsonl"; LOI=1; }; done
 fi
 [ $LOI = 0 ] && echo "=== TÁI LẬP ĐẠT" || echo "=== CÓ BƯỚC LỆCH"
 exit $LOI

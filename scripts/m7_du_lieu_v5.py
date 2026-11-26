@@ -47,28 +47,31 @@ def che_ngoai_danh_sach(t, cho_phep, kh_ban_than):
         if d: out.append(f'{d.group(1)}… tháng … năm …' if d.group(1) is not None else f'{d.group(7)}…'); i = d.end()
     out.append(t[i:]); return ''.join(out), n
 
-O = 'm7'; os.makedirs(O, exist_ok=True); TK = {}
-for s, n2, n3, n4 in (('train', 300, 300, 200), ('valid', 30, 30, 20)):
-    R = [json.loads(l) for l in open(f'm6b/{s}.jsonl', encoding='utf-8')]
-    T1, dem = [], collections.Counter()
-    for r in R:
-        if nv(r) != 'T1': continue
-        r = copy.deepcopy(r); de = r['messages'][1]['content']
-        r['messages'][1]['content'] = tcu.lam_giau_de(de, TC, 8, bo_chinh_no=True)
-        giu = set(re.findall(r'Thủ tướng Chính phủ: ([^.]+)\.', r['messages'][1]['content']))
-        cho = {x[0] for x in tcu.lam_giau_de.ds}
-        kh = re.search(r'Số, ký hiệu: (.*)', de).group(1)
-        t, a = che_ngoai_danh_sach(r['messages'][2]['content'], cho, kh); t, b = lam_sach(t, giu)
-        r['messages'][2]['content'] = t; dem.update(a); dem.update(b); T1.append(r)
-    nhom = collections.defaultdict(list)
-    for r in R: nhom[nv(r)].append(r)
-    for x in nhom.values(): rng.shuffle(x)
-    from transformers import AutoTokenizer
-    TOK = AutoTokenizer.from_pretrained(os.environ.get('VBHC_TOKENIZER', '/home/claude/m4/qwen25_05b'))
-    vua = lambda r: len(TOK(TOK.apply_chat_template(r['messages'], tokenize=False))['input_ids']) <= 3000
-    n_truoc = len(T1); T1 = [r for r in T1 if vua(r)]; dem['bo_qua_3000_token'] = n_truoc - len(T1)
-    rows = T1 + nhom['T2'][:n2] + nhom['T3'][:n3] + nhom['T4'][:n4]; rng.shuffle(rows)
-    open(f'{O}/{s}.jsonl', 'w', encoding='utf-8').write(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows))
-    TK[s] = {'tong': len(rows), 'T1': len(T1), 'T2': min(n2, len(nhom['T2'])), 'T3': min(n3, len(nhom['T3'])), 'T4': min(n4, len(nhom['T4'])), 'T1_xu_ly': dict(dem)}
-json.dump(TK, open(f'{O}/thong_ke.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-print(json.dumps(TK, ensure_ascii=False))
+def main():
+    O = 'm7'; os.makedirs(O, exist_ok=True); TK = {}
+    for s, n2, n3, n4 in (('train', 300, 300, 200), ('valid', 30, 30, 20)):
+        R = [json.loads(l) for l in open(f'm6b/{s}.jsonl', encoding='utf-8')]
+        T1, dem = [], collections.Counter()
+        for r in R:
+            if nv(r) != 'T1': continue
+            r = copy.deepcopy(r); de = r['messages'][1]['content']
+            r['messages'][1]['content'] = tcu.lam_giau_de(de, TC, 8, bo_chinh_no=True)
+            giu = set(re.findall(r'Thủ tướng Chính phủ: ([^.]+)\.', r['messages'][1]['content']))
+            cho = {x[0] for x in tcu.lam_giau_de.ds}
+            kh = re.search(r'Số, ký hiệu: (.*)', de).group(1)
+            t, a = che_ngoai_danh_sach(r['messages'][2]['content'], cho, kh); t, b = lam_sach(t, giu)
+            r['messages'][2]['content'] = t; dem.update(a); dem.update(b); T1.append(r)
+        nhom = collections.defaultdict(list)
+        for r in R: nhom[nv(r)].append(r)
+        for x in nhom.values(): rng.shuffle(x)
+        from transformers import AutoTokenizer
+        TOK = AutoTokenizer.from_pretrained(os.environ.get('VBHC_TOKENIZER', '/home/claude/m4/qwen25_05b'))
+        vua = lambda r: len(TOK(TOK.apply_chat_template(r['messages'], tokenize=False))['input_ids']) <= 3000
+        n_truoc = len(T1); T1 = [r for r in T1 if vua(r)]; dem['bo_qua_3000_token'] = n_truoc - len(T1)
+        rows = T1 + nhom['T2'][:n2] + nhom['T3'][:n3] + nhom['T4'][:n4]; rng.shuffle(rows)
+        open(f'{O}/{s}.jsonl', 'w', encoding='utf-8').write(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows))
+        TK[s] = {'tong': len(rows), 'T1': len(T1), 'T2': min(n2, len(nhom['T2'])), 'T3': min(n3, len(nhom['T3'])), 'T4': min(n4, len(nhom['T4'])), 'T1_xu_ly': dict(dem)}
+    json.dump(TK, open(f'{O}/thong_ke.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print(json.dumps(TK, ensure_ascii=False))
+
+if __name__ == '__main__': main()

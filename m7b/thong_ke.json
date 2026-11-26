@@ -1,0 +1,36 @@
+{
+ "train": {
+  "tong": 1137,
+  "T1": 737,
+  "T2": 150,
+  "T3": 150,
+  "T4": 100,
+  "T1_xu_ly": {
+   "co_dap_an_trong_tu_lieu": 572,
+   "ho_ten": 2162,
+   "ho_ten_noi_nhan": 185,
+   "rac_na": 11,
+   "tra_cuu_that": 232,
+   "che": 187,
+   "giu": 336,
+   "bo_qua_3000_token": 67
+  }
+ },
+ "valid": {
+  "tong": 114,
+  "T1": 34,
+  "T2": 30,
+  "T3": 30,
+  "T4": 20,
+  "T1_xu_ly": {
+   "tra_cuu_that": 12,
+   "ho_ten": 109,
+   "rac_na": 1,
+   "co_dap_an_trong_tu_lieu": 28,
+   "ho_ten_noi_nhan": 6,
+   "giu": 21,
+   "che": 3,
+   "bo_qua_3000_token": 6
+  }
+ }
+}

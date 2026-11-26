@@ -229,3 +229,13 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   3. Thể thức T1 không thấp hơn v4 theo 1.3 quá 3 điểm.
   4. Chấm mù nội dung không thua Qwen3 gốc có tra cứu.
 - **Rủi ro đã biết:** khoảng một phần ba căn cứ đúng không có trong tư liệu. Mô hình có thể học chép thừa căn cứ không liên quan từ danh sách. Bộ kiểm trung thực không bắt được lỗi này, nên chấm mù nội dung là bắt buộc.
+
+## QĐ-16 · M7b: dạy chép số từ tư liệu (v6)
+
+- **Ngày:** 26/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm ("đồng ý"), theo đề xuất sau khi chấm v5.
+- **Căn cứ:** v5 qua ba điều kiện của QĐ-15 (bài sạch 90,2%, viện dẫn sai 0, thể thức 90,9) nhưng gần như không dẫn số hiệu (phủ căn cứ thật 1,8%). Đây là học quá tay việc "để …", do lỗi dựng dữ liệu v5. Chưa nhận v5.
+- **Nội dung:**
+  - Tập v6 (`scripts/m7b_du_lieu_v6.py` → `m7b/`): 70% bài T1 có tư liệu luôn chứa các căn cứ bài thật dẫn (trộn văn bản nhiễu, xếp ngẫu nhiên); 30% giữ điều kiện tra cứu thật. Chỉ che căn cứ không có trong tư liệu. Ôn T2 150, T3 150, T4 100. Bộ kiểm tra không đổi.
+  - Huấn luyện v6 từ v5, 800 vòng (`scripts/chay_m7b_mac.sh`).
+  - Giao thức 2.1 (2.0 cộng bước điền căn cứ tất định) báo cáo thành cột riêng, ghi rõ là có bước hậu xử lý không dùng mô hình.
+- **Điều kiện nhận v6:** ba điều kiện của QĐ-15 theo 2.0, cộng thêm: độ chính xác căn cứ (so với văn bản thật) không thấp hơn v4 có tra cứu (20,7%), và phủ căn cứ thật không thấp hơn v4 có tra cứu (49%). Chấm mù nội dung vẫn bắt buộc.
