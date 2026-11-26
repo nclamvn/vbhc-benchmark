@@ -1,0 +1,47 @@
+{
+ "qwen3_8b_tinh_chinh_v6_p21": {
+  "n": 13,
+  "A": 1.15,
+  "B": 1.38,
+  "C": 0.92,
+  "D": 0.92,
+  "tong_8": 4.38,
+  "ty_le_dat_6_tro_len": 31,
+  "so_bai_D0": 3
+ },
+ "qwen3_8b_goc_p20": {
+  "n": 13,
+  "A": 1.23,
+  "B": 1.0,
+  "C": 1.0,
+  "D": 0.54,
+  "tong_8": 3.77,
+  "ty_le_dat_6_tro_len": 8,
+  "so_bai_D0": 9
+ },
+ "qwen3_8b_tinh_chinh_v4_p20": {
+  "n": 13,
+  "A": 1.23,
+  "B": 1.08,
+  "C": 1.0,
+  "D": 0.62,
+  "tong_8": 3.92,
+  "ty_le_dat_6_tro_len": 15,
+  "so_bai_D0": 7
+ },
+ "doi_dau_v6_vs_v4": {
+  "thang": 6,
+  "hoa": 2,
+  "thua": 5
+ },
+ "doi_dau_v6_vs_goc": {
+  "thang": 5,
+  "hoa": 5,
+  "thua": 3
+ },
+ "doi_dau_v4_vs_goc": {
+  "thang": 6,
+  "hoa": 3,
+  "thua": 4
+ }
+}

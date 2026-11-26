@@ -1,172 +1,376 @@
-[
- {
-  "he": "Qwen3-8B v4 tinh chỉnh (mô hình cơ sở)",
-  "ma": "qwen3_8b_tinh_chinh_v4",
-  "tong_hop": 71.8,
-  "T1": 94.8,
-  "T1_the_thuc": 80.7,
-  "T2": 21.3,
-  "T3": 99.3,
-  "sach_11": 22.0,
-  "lap_11": 56.1,
-  "T1_12": 96.7,
-  "T1_the_thuc_12": 93.5,
-  "sach_12": 51.2,
-  "lap_12": 14.6,
-  "noi_dung": [
-   [
-    4.92,
-    "M6b, phạt lặp"
+{
+ "bang_chinh": [
+  {
+   "he": "Qwen3-8B v6 tinh chỉnh (mô hình cơ sở, dùng với giao thức 2.1)",
+   "ma": "qwen3_8b_tinh_chinh_v6",
+   "tong_hop": 75.9,
+   "T1": 96.4,
+   "T1_the_thuc": 85.0,
+   "T2": 31.9,
+   "T3": 99.5,
+   "sach_11": 41.5,
+   "lap_11": 48.8,
+   "noi_dung": [
+    [
+     4.38,
+     "M7, giao thức 2.1"
+    ]
    ]
-  ]
- },
- {
-  "he": "Qwen3-8B v3 tinh chỉnh",
-  "ma": "qwen3_8b_tinh_chinh_v3",
-  "tong_hop": 71.3,
-  "T1": 94.5,
-  "T1_the_thuc": 80.2,
-  "T2": 20.2,
-  "T3": 99.2,
-  "sach_11": 24.4,
-  "lap_11": 56.1,
-  "T1_12": 97.9,
-  "T1_the_thuc_12": 89.4,
-  "sach_12": 48.8,
-  "lap_12": 22.0,
-  "noi_dung": [
-   [
-    3.85,
-    "M6, tham lam"
+  },
+  {
+   "he": "Qwen3-8B v5 tinh chỉnh",
+   "ma": "qwen3_8b_tinh_chinh_v5",
+   "tong_hop": 75.3,
+   "T1": 96.6,
+   "T1_the_thuc": 85.9,
+   "T2": 29.8,
+   "T3": 99.5,
+   "sach_11": 46.3,
+   "lap_11": 29.3,
+   "noi_dung": []
+  },
+  {
+   "he": "Qwen3-8B v4 tinh chỉnh",
+   "ma": "qwen3_8b_tinh_chinh_v4",
+   "tong_hop": 71.8,
+   "T1": 94.8,
+   "T1_the_thuc": 80.7,
+   "T2": 21.3,
+   "T3": 99.3,
+   "sach_11": 22.0,
+   "lap_11": 56.1,
+   "T1_12": 96.7,
+   "T1_the_thuc_12": 93.5,
+   "sach_12": 51.2,
+   "lap_12": 14.6,
+   "noi_dung": [
+    [
+     4.92,
+     "M6b, phạt lặp"
+    ],
+    [
+     3.92,
+     "M7, giao thức 2.0"
+    ]
    ]
-  ]
- },
- {
-  "he": "Llama-3.1-8B tinh chỉnh",
-  "ma": "llama31_8b_tinh_chinh",
-  "tong_hop": 67.3,
-  "T1": 86.6,
-  "T1_the_thuc": 74.5,
-  "T2": 17.0,
-  "T3": 98.2,
-  "sach_11": 24.4,
-  "lap_11": 68.3,
-  "T1_12": 93.6,
-  "T1_the_thuc_12": 81.1,
-  "sach_12": 46.3,
-  "lap_12": 34.1,
-  "noi_dung": [
-   [
-    3.31,
-    "M5, tham lam"
+  },
+  {
+   "he": "Qwen3-8B v3 tinh chỉnh",
+   "ma": "qwen3_8b_tinh_chinh_v3",
+   "tong_hop": 71.3,
+   "T1": 94.5,
+   "T1_the_thuc": 80.2,
+   "T2": 20.2,
+   "T3": 99.2,
+   "sach_11": 24.4,
+   "lap_11": 56.1,
+   "T1_12": 97.9,
+   "T1_the_thuc_12": 89.4,
+   "sach_12": 48.8,
+   "lap_12": 22.0,
+   "noi_dung": [
+    [
+     3.85,
+     "M6, tham lam"
+    ]
    ]
-  ]
- },
- {
-  "he": "Qwen3-8B v2 tinh chỉnh",
-  "ma": "qwen3_8b_tinh_chinh_v2",
-  "tong_hop": 66.7,
-  "T1": 93.7,
-  "T1_the_thuc": 78.9,
-  "T2": 7.4,
-  "T3": 98.9,
-  "sach_11": 31.7,
-  "lap_11": 53.7,
-  "noi_dung": [
-   [
-    2.23,
-    "M6, tham lam"
+  },
+  {
+   "he": "Llama-3.1-8B tinh chỉnh",
+   "ma": "llama31_8b_tinh_chinh",
+   "tong_hop": 67.3,
+   "T1": 86.6,
+   "T1_the_thuc": 74.5,
+   "T2": 17.0,
+   "T3": 98.2,
+   "sach_11": 24.4,
+   "lap_11": 68.3,
+   "T1_12": 93.6,
+   "T1_the_thuc_12": 81.1,
+   "sach_12": 46.3,
+   "lap_12": 34.1,
+   "noi_dung": [
+    [
+     3.31,
+     "M5, tham lam"
+    ]
    ]
-  ]
- },
- {
-  "he": "Luật viết tay (không mô hình)",
-  "ma": "moc_luat",
-  "tong_hop": 60.8,
-  "T1": 0.0,
-  "T1_the_thuc": 0.0,
-  "T2": 95.7,
-  "T3": 86.7,
-  "noi_dung": []
- },
- {
-  "he": "Qwen3-8B gốc",
-  "ma": "qwen3_8b_goc",
-  "tong_hop": 60.5,
-  "T1": 86.5,
-  "T1_the_thuc": 65.5,
-  "T2": 9.6,
-  "T3": 85.5,
-  "sach_11": 31.7,
-  "lap_11": 7.3,
-  "T1_12": 85.2,
-  "T1_the_thuc_12": 64.1,
-  "sach_12": 41.5,
-  "lap_12": 0.0,
-  "noi_dung": [
-   [
-    4.69,
-    "M5, tham lam"
-   ],
-   [
-    3.92,
-    "M6b, phạt lặp"
+  },
+  {
+   "he": "Qwen3-8B v2 tinh chỉnh",
+   "ma": "qwen3_8b_tinh_chinh_v2",
+   "tong_hop": 66.7,
+   "T1": 93.7,
+   "T1_the_thuc": 78.9,
+   "T2": 7.4,
+   "T3": 98.9,
+   "sach_11": 31.7,
+   "lap_11": 53.7,
+   "noi_dung": [
+    [
+     2.23,
+     "M6, tham lam"
+    ]
    ]
-  ]
- },
- {
-  "he": "Llama-3.1-8B gốc",
-  "ma": "llama31_8b_goc",
-  "tong_hop": 59.0,
-  "T1": 79.9,
-  "T1_the_thuc": 58.5,
-  "T2": 12.8,
-  "T3": 84.3,
-  "sach_11": 26.8,
-  "lap_11": 53.7,
-  "T1_12": 85.8,
-  "T1_the_thuc_12": 60.2,
-  "sach_12": 46.3,
-  "lap_12": 41.5,
-  "noi_dung": [
-   [
-    3.62,
-    "M5, tham lam"
+  },
+  {
+   "he": "Luật viết tay (không mô hình)",
+   "ma": "moc_luat",
+   "tong_hop": 60.8,
+   "T1": 0.0,
+   "T1_the_thuc": 0.0,
+   "T2": 95.7,
+   "T3": 86.7,
+   "noi_dung": []
+  },
+  {
+   "he": "Qwen3-8B gốc",
+   "ma": "qwen3_8b_goc",
+   "tong_hop": 60.5,
+   "T1": 86.5,
+   "T1_the_thuc": 65.5,
+   "T2": 9.6,
+   "T3": 85.5,
+   "sach_11": 31.7,
+   "lap_11": 7.3,
+   "T1_12": 85.2,
+   "T1_the_thuc_12": 64.1,
+   "sach_12": 41.5,
+   "lap_12": 0.0,
+   "noi_dung": [
+    [
+     4.69,
+     "M5, tham lam"
+    ],
+    [
+     3.92,
+     "M6b, phạt lặp"
+    ],
+    [
+     3.77,
+     "M7, giao thức 2.0"
+    ]
    ]
-  ]
- },
- {
-  "he": "Qwen2.5-0.5B tinh chỉnh",
-  "ma": "qwen25_05b_tinh_chinh",
-  "tong_hop": 56.4,
-  "T1": 55.9,
-  "T1_the_thuc": 45.7,
-  "T2": 18.1,
-  "T3": 95.2,
-  "sach_11": 12.2,
-  "lap_11": 80.5,
-  "noi_dung": [
-   [
-    0.08,
-    "M5, tham lam"
+  },
+  {
+   "he": "Llama-3.1-8B gốc",
+   "ma": "llama31_8b_goc",
+   "tong_hop": 59.0,
+   "T1": 79.9,
+   "T1_the_thuc": 58.5,
+   "T2": 12.8,
+   "T3": 84.3,
+   "sach_11": 26.8,
+   "lap_11": 53.7,
+   "T1_12": 85.8,
+   "T1_the_thuc_12": 60.2,
+   "sach_12": 46.3,
+   "lap_12": 41.5,
+   "noi_dung": [
+    [
+     3.62,
+     "M5, tham lam"
+    ]
    ]
-  ]
- },
- {
-  "he": "Qwen2.5-0.5B gốc",
-  "ma": "qwen25_05b_goc",
-  "tong_hop": 29.9,
-  "T1": 64.3,
-  "T1_the_thuc": 43.9,
-  "T2": 4.3,
-  "T3": 21.1,
-  "sach_11": 22.0,
-  "lap_11": 58.5,
-  "noi_dung": [
-   [
-    0.69,
-    "M5, tham lam"
+  },
+  {
+   "he": "Qwen2.5-0.5B tinh chỉnh",
+   "ma": "qwen25_05b_tinh_chinh",
+   "tong_hop": 56.4,
+   "T1": 55.9,
+   "T1_the_thuc": 45.7,
+   "T2": 18.1,
+   "T3": 95.2,
+   "sach_11": 12.2,
+   "lap_11": 80.5,
+   "noi_dung": [
+    [
+     0.08,
+     "M5, tham lam"
+    ]
    ]
-  ]
- }
-]
+  },
+  {
+   "he": "Qwen2.5-0.5B gốc",
+   "ma": "qwen25_05b_goc",
+   "tong_hop": 29.9,
+   "T1": 64.3,
+   "T1_the_thuc": 43.9,
+   "T2": 4.3,
+   "T3": 21.1,
+   "sach_11": 22.0,
+   "lap_11": 58.5,
+   "noi_dung": [
+    [
+     0.69,
+     "M5, tham lam"
+    ]
+   ]
+  }
+ ],
+ "giao_thuc_1_3": [
+  {
+   "he": "Qwen3-8B v4 tinh chỉnh",
+   "T1": 95.7,
+   "the_thuc": 91.2,
+   "sach": 63.4,
+   "sai_moi_bai": 1.46,
+   "thoi_diem": 14.6,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 31.57894736842105,
+   "can_cu_phu": 21.05263157894737
+  },
+  {
+   "he": "Qwen3-8B v3 tinh chỉnh",
+   "T1": 97.6,
+   "the_thuc": 88.3,
+   "sach": 63.4,
+   "sai_moi_bai": 0.83,
+   "thoi_diem": 22.0,
+   "lap": 2.4,
+   "can_cu_chinh_xac": 16.363636363636363,
+   "can_cu_phu": 15.789473684210526
+  },
+  {
+   "he": "Llama-3.1-8B tinh chỉnh",
+   "T1": 91.6,
+   "the_thuc": 78.7,
+   "sach": 65.9,
+   "sai_moi_bai": 0.12,
+   "thoi_diem": 12.2,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 0.0,
+   "can_cu_phu": 0.0
+  },
+  {
+   "he": "Qwen3-8B gốc",
+   "T1": 85.2,
+   "the_thuc": 64.1,
+   "sach": 41.5,
+   "sai_moi_bai": 0.68,
+   "thoi_diem": 26.8,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 0.0,
+   "can_cu_phu": 0.0
+  },
+  {
+   "he": "Llama-3.1-8B gốc",
+   "T1": 85.8,
+   "the_thuc": 60.0,
+   "sach": 73.2,
+   "sai_moi_bai": 0.15,
+   "thoi_diem": 14.6,
+   "lap": 4.9,
+   "can_cu_chinh_xac": 0.0,
+   "can_cu_phu": 0.0
+  },
+  {
+   "he": "Qwen3-14B gốc",
+   "T1": 91.7,
+   "the_thuc": 73.5,
+   "sach": 65.9,
+   "sai_moi_bai": 0.15,
+   "thoi_diem": 26.8,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 0.0,
+   "can_cu_phu": 0.0
+  },
+  {
+   "he": "Qwen3-30B-A3B gốc",
+   "T1": 90.9,
+   "the_thuc": 72.0,
+   "sach": 58.5,
+   "sai_moi_bai": 0.32,
+   "thoi_diem": 17.1,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 0.0,
+   "can_cu_phu": 0.0
+  }
+ ],
+ "giao_thuc_2": [
+  {
+   "he": "Qwen3-8B v6 tinh chỉnh",
+   "giao_thuc": "2.1",
+   "T1": 97.7,
+   "the_thuc": 88.9,
+   "sach": 85.4,
+   "sai_moi_bai": 0.05,
+   "thoi_diem": 9.8,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 50.0,
+   "can_cu_phu": 17.54385964912281
+  },
+  {
+   "he": "Qwen3-8B v6 tinh chỉnh",
+   "giao_thuc": "2.0",
+   "T1": 97.7,
+   "the_thuc": 88.9,
+   "sach": 87.8,
+   "sai_moi_bai": 0.02,
+   "thoi_diem": 9.8,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 57.142857142857146,
+   "can_cu_phu": 7.017543859649122
+  },
+  {
+   "he": "Qwen3-8B v5 tinh chỉnh",
+   "giao_thuc": "2.1",
+   "T1": 98.1,
+   "the_thuc": 90.9,
+   "sach": 90.2,
+   "sai_moi_bai": 0.0,
+   "thoi_diem": 9.8,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 53.84615384615385,
+   "can_cu_phu": 12.280701754385966
+  },
+  {
+   "he": "Qwen3-8B v5 tinh chỉnh",
+   "giao_thuc": "2.0",
+   "T1": 98.1,
+   "the_thuc": 90.9,
+   "sach": 90.2,
+   "sai_moi_bai": 0.0,
+   "thoi_diem": 9.8,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 25.0,
+   "can_cu_phu": 1.7543859649122806
+  },
+  {
+   "he": "Qwen3-8B v4 tinh chỉnh",
+   "giao_thuc": "2.0",
+   "T1": 96.5,
+   "the_thuc": 84.9,
+   "sach": 78.0,
+   "sai_moi_bai": 0.27,
+   "thoi_diem": 9.8,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 20.74074074074074,
+   "can_cu_phu": 49.12280701754386
+  },
+  {
+   "he": "Qwen3-14B gốc",
+   "giao_thuc": "2.0",
+   "T1": 91.2,
+   "the_thuc": 73.5,
+   "sach": 63.4,
+   "sai_moi_bai": 0.29,
+   "thoi_diem": 14.6,
+   "lap": 0.0,
+   "can_cu_chinh_xac": 14.619883040935672,
+   "can_cu_phu": 43.85964912280702
+  },
+  {
+   "he": "Qwen3-8B gốc",
+   "giao_thuc": "2.0",
+   "T1": 79.8,
+   "the_thuc": 66.0,
+   "sach": 36.6,
+   "sai_moi_bai": 0.63,
+   "thoi_diem": 22.0,
+   "lap": 2.4,
+   "can_cu_chinh_xac": 11.881188118811881,
+   "can_cu_phu": 42.10526315789474
+  }
+ ]
+}

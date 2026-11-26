@@ -239,3 +239,14 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   - Huấn luyện v6 từ v5, 800 vòng (`scripts/chay_m7b_mac.sh`).
   - Giao thức 2.1 (2.0 cộng bước điền căn cứ tất định) báo cáo thành cột riêng, ghi rõ là có bước hậu xử lý không dùng mô hình.
 - **Điều kiện nhận v6:** ba điều kiện của QĐ-15 theo 2.0, cộng thêm: độ chính xác căn cứ (so với văn bản thật) không thấp hơn v4 có tra cứu (20,7%), và phủ căn cứ thật không thấp hơn v4 có tra cứu (49%). Chấm mù nội dung vẫn bắt buộc.
+
+## QĐ-17 · Chốt mô hình cơ sở pilot: v6 + giao thức 2.1
+
+- **Ngày:** 27/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm ("Triển khai"), theo đề xuất sau khi chấm v6.
+- **Kết quả v6 (giao thức 2.0/2.1):** bài sạch 87,8%/85,4%, viện dẫn sai 0,02/0,05 mỗi bài, thể thức 88,9, căn cứ đúng chỗ 57,1%/50,0%, phủ căn cứ thật 7,0%/17,5%. Chấm mù nội dung phiên M7: v6 + 2.1 được 4,38/8, v4 + 2.0 được 3,92, Qwen3 gốc + 2.0 được 3,77.
+- **Quyết định:**
+  - v6 + 2.1 là mô hình cơ sở của pilot. Đạt 4/5 điều kiện QĐ-16 và điều kiện nội dung; **trượt điều kiện phủ căn cứ**, ghi rõ trong bảng công bố.
+  - v6 chỉ dùng kèm tra cứu và giải mã chống lặp (không tra cứu, giải mã tham lam: lặp 48,8%).
+  - Không huấn luyện thêm trước 01/12.
+- **Lỗi đã biết, sửa ở M8:** che họ tên che nhầm "Hà Nội" và "Bộ Tài"; bộ chặn lặp không bắt lặp trong đoạn dài; thói quen để "…" từ v3–v5.
+- **Báo cáo:** `docs/m7_bao_cao.md`.
