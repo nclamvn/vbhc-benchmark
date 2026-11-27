@@ -21,7 +21,7 @@
    "giu": 1529,
    "che_noi_nhan": 378,
    "bo_qua_qua_dai": 2,
-   "cong_van_bo_bot": 182
+   "bo_bot:Công văn": 182
   }
  },
  "valid": {
@@ -45,7 +45,7 @@
    "giu": 31,
    "che_noi_nhan": 3,
    "bo_qua_qua_dai": 0,
-   "cong_van_bo_bot": 0
+   "bo_bot:Công văn": 0
   }
  },
  "ly_do_loai_khoi_be": {

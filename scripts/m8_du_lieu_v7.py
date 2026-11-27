@@ -14,6 +14,8 @@ sys.path.insert(0, 'scripts')
 src = open('scripts/m6_du_lieu_v2.py', encoding='utf-8').read()
 G = {'__name__': 'v2_ham'}; exec(src[:src.index('def cu(p):')], G)   # dùng lại nguyên văn các hàm lọc, làm sạch, che của v2
 C, SP, de_T1, msg, lam_sach_v2, che_v2, nhieu, v1, v2 = G['C'], G['SP'], G['de_T1'], G['msg'], G['lam_sach'], G['che'], G['nhieu'], G['v1'], G['v2']
+if os.environ.get('VBHC_CHIA_TAP_THEM'):   # văn bản của các đợt cào M8 (chia tập riêng; nhãn 'de_moi' để ngoài huấn luyện)
+    SP.update(json.load(open(os.environ['VBHC_CHIA_TAP_THEM'], encoding='utf-8')))
 import tra_cuu as tcu, kiem_trung_thuc as k, m8_lam_sach as LS, sot_bo_may as SOT
 tcu.SOT_BAN = 'v1'
 import m7b_du_lieu_v6 as v6m   # hàm tu_lieu (đưa căn cứ thật vào tư liệu) và che_ngoai_danh_sach của v5
@@ -74,9 +76,15 @@ for s, n2, n3, n4 in (('train', 300, 300, 200), ('valid', 30, 30, 20)):
         dem.update(a); dem.update(b); dem['co_dap_an' if dap else 'tra_cuu_that'] += 1
         r = msg(de2, tra); r['_loai'] = c['loai_van_ban']; T1.append(r)
     n0 = len(T1); T1 = [r for r in T1 if vua(r)]; dem['bo_qua_qua_dai'] = n0 - len(T1)
-    # cân bằng: công văn tối đa 35%
-    cv = [r for r in T1 if r['_loai'] == 'Công văn']; khac = [r for r in T1 if r['_loai'] != 'Công văn']
-    tran = int(0.35 / 0.65 * len(khac)); dem['cong_van_bo_bot'] = max(0, len(cv) - tran); T1 = khac + cv[:tran]
+    # cân bằng: công văn tối đa 35% (M8.1); từ khi có đợt cào M8 (VBHC_CHIA_TAP_THEM), mọi loại tối đa 35%
+    tran_loai = ['Công văn'] if not os.environ.get('VBHC_CHIA_TAP_THEM') else LOAI
+    for _ in range(3 if os.environ.get('VBHC_CHIA_TAP_THEM') else 1):   # lặp vì bỏ bớt loại này làm tỷ lệ loại khác tăng (M8.1 giữ một lượt như cũ)
+        dem_l = collections.Counter(r['_loai'] for r in T1)
+        for L in tran_loai:
+            khac = len(T1) - dem_l[L]; tran = int(0.35 / 0.65 * khac)
+            if dem_l[L] > tran or not os.environ.get('VBHC_CHIA_TAP_THEM'):   # M8.1: luôn xếp lại như bản đầu (để tái lập)
+                giu = [r for r in T1 if r['_loai'] == L][:tran]; dem['bo_bot:' + L] = dem.get('bo_bot:' + L, 0) + max(0, dem_l[L] - tran)
+                T1 = [r for r in T1 if r['_loai'] != L] + giu; dem_l = collections.Counter(r['_loai'] for r in T1)
     loai = collections.Counter(r.pop('_loai') for r in T1)
     R = [json.loads(l) for l in open(f'm6b/{s}.jsonl', encoding='utf-8')]
     nhom = collections.defaultdict(list)

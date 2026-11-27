@@ -1,0 +1,67 @@
+{
+ "ten_dot": "sau_dot_b",
+ "tep": "data/stage4_v6/corpus.jsonl",
+ "so_van_ban": 7166,
+ "lop3": {
+  "dat": 6368,
+  "ty_le_dat": 0.889,
+  "loai_vi_nhieu": 635,
+  "loai_vi_khong_khop_chi_muc": 171,
+  "loai_vi_trung": 11,
+  "cho_nguoi_xac_minh": 1
+ },
+ "lop4": {
+  "so_van_ban_soan": 5951,
+  "ty_le_loai": {
+   "Công văn": 0.35,
+   "Quyết định (cá biệt)": 0.273,
+   "Thông báo": 0.221,
+   "Công điện": 0.101,
+   "Chỉ thị": 0.042,
+   "Tờ trình": 0.0,
+   "Báo cáo": 0.005,
+   "Kế hoạch": 0.008
+  },
+  "sau_sap_nhap": 0.384,
+  "so_co_quan": 89,
+  "co_quan_lon_nhat": [
+   [
+    "VPCP",
+    2886
+   ],
+   [
+    "TTg",
+    2230
+   ],
+   [
+    "UBND",
+    563
+   ]
+  ],
+  "nguoi_ky_nhieu_nhat": [
+   "Trần Hồng Hà",
+   0.111
+  ]
+ },
+ "nguong": {
+  "nhieu_toi_da": 0.03,
+  "khop_trich_yeu_toi_thieu": 0.9,
+  "loai_toi_thieu": 0.08,
+  "loai_toi_da": 0.35,
+  "sau_sap_nhap_toi_thieu": 0.4,
+  "co_quan_toi_thieu": 6,
+  "nguoi_ky_toi_da": 0.03
+ },
+ "danh_gia": {
+  "loai_thieu": [
+   "Chỉ thị",
+   "Tờ trình",
+   "Báo cáo",
+   "Kế hoạch"
+  ],
+  "loai_qua_tai": [],
+  "sau_sap_nhap_dat": false,
+  "co_quan_dat": true,
+  "nguoi_ky_dat": false
+ }
+}

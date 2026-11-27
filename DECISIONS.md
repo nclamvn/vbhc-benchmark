@@ -263,3 +263,4 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
 - **Hiệu chỉnh ngưỡng:** nhiễu chữ ≤ 3% thay cho 2% (2% loại 24% kho v4).
 - **Mốc kho v4:** lớp 3 đạt 87,9%; lớp 4 trượt ở công văn (40,3% > 35%), chỉ thị (4,9%), tờ trình/báo cáo/kế hoạch (≈0%), văn bản từ 03/2025 (29% < 40%).
 - **M8.1 (27/11):** kho v5 bù trang cho 415 văn bản từ PDF có sẵn; tập v7 hai bản (khung 3.000 và 6.000 token). Khung 6.000: 1.484 bài soạn văn bản, công văn 35%, chỉ thị 4,7% (trượt nhẹ ngưỡng 5%), 0 lỗi che tên, tên người ngoài đề tối đa 1,2%. Chờ đầu mối chọn khung độ dài. Chi tiết: `docs/m8_ke_hoach.md` mục 4.
+- **M8.2 (27/11):** đợt cào B nhận 872 văn bản từ 03/2025; tập v7b 2.136 bài soạn văn bản, 48,2% từ 03/2025, không loại nào quá 35%, độ phủ tra cứu 68,3%. Đầu mối chưa chọn khung độ dài; AI chạy theo đề xuất khung 6.000 token và bù chỉ thị qua đợt B (đợt B không có chỉ thị mới nên chỉ thị giảm còn 3,3%). Chờ kiểm tay 100 mẫu thông tin cá nhân.

@@ -98,3 +98,22 @@ Mỗi mốc có một dòng trong `DECISIONS.md` khi đóng, kèm số đo trư�
 - **Cổng M8.1:** lỗi che tên 0 ✓; người ký ≤ 3% ✓; công văn ≤ 35% ✓; chỉ thị ≥ 5% ✗ (4,7% ở khung 6.000; 0,8% ở khung 3.000).
 - **Khung 6.000 token** cần huấn luyện với max-seq 6.144 và giải mã tối đa khoảng 4.000 token. Với Qwen3-8B 4-bit vừa máy 32 GB; với Qwen3-14B cần đo bộ nhớ trên Mac trước.
 - Kiểm tái lập bước 7: dựng lại kho v5 và cả hai bản v7 khớp từng byte.
+
+## 5. Kết quả M8.2 · đợt cào B (27/11)
+
+- **Lớp 1:** 1.112 văn bản hành chính trung ương từ 03/2025 có trong chỉ mục nhưng chưa có toàn văn; đã loại trước từ trích yếu 369 văn bản về cá nhân (khen thưởng, danh hiệu, nhân sự, quốc tịch). Tải từ vanban.chinhphu.vn / datafiles.chinhphu.vn, 1 yêu cầu mỗi giây: 1.112/1.112 thành công (`scripts/m8_dot_b.py`, `data/dot_b/manifest.jsonl` có mã băm từng tệp).
+- **Lớp 2–3** (`scripts/m8_dot_b_xu_ly.py`): 47 văn bản dùng lớp chữ PDF, còn lại OCR đủ trang. Loại 207 văn bản trên 12 trang (chủ yếu phụ lục bảng), 26 quyết định nhân sự về một người cụ thể, 5 vì độ tin OCR dưới 70, 1 vì trích yếu gần trùng bộ đo. **Nhận 872 văn bản.** 10 văn bản mới nhất để riêng cho bộ đề mới (M8.6).
+- **Máy kiểm thông tin cá nhân trên 872 văn bản:** 0 số điện thoại, 0 số định danh, 0 email; 12 chỗ "ông/bà + họ tên" còn lại đều là cán bộ trong quyết định kiện toàn tổ chức (giữ theo QĐ-03, QĐ-09). **Kiểm tay 100 mẫu: chờ đầu mối.**
+- **Bảng đồng viện dẫn M8** (`m8/dong_vien_dan.json`, thêm văn bản đợt B): độ phủ tra cứu 65,9% → 68,3%.
+- **Tập v7b** (`m8b_6000/`, khung 6.000 token): 2.136 bài soạn văn bản (v6: 737), tổng 2.936 ví dụ.
+
+| Cổng M8.2 | Trước (v7, M8.1) | Sau (v7b) | Đạt |
+|---|---|---|---|
+| Bài soạn văn bản từ 03/2025 | 34,6% | **48,2%** | ✓ (≥ 40%) |
+| Loại lớn nhất | công văn 35,0% | quyết định 35,0%, công văn 34,1% | ✓ (≤ 35%) |
+| Độ phủ tra cứu | 65,9% | 68,3% | ✓ (không giảm) |
+| Thông tin cá nhân (máy kiểm) | 0 | 0 | ✓, chờ kiểm tay |
+| Chỉ thị | 4,7% | 3,3% | ✗ (pha loãng, cổng chỉ thị vẫn mở) |
+
+- Mức kho (tất cả văn bản, không chỉ tập huấn luyện): văn bản từ 03/2025 tăng từ 29,0% lên 38,4%.
+- Kiểm tái lập bước 8: dựng lại kho v6, bảng đồng viện dẫn và tập v7b khớp từng byte.

@@ -20,7 +20,8 @@ def am(s):
 class TraCuu:
     """Hai nguồn ứng viên: (a) văn bản quy phạm mà các văn bản huấn luyện có trích yếu gần nhất đã viện dẫn (đồng viện dẫn,
     chỉ dùng tập huấn luyện, viện dẫn đã kiểm khớp chỉ mục); (b) văn bản quy phạm có trích yếu gần nhất. Mọi ứng viên phải ban hành trước ngày soạn."""
-    def __init__(self, chi_muc='m3/chi_muc_kiem_trung_thuc.csv.xz', dong_vien_dan='m7/dong_vien_dan.json'):
+    def __init__(self, chi_muc='m3/chi_muc_kiem_trung_thuc.csv.xz', dong_vien_dan=None):
+        dong_vien_dan = dong_vien_dan or os.environ.get('VBHC_DVD', 'm7/dong_vien_dan.json')   # M8: m8/dong_vien_dan.json (có đợt cào B)
         I = k.nap_chi_muc(chi_muc); self.vb = []
         for kh, ds in I.items():
             m = QP.match(kh)
@@ -110,8 +111,8 @@ def lam_giau_de(de, tc, k_=8, bo_chinh_no=False):
           + '\nBộ máy tại ngày ban hành:\n' + bo_may(ngay))
     return de.replace('\nViết đủ các thành phần', tl + '\nViết đủ các thành phần', 1)
 
-def do_phu(k_=8):
-    tc = TraCuu(); DE = {json.loads(l)['id']: json.loads(l) for l in open('m3/test_de.jsonl', encoding='utf-8')}
+def do_phu(k_=8, dong_vien_dan='m7/dong_vien_dan.json'):
+    tc = TraCuu(dong_vien_dan=dong_vien_dan); DE = {json.loads(l)['id']: json.loads(l) for l in open('m3/test_de.jsonl', encoding='utf-8')}
     DA = {json.loads(l)['id']: json.loads(l) for l in open('m3/test_dap_an.jsonl', encoding='utf-8')}
     co, trung = 0, 0; I = k.nap_chi_muc()
     for i, d in DE.items():
@@ -126,6 +127,7 @@ def do_phu(k_=8):
 def dung_dong_vien_dan(toan_van='data/stage4_v4/corpus.jsonl', ra='m7/dong_vien_dan.json'):
     """Từ tập huấn luyện (chia_tap = train): mỗi văn bản → trích yếu + các viện dẫn quy phạm trung ương đã kiểm khớp chỉ mục."""
     I = k.nap_chi_muc(); SP = json.load(open('m3/chia_tap.json', encoding='utf-8'))['chia_tap']; out = []
+    if os.environ.get('VBHC_CHIA_TAP_THEM'): SP.update(json.load(open(os.environ['VBHC_CHIA_TAP_THEM'], encoding='utf-8')))
     for l in open(os.environ.get('VBHC_TOAN_VAN', toan_van), encoding='utf-8'):
         c = json.loads(l)
         if SP.get(c['docid']) != 'train' or not c.get('ngay_ban_hanh'): continue
@@ -135,6 +137,6 @@ def dung_dong_vien_dan(toan_van='data/stage4_v4/corpus.jsonl', ra='m7/dong_vien_
     return len(out)
 
 if __name__ == '__main__':
-    if '--dung' in sys.argv: print('văn bản huấn luyện có viện dẫn:', dung_dong_vien_dan())
+    if '--dung' in sys.argv: print('văn bản huấn luyện có viện dẫn:', dung_dong_vien_dan(ra=os.environ.get('VBHC_DVD_RA', 'm7/dong_vien_dan.json')))
     if '--do-phu' in sys.argv:
         for kk in (5, 8, 12): print(json.dumps(do_phu(kk), ensure_ascii=False))

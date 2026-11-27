@@ -35,6 +35,16 @@ if [ -n "${VBHC_TOAN_VAN:-}" ]; then
       for p in train valid; do cmp -s m8_$M/$p.jsonl /tmp/goc_m8_${M}_$p.jsonl && echo "   KHỚP m8_$M/$p.jsonl" || { echo "   LỆCH m8_$M/$p.jsonl"; LOI=1; }; done
     done
   fi
+  if [ -d data/dot_b/text ]; then
+    echo "8. Dựng lại kho v6 (đợt cào B), bảng đồng viện dẫn M8 và tập v7b, so từng byte"
+    cp m8/chia_tap_dot_b.json /tmp/goc_ctb.json; cp m8/dong_vien_dan.json /tmp/goc_dvd8.json; cp m8b_6000/valid.jsonl /tmp/goc_m8b_valid.jsonl; xz -dc m8b_6000/train.jsonl.xz > /tmp/goc_m8b_train.jsonl
+    python3 scripts/m8_dot_b_xu_ly.py ghep > /dev/null
+    VBHC_TOAN_VAN=data/stage4_v6/corpus.jsonl VBHC_CHIA_TAP_THEM=m8/chia_tap_dot_b.json VBHC_DVD_RA=m8/dong_vien_dan.json python3 scripts/tra_cuu.py --dung > /dev/null
+    VBHC_DVD=m8/dong_vien_dan.json VBHC_TOAN_VAN=data/stage4_v6/corpus.jsonl VBHC_CHIA_TAP_THEM=m8/chia_tap_dot_b.json VBHC_MAX_TOKEN=6000 VBHC_RA=m8b_6000 python3 scripts/m8_du_lieu_v7.py > /dev/null 2>&1
+    for p in "m8/chia_tap_dot_b.json /tmp/goc_ctb.json" "m8/dong_vien_dan.json /tmp/goc_dvd8.json" "m8b_6000/valid.jsonl /tmp/goc_m8b_valid.jsonl" "m8b_6000/train.jsonl /tmp/goc_m8b_train.jsonl"; do
+      set -- $p; cmp -s $1 $2 && echo "   KHỚP $1" || { echo "   LỆCH $1"; LOI=1; }
+    done
+  fi
 fi
 [ $LOI = 0 ] && echo "=== TÁI LẬP ĐẠT" || echo "=== CÓ BƯỚC LỆCH"
 exit $LOI
