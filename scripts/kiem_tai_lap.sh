@@ -26,6 +26,15 @@ if [ -n "${VBHC_TOAN_VAN:-}" ]; then
   cp m7b/valid.jsonl /tmp/goc_m7b_valid.jsonl; xz -dc m7b/train.jsonl.xz > /tmp/goc_m7b_train.jsonl
   python3 scripts/m7b_du_lieu_v6.py > /dev/null
   for p in train valid; do cmp -s m7b/$p.jsonl /tmp/goc_m7b_$p.jsonl && echo "   KHỚP m7b/$p.jsonl" || { echo "   LỆCH m7b/$p.jsonl"; LOI=1; }; done
+  if [ -d data/text_du_trang ]; then
+    echo "7. Dựng lại kho v5 (bù trang) và tập v7 (M8.1), so từng byte"
+    python3 scripts/m8_kho_v5.py > /dev/null
+    for M in 3000 6000; do
+      cp m8_$M/valid.jsonl /tmp/goc_m8_${M}_valid.jsonl; xz -dc m8_$M/train.jsonl.xz > /tmp/goc_m8_${M}_train.jsonl
+      VBHC_TOAN_VAN=data/stage4_v5/corpus.jsonl VBHC_MAX_TOKEN=$M VBHC_RA=m8_$M python3 scripts/m8_du_lieu_v7.py > /dev/null 2>&1
+      for p in train valid; do cmp -s m8_$M/$p.jsonl /tmp/goc_m8_${M}_$p.jsonl && echo "   KHỚP m8_$M/$p.jsonl" || { echo "   LỆCH m8_$M/$p.jsonl"; LOI=1; }; done
+    done
+  fi
 fi
 [ $LOI = 0 ] && echo "=== TÁI LẬP ĐẠT" || echo "=== CÓ BƯỚC LỆCH"
 exit $LOI

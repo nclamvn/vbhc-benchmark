@@ -9,7 +9,13 @@ Dùng: python3 scripts/m8_lam_sach.py   → chạy phép thử (thoát mã 2 n�
 import re, sys, os, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sot_bo_may as SOT
 CHUC_DAI = r'(?:Bộ trưởng|Thứ trưởng|Chủ nhiệm|Phó Chủ nhiệm|Chủ tịch|Phó Chủ tịch|Giám đốc|Phó Giám đốc|Chánh Văn phòng|Phó Chánh Văn phòng|Phó Thủ tướng|Thủ tướng|Bí thư|Phó Bí thư|Trưởng ban|Phó Trưởng ban|Tổng cục trưởng|Cục trưởng|Vụ trưởng)'
-CHUC_TAT = r'(?:PCN|BTCN|PTTg|TTgCP|PCT|CT|CN|TTg)'
+CHUC_TAT = r'(?:PCN|BTCN|PTTgTT|PTTg|TTgCP|PCT|CT|CN|TTg)'
+# chức danh viết dài: cho phép xuống dòng giữa các từ và lỗi OCR hay gặp (Thú/Thủ, phú/phủ)
+def _mem(cum):
+    tu = cum.replace('Thủ', 'Th[ủúùuũ]').replace('tướng', 't[ưu][ớơo]ng').split(' ')
+    return r'\s+'.join(tu)
+CHUC_DAI = '(?:' + '|'.join(_mem(x) for x in sorted(CHUC_DAI[3:-1].split('|'), key=len, reverse=True)) + ')'
+DUOI = r'(?:\s+Th[ưu][ờơo]ng\s+tr[ựưu]c)?(?:\s+Ch[íi]nh\s+ph[ủúùu])?'
 HO = 'Nguyễn|Trần|Lê|Phạm|Hoàng|Huỳnh|Phan|Vũ|Võ|Đặng|Bùi|Đỗ|Hồ|Ngô|Dương|Lý|Mai|Đinh|Trương|Lưu|Tạ|Cao|Đào|Lương|Trịnh|Tô|Lại|Đoàn|Kiều|Chu|Quách|Nghiêm|Tống|Triệu|Đàm|Thân|Hà|Lâm|Châu|Vương|La|Khổng|Thái|Văn|Doãn|Mạc|Ninh|Phùng|Giang|Từ|Âu|Kim|Tăng|Lục|Tiêu|Diệp|Quan|Hứa|Bế|Nông|Lò|Hầu|Mã'
 HOA = 'A-Z' + ''.join(c for c in map(chr, range(0xC0, 0x1EFA)) if c.isupper() and c.isalpha())   # chữ hoa tiếng Việt, không lẫn chữ thường có dấu
 AM = rf'[{HOA}][a-zà-ỹđ]+'
@@ -29,7 +35,7 @@ def che(t, giu_ten=()):
         if ten in giu_ten or la_dia_danh(ten): n['giu'] += 1; return m.group(0)
         duoi = next((d for d in DIA if ten.endswith(' ' + d)), None)   # "Tô Lâm Hà Nội": giữ phần địa danh dính phía sau
         n['che'] += 1; return m.group('dau') + '[Họ và tên]' + (' ' + duoi if duoi else '')
-    t = re.sub(rf'(?P<dau>(?<![\w])(?:{CHUC_DAI}(?:[ \t]+Chính phủ)?|(?<![-/]){CHUC_TAT})[ \t\n:]+)(?P<ten>{TEN})(?![a-zà-ỹđ])', thay, t)
+    t = re.sub(rf'(?P<dau>(?<![\w])(?:{CHUC_DAI}{DUOI}|(?<![-/]){CHUC_TAT})[ \t\n:]+)(?P<ten>{TEN})(?![a-zà-ỹđ])', thay, t)
     vt = t.find('Nơi nhận')
     if vt >= 0:
         def thay2(m):
@@ -52,6 +58,10 @@ THU = [  # (đầu vào, phải chứa, không được chứa)
     ('Số: 228/CĐ-TTg Hà Nội, ngày 25 tháng 11 năm 2025', 'Hà Nội', '[Họ và tên]'),
     ('Thủ tướng Chính phủ Trần Lưu Quang đã chỉ đạo', '[Họ và tên] đã chỉ đạo', 'Trần Lưu Quang'),
     ('Tổng Bí thư Tô Lâm Hà Nội', '[Họ và tên] Hà Nội', 'Tô Lâm'),
+    ('ý kiến của Phó Thủ tướng\nChính phủ Trần Hồng Hà như sau', '[Họ và tên] như sau', 'Trần Hồng Hà'),
+    ('Phó Thủ tướng Thường trực Chính phủ Phạm Gia Túc chỉ đạo', '[Họ và tên] chỉ đạo', 'Phạm Gia Túc'),
+    ('kết luận của Phó Thú tướng Vũ Đức Đam', '[Họ và tên]', 'Vũ Đức Đam'),
+    ('- Thủ tướng, PTTgTT Phạm Gia Túc;', '[Họ và tên]', 'Phạm Gia Túc'),
     ('KT. BỘ TRƯỞNG, CHỦ NHIỆM\nPHÓ CHỦ NHIỆM\n\nNguyễn Sỹ Hiệp', 'Nguyễn Sỹ Hiệp', 'xxx'),   # khối ký viết hoa: không thuộc phạm vi hàm này
 ]
 if __name__ == '__main__':

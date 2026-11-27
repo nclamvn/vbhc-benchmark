@@ -74,3 +74,27 @@ Giữ bộ đo 285 câu; thêm bộ 30 đề chưa thấy; một người thật
 | M9 | Quét: Tesseract tiếng Việt tầng một, mô hình thị giác 7–8B chạy MLX cho trang xấu | Âm tiết đúng dấu ≥ 98,5%, offline |
 
 Mỗi mốc có một dòng trong `DECISIONS.md` khi đóng, kèm số đo trước và sau.
+
+## 4. Kết quả M8.1 (27/11)
+
+- **Nguyên nhân thiếu chỉ thị, quyết định:** (1) bộ lọc cũ đòi số và ngày trong toàn văn OCR phải đọc được, mà số, ngày thường viết tay hoặc dưới dấu đỏ; (2) đợt OCR cũ chỉ bóc trang 1, 2 và trang cuối, nên văn bản nhiều trang bị thiếu giữa; (3) chỉ thị dài, trung vị 3.425 token, vượt khung 3.000 token.
+- **Đã làm, không cào mạng:**
+  - `scripts/m8_ocr_du_trang.py`: OCR 972 trang còn thiếu của 424 văn bản (chỉ thị, công điện, quyết định, công văn) từ PDF đã có, khoảng 13 phút.
+  - `scripts/m8_kho_v5.py`: kho v5 ghép trang, làm sạch và che như kho v4. 415 văn bản được bù đủ trang; 9 giữ bản cũ vì OCR kém. Máy kiểm: 0 số điện thoại, 0 số định danh, 0 email sót; 2 họ tên còn lại đều là cán bộ trong việc nhân sự (được giữ theo QĐ-03, QĐ-09).
+  - `scripts/m8_du_lieu_v7.py`: viết lại dòng số, ngày ở phần đầu theo chỉ mục khi OCR hỏng; che tên M8 (16 phép thử, có xuống dòng giữa chức danh và lỗi OCR "Thú tướng"); tư liệu dùng sổ SOT v1; công văn tối đa 35%.
+- **Hai bản tập, chờ đầu mối chọn khung độ dài:**
+
+| | v6 | v7, khung 3.000 token | v7, khung 6.000 token |
+|---|---|---|---|
+| Bài soạn văn bản | 737 | 858 | **1.484** |
+| Công văn | 77% | 35,0% | 35,0% |
+| Quyết định | 10% | 28,0% | 25,3% |
+| Công điện | 7% | 18,5% | 18,1% |
+| Thông báo | 20% | 17,7% | 16,9% |
+| Chỉ thị | 0 | 0,8% | **4,7%** |
+| Lỗi che tên "[Họ và tên], ngày" | 290 bài | 0 | 0 |
+| Tên người ngoài đề nhiều nhất | 21,5% | 1,5% | 1,2% |
+
+- **Cổng M8.1:** lỗi che tên 0 ✓; người ký ≤ 3% ✓; công văn ≤ 35% ✓; chỉ thị ≥ 5% ✗ (4,7% ở khung 6.000; 0,8% ở khung 3.000).
+- **Khung 6.000 token** cần huấn luyện với max-seq 6.144 và giải mã tối đa khoảng 4.000 token. Với Qwen3-8B 4-bit vừa máy 32 GB; với Qwen3-14B cần đo bộ nhớ trên Mac trước.
+- Kiểm tái lập bước 7: dựng lại kho v5 và cả hai bản v7 khớp từng byte.

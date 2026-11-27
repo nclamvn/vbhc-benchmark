@@ -262,3 +262,4 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
 - **Che tên M8** (`scripts/m8_lam_sach.py`): sửa lỗi che nhầm "Hà Nội" sau "…-TTg" và "Bộ Tài"; qua 12 phép thử. Trên 804 mục tiêu T1: còn 1 "[Họ và tên], ngày" (trước 295), 0 "Bộ trưởng [Họ và tên] nguyên".
 - **Hiệu chỉnh ngưỡng:** nhiễu chữ ≤ 3% thay cho 2% (2% loại 24% kho v4).
 - **Mốc kho v4:** lớp 3 đạt 87,9%; lớp 4 trượt ở công văn (40,3% > 35%), chỉ thị (4,9%), tờ trình/báo cáo/kế hoạch (≈0%), văn bản từ 03/2025 (29% < 40%).
+- **M8.1 (27/11):** kho v5 bù trang cho 415 văn bản từ PDF có sẵn; tập v7 hai bản (khung 3.000 và 6.000 token). Khung 6.000: 1.484 bài soạn văn bản, công văn 35%, chỉ thị 4,7% (trượt nhẹ ngưỡng 5%), 0 lỗi che tên, tên người ngoài đề tối đa 1,2%. Chờ đầu mối chọn khung độ dài. Chi tiết: `docs/m8_ke_hoach.md` mục 4.
