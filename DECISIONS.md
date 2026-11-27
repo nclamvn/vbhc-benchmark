@@ -250,3 +250,15 @@ Mỗi quyết định ghi ngày, người quyết, nội dung, lý do và điề
   - Không huấn luyện thêm trước 01/12.
 - **Lỗi đã biết, sửa ở M8:** che họ tên che nhầm "Hà Nội" và "Bộ Tài"; bộ chặn lặp không bắt lặp trong đoạn dài; thói quen để "…" từ v3–v5.
 - **Báo cáo:** `docs/m7_bao_cao.md`.
+
+## QĐ-18 · Bộ tiêu chuẩn M8, sổ SOT bộ máy, các đợt cào lọc có tiêu chuẩn
+
+- **Ngày:** 27/11/2026 · **Người quyết:** Nguyễn Cảnh Lâm ("bắt đầu nâng cấp dataset… tạo các milestone từng vòng để làm giàu dữ liệu bằng cào lọc có tiêu chuẩn").
+- **Phương pháp:** con người ở ba chỗ (mục tiêu, tiêu chuẩn, nghiệm thu), cùng AI bàn ở cả ba. Mỗi tiêu chuẩn chạy thử trên dữ liệu thật trước khi dùng và có ngưỡng dừng.
+- **Bộ tiêu chuẩn A–F và năm lớp cho mỗi đợt cào:** `docs/m8_ke_hoach.md`.
+- **Sổ SOT bộ máy v1** (`sot/bo_may.json`, `scripts/sot_bo_may.py`): 99 bản ghi (bộ, cơ quan ngang bộ, Thủ tướng, Phó Thủ tướng 2026–2031, cấp chính quyền, tỉnh), mỗi dòng có mức xác minh và căn cứ. Cổng kiểm sổ qua 4 phép tiêm lỗi. Bộ chấm, bộ tra cứu và dữ liệu T4 đọc chung sổ; giao thức tra cứu cũ giữ chế độ `v0` để tái lập v5, v6. Kiểm tái lập vẫn khớp từng byte, bảng xếp hạng không đổi.
+  - Bổ sung từ nguồn web: Thủ tướng Lê Minh Hưng từ 07/4/2026 (Nghị quyết 10/2026/QH16); 6 Phó Thủ tướng nhiệm kỳ 2026–2031 từ 08/4/2026.
+  - Còn mức thấp: nhiệm kỳ Thủ tướng Nguyễn Xuân Phúc chưa đính nguồn; Thừa Thiên Huế cần đối chiếu nội dung căn cứ.
+- **Che tên M8** (`scripts/m8_lam_sach.py`): sửa lỗi che nhầm "Hà Nội" sau "…-TTg" và "Bộ Tài"; qua 12 phép thử. Trên 804 mục tiêu T1: còn 1 "[Họ và tên], ngày" (trước 295), 0 "Bộ trưởng [Họ và tên] nguyên".
+- **Hiệu chỉnh ngưỡng:** nhiễu chữ ≤ 3% thay cho 2% (2% loại 24% kho v4).
+- **Mốc kho v4:** lớp 3 đạt 87,9%; lớp 4 trượt ở công văn (40,3% > 35%), chỉ thị (4,9%), tờ trình/báo cáo/kế hoạch (≈0%), văn bản từ 03/2025 (29% < 40%).

@@ -71,25 +71,22 @@ class TraCuu:
             if len(kq) == k_: break
         return kq
 
-BO_CU = ['Quốc phòng', 'Công an', 'Ngoại giao', 'Nội vụ', 'Tư pháp', 'Kế hoạch và Đầu tư', 'Tài chính', 'Công Thương', 'Nông nghiệp và Phát triển nông thôn',
-         'Giao thông vận tải', 'Xây dựng', 'Tài nguyên và Môi trường', 'Thông tin và Truyền thông', 'Lao động - Thương binh và Xã hội',
-         'Văn hóa, Thể thao và Du lịch', 'Khoa học và Công nghệ', 'Giáo dục và Đào tạo', 'Y tế']
-NGANG_BO_CU = ['Ủy ban Dân tộc', 'Ngân hàng Nhà nước Việt Nam', 'Thanh tra Chính phủ', 'Văn phòng Chính phủ']
-BO_MOI = ['Quốc phòng', 'Công an', 'Ngoại giao', 'Nội vụ', 'Tư pháp', 'Tài chính', 'Công Thương', 'Nông nghiệp và Môi trường', 'Xây dựng',
-          'Văn hóa, Thể thao và Du lịch', 'Khoa học và Công nghệ', 'Giáo dục và Đào tạo', 'Y tế', 'Dân tộc và Tôn giáo']
-NGANG_BO_MOI = ['Ngân hàng Nhà nước Việt Nam', 'Thanh tra Chính phủ', 'Văn phòng Chính phủ']
-TINH_34 = ['Hà Nội', 'Huế', 'Lai Châu', 'Điện Biên', 'Sơn La', 'Lạng Sơn', 'Quảng Ninh', 'Thanh Hóa', 'Nghệ An', 'Hà Tĩnh', 'Cao Bằng', 'Tuyên Quang',
-           'Lào Cai', 'Thái Nguyên', 'Phú Thọ', 'Bắc Ninh', 'Hưng Yên', 'Hải Phòng', 'Ninh Bình', 'Quảng Trị', 'Đà Nẵng', 'Quảng Ngãi', 'Gia Lai',
-           'Khánh Hòa', 'Lâm Đồng', 'Đắk Lắk', 'Thành phố Hồ Chí Minh', 'Đồng Nai', 'Tây Ninh', 'Cần Thơ', 'Vĩnh Long', 'Đồng Tháp', 'Cà Mau', 'An Giang']
+import sot_bo_may as SOT
+SOT_BAN = 'v0'   # v0: giữ đúng khối bộ máy đã dùng khi dựng tập v5, v6 (không nêu Thủ tướng từ 2026). v1: đọc đủ từ sổ SOT, có Thủ tướng và Phó Thủ tướng khi sổ có
+BO_CU, BO_MOI = SOT.bo('2025-02-28'), SOT.bo('2025-03-01')
+NGANG_BO_CU, NGANG_BO_MOI = SOT.ngang_bo('2025-02-28'), SOT.ngang_bo('2025-03-01')
+TINH_34 = SOT.tinh_34('2025-07-01')
 
 def bo_may(ngay):
-    moi = ngay >= '2025-03-01'
-    d = [f"- Các bộ: {', '.join(BO_MOI if moi else BO_CU)}.", f"- Cơ quan ngang bộ: {', '.join(NGANG_BO_MOI if moi else NGANG_BO_CU)}."]
-    if ngay < '2026-01-01':
-        d.append(f"- Thủ tướng Chính phủ: {'Nguyễn Xuân Phúc' if ngay < '2021-04-05' else 'Phạm Minh Chính'}.")
-    d.append('- Chính quyền địa phương: ' + ('hai cấp (tỉnh và xã), không còn cấp huyện.' if ngay >= '2025-07-01' else 'ba cấp (tỉnh, huyện, xã).'))
-    if ngay >= '2025-07-01':
-        d.append(f"- 34 đơn vị hành chính cấp tỉnh: {', '.join(TINH_34)}.")
+    d = [f"- Các bộ: {', '.join(SOT.bo(ngay))}.", f"- Cơ quan ngang bộ: {', '.join(SOT.ngang_bo(ngay))}."]
+    ttg = SOT.thu_tuong(ngay)
+    if ttg and (SOT_BAN != 'v0' or ngay < '2026-01-01'):
+        d.append(f"- Thủ tướng Chính phủ: {ttg}.")
+    if SOT_BAN != 'v0' and SOT.pho_thu_tuong(ngay):
+        d.append(f"- Phó Thủ tướng Chính phủ: {', '.join(SOT.pho_thu_tuong(ngay))}.")
+    d.append('- Chính quyền địa phương: ' + SOT.cap_chinh_quyen(ngay) + '.')
+    if SOT.tinh_34(ngay):
+        d.append(f"- 34 đơn vị hành chính cấp tỉnh: {', '.join(SOT.tinh_34(ngay))}.")
     return '\n'.join(d)
 
 def dong_vb(kh, ngay, ty):

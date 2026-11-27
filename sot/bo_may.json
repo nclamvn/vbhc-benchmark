@@ -1,0 +1,1128 @@
+{
+ "ten": "Sổ bộ máy nhà nước theo thời điểm (SOT)",
+ "phien_ban": "v1",
+ "cap_nhat": "2026-11-27",
+ "quy_uoc": {
+  "tu/den": "ngày bắt đầu và kết thúc hiệu lực, null là không giới hạn",
+  "muc_xac_minh": {
+   "chi_muc": "văn bản căn cứ có trong chỉ mục công khai m3/chi_muc_kiem_trung_thuc.csv.xz",
+   "chi_muc_can_doi_chieu": "có trong chỉ mục nhưng trích yếu chưa khớp hẳn nội dung, cần người đối chiếu",
+   "nguon_web": "có đường dẫn nguồn chính thức hoặc báo chí, cần thêm văn bản căn cứ",
+   "tri_thuc_chung": "chưa có nguồn đính kèm, cần bổ sung",
+   "giu_nguyen": "tên không đổi qua đợt sắp xếp"
+  },
+  "thu_tu": "vị trí trong danh sách chính thức trước (cu) và từ (moi) 01/3/2025, theo thứ tự trong Nghị quyết 176/2025/QH15"
+ },
+ "ban_ghi": [
+  {
+   "id": "bo:Quốc phòng:cu",
+   "loai": "bo",
+   "ten": "Quốc phòng",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 0,
+    "moi": 0
+   }
+  },
+  {
+   "id": "bo:Công an:cu",
+   "loai": "bo",
+   "ten": "Công an",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 1,
+    "moi": 1
+   }
+  },
+  {
+   "id": "bo:Ngoại giao:cu",
+   "loai": "bo",
+   "ten": "Ngoại giao",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 2,
+    "moi": 2
+   }
+  },
+  {
+   "id": "bo:Nội vụ:cu",
+   "loai": "bo",
+   "ten": "Nội vụ",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 3,
+    "moi": 3
+   }
+  },
+  {
+   "id": "bo:Tư pháp:cu",
+   "loai": "bo",
+   "ten": "Tư pháp",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 4,
+    "moi": 4
+   }
+  },
+  {
+   "id": "bo:Kế hoạch và Đầu tư:cu",
+   "loai": "bo",
+   "ten": "Kế hoạch và Đầu tư",
+   "tu": null,
+   "den": "2025-02-28",
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "nay_la": "Tài chính",
+   "thu_tu": {
+    "cu": 5,
+    "moi": null
+   }
+  },
+  {
+   "id": "bo:Tài chính:cu",
+   "loai": "bo",
+   "ten": "Tài chính",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 6,
+    "moi": 5
+   }
+  },
+  {
+   "id": "bo:Công Thương:cu",
+   "loai": "bo",
+   "ten": "Công Thương",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 7,
+    "moi": 6
+   }
+  },
+  {
+   "id": "bo:Nông nghiệp và Phát triển nông thôn:cu",
+   "loai": "bo",
+   "ten": "Nông nghiệp và Phát triển nông thôn",
+   "tu": null,
+   "den": "2025-02-28",
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "nay_la": "Nông nghiệp và Môi trường",
+   "bien_the": [
+    "Nông nghiệp và Phát triển Nông thôn"
+   ],
+   "thu_tu": {
+    "cu": 8,
+    "moi": null
+   }
+  },
+  {
+   "id": "bo:Giao thông vận tải:cu",
+   "loai": "bo",
+   "ten": "Giao thông vận tải",
+   "tu": null,
+   "den": "2025-02-28",
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "nay_la": "Xây dựng",
+   "bien_the": [
+    "Giao thông Vận tải"
+   ],
+   "thu_tu": {
+    "cu": 9,
+    "moi": null
+   }
+  },
+  {
+   "id": "bo:Xây dựng:cu",
+   "loai": "bo",
+   "ten": "Xây dựng",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 10,
+    "moi": 8
+   }
+  },
+  {
+   "id": "bo:Tài nguyên và Môi trường:cu",
+   "loai": "bo",
+   "ten": "Tài nguyên và Môi trường",
+   "tu": null,
+   "den": "2025-02-28",
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "nay_la": "Nông nghiệp và Môi trường",
+   "thu_tu": {
+    "cu": 11,
+    "moi": null
+   }
+  },
+  {
+   "id": "bo:Thông tin và Truyền thông:cu",
+   "loai": "bo",
+   "ten": "Thông tin và Truyền thông",
+   "tu": null,
+   "den": "2025-02-28",
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "nay_la": "Khoa học và Công nghệ",
+   "thu_tu": {
+    "cu": 12,
+    "moi": null
+   }
+  },
+  {
+   "id": "bo:Lao động - Thương binh và Xã hội:cu",
+   "loai": "bo",
+   "ten": "Lao động - Thương binh và Xã hội",
+   "tu": null,
+   "den": "2025-02-28",
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "nay_la": "Nội vụ",
+   "bien_the": [
+    "Lao động – Thương binh và Xã hội"
+   ],
+   "thu_tu": {
+    "cu": 13,
+    "moi": null
+   }
+  },
+  {
+   "id": "bo:Văn hóa, Thể thao và Du lịch:cu",
+   "loai": "bo",
+   "ten": "Văn hóa, Thể thao và Du lịch",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 14,
+    "moi": 9
+   }
+  },
+  {
+   "id": "bo:Khoa học và Công nghệ:cu",
+   "loai": "bo",
+   "ten": "Khoa học và Công nghệ",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 15,
+    "moi": 10
+   }
+  },
+  {
+   "id": "bo:Giáo dục và Đào tạo:cu",
+   "loai": "bo",
+   "ten": "Giáo dục và Đào tạo",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 16,
+    "moi": 11
+   }
+  },
+  {
+   "id": "bo:Y tế:cu",
+   "loai": "bo",
+   "ten": "Y tế",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 17,
+    "moi": 12
+   }
+  },
+  {
+   "id": "bo:Nông nghiệp và Môi trường",
+   "loai": "bo",
+   "ten": "Nông nghiệp và Môi trường",
+   "tu": "2025-03-01",
+   "den": null,
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "thu_tu": {
+    "cu": null,
+    "moi": 7
+   }
+  },
+  {
+   "id": "bo:Dân tộc và Tôn giáo",
+   "loai": "bo",
+   "ten": "Dân tộc và Tôn giáo",
+   "tu": "2025-03-01",
+   "den": null,
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "thu_tu": {
+    "cu": null,
+    "moi": 13
+   }
+  },
+  {
+   "id": "ngang:Ủy ban Dân tộc:cu",
+   "loai": "co_quan_ngang_bo",
+   "ten": "Ủy ban Dân tộc",
+   "tu": null,
+   "den": "2025-02-28",
+   "can_cu": "176/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về cơ cấu tổ chức của Chính phủ nhiệm kỳ Quốc hội khóa XV, ngày 18/02/2025; mốc áp dụng 01/3/2025 theo các nghị định quy định chức năng của bộ mới",
+   "nay_la": "Dân tộc và Tôn giáo",
+   "thu_tu": {
+    "cu": 0,
+    "moi": null
+   }
+  },
+  {
+   "id": "ngang:Ngân hàng Nhà nước Việt Nam:cu",
+   "loai": "co_quan_ngang_bo",
+   "ten": "Ngân hàng Nhà nước Việt Nam",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 1,
+    "moi": 0
+   }
+  },
+  {
+   "id": "ngang:Thanh tra Chính phủ:cu",
+   "loai": "co_quan_ngang_bo",
+   "ten": "Thanh tra Chính phủ",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 2,
+    "moi": 1
+   }
+  },
+  {
+   "id": "ngang:Văn phòng Chính phủ:cu",
+   "loai": "co_quan_ngang_bo",
+   "ten": "Văn phòng Chính phủ",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": "giữ tên qua đợt sắp xếp 2025",
+   "thu_tu": {
+    "cu": 3,
+    "moi": 2
+   }
+  },
+  {
+   "id": "ttg:Nguyễn Xuân Phúc",
+   "loai": "thu_tuong",
+   "ten": "Nguyễn Xuân Phúc",
+   "tu": "2016-04-07",
+   "den": "2021-04-04",
+   "can_cu": null,
+   "muc_xac_minh": "tri_thuc_chung",
+   "ghi_chu": "mốc kết thúc trùng ngày Quốc hội bầu Thủ tướng mới 05/4/2021"
+  },
+  {
+   "id": "ttg:Phạm Minh Chính",
+   "loai": "thu_tuong",
+   "ten": "Phạm Minh Chính",
+   "tu": "2021-04-05",
+   "den": "2026-04-06",
+   "can_cu": null,
+   "muc_xac_minh": "nguon_web",
+   "nguon": "https://moc.gov.vn/vn/tin-tuc/1173/93221/dong-chi-le-minh-hung-duoc-bau-lam-thu-tuong-chinh-phu.aspx",
+   "ghi_chu": "kết thúc khi Quốc hội khóa XVI bầu Thủ tướng mới ngày 07/4/2026"
+  },
+  {
+   "id": "ttg:Lê Minh Hưng",
+   "loai": "thu_tuong",
+   "ten": "Lê Minh Hưng",
+   "tu": "2026-04-07",
+   "den": null,
+   "can_cu": "10/2026/QH16",
+   "muc_xac_minh": "nguon_web",
+   "nguon": "https://luatvietnam.vn/co-cau-to-chuc/nghi-quyet-10-2026-qh16-bau-thu-tuong-chinh-phu-viet-nam-nhiem-ky-2026-2031-431651-d1.html",
+   "ghi_chu": "Nghị quyết 10/2026/QH16 ngày 07/4/2026; hai nguồn: moc.gov.vn, hatinh.gov.vn"
+  },
+  {
+   "id": "pttg:Phạm Gia Túc",
+   "loai": "pho_thu_tuong",
+   "ten": "Phạm Gia Túc",
+   "tu": "2026-04-08",
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "nguon_web",
+   "nguon": "https://moc.gov.vn/vn/tin-tuc/1173/93236/phe-chuan-bo-nhiem-pho-thu-tuong--bo-truong-va-cac-thanh-vien-khac-cua-chinh-phu.aspx",
+   "ghi_chu": "Quốc hội phê chuẩn ngày 08/4/2026, nhiệm kỳ 2026–2031"
+  },
+  {
+   "id": "pttg:Phan Văn Giang",
+   "loai": "pho_thu_tuong",
+   "ten": "Phan Văn Giang",
+   "tu": "2026-04-08",
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "nguon_web",
+   "nguon": "https://moc.gov.vn/vn/tin-tuc/1173/93236/phe-chuan-bo-nhiem-pho-thu-tuong--bo-truong-va-cac-thanh-vien-khac-cua-chinh-phu.aspx",
+   "ghi_chu": "Quốc hội phê chuẩn ngày 08/4/2026, nhiệm kỳ 2026–2031"
+  },
+  {
+   "id": "pttg:Phạm Thị Thanh Trà",
+   "loai": "pho_thu_tuong",
+   "ten": "Phạm Thị Thanh Trà",
+   "tu": "2026-04-08",
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "nguon_web",
+   "nguon": "https://moc.gov.vn/vn/tin-tuc/1173/93236/phe-chuan-bo-nhiem-pho-thu-tuong--bo-truong-va-cac-thanh-vien-khac-cua-chinh-phu.aspx",
+   "ghi_chu": "Quốc hội phê chuẩn ngày 08/4/2026, nhiệm kỳ 2026–2031"
+  },
+  {
+   "id": "pttg:Hồ Quốc Dũng",
+   "loai": "pho_thu_tuong",
+   "ten": "Hồ Quốc Dũng",
+   "tu": "2026-04-08",
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "nguon_web",
+   "nguon": "https://moc.gov.vn/vn/tin-tuc/1173/93236/phe-chuan-bo-nhiem-pho-thu-tuong--bo-truong-va-cac-thanh-vien-khac-cua-chinh-phu.aspx",
+   "ghi_chu": "Quốc hội phê chuẩn ngày 08/4/2026, nhiệm kỳ 2026–2031"
+  },
+  {
+   "id": "pttg:Nguyễn Văn Thắng",
+   "loai": "pho_thu_tuong",
+   "ten": "Nguyễn Văn Thắng",
+   "tu": "2026-04-08",
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "nguon_web",
+   "nguon": "https://moc.gov.vn/vn/tin-tuc/1173/93236/phe-chuan-bo-nhiem-pho-thu-tuong--bo-truong-va-cac-thanh-vien-khac-cua-chinh-phu.aspx",
+   "ghi_chu": "Quốc hội phê chuẩn ngày 08/4/2026, nhiệm kỳ 2026–2031"
+  },
+  {
+   "id": "pttg:Lê Tiến Châu",
+   "loai": "pho_thu_tuong",
+   "ten": "Lê Tiến Châu",
+   "tu": "2026-04-08",
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "nguon_web",
+   "nguon": "https://moc.gov.vn/vn/tin-tuc/1173/93236/phe-chuan-bo-nhiem-pho-thu-tuong--bo-truong-va-cac-thanh-vien-khac-cua-chinh-phu.aspx",
+   "ghi_chu": "Quốc hội phê chuẩn ngày 08/4/2026, nhiệm kỳ 2026–2031"
+  },
+  {
+   "id": "cap:ba_cap",
+   "loai": "cap_chinh_quyen",
+   "ten": "ba cấp (tỉnh, huyện, xã)",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "72/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Luật Tổ chức chính quyền địa phương 2025, ngày 16/6/2025, hiệu lực 01/7/2025"
+  },
+  {
+   "id": "cap:hai_cap",
+   "loai": "cap_chinh_quyen",
+   "ten": "hai cấp (tỉnh và xã), không còn cấp huyện",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "72/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": ""
+  },
+  {
+   "id": "tinh:Hà Nội",
+   "loai": "tinh_34",
+   "ten": "Hà Nội",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Huế",
+   "loai": "tinh_34",
+   "ten": "Huế",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Lai Châu",
+   "loai": "tinh_34",
+   "ten": "Lai Châu",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Điện Biên",
+   "loai": "tinh_34",
+   "ten": "Điện Biên",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Sơn La",
+   "loai": "tinh_34",
+   "ten": "Sơn La",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Lạng Sơn",
+   "loai": "tinh_34",
+   "ten": "Lạng Sơn",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Quảng Ninh",
+   "loai": "tinh_34",
+   "ten": "Quảng Ninh",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Thanh Hóa",
+   "loai": "tinh_34",
+   "ten": "Thanh Hóa",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Nghệ An",
+   "loai": "tinh_34",
+   "ten": "Nghệ An",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Hà Tĩnh",
+   "loai": "tinh_34",
+   "ten": "Hà Tĩnh",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Cao Bằng",
+   "loai": "tinh_34",
+   "ten": "Cao Bằng",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Tuyên Quang",
+   "loai": "tinh_34",
+   "ten": "Tuyên Quang",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Lào Cai",
+   "loai": "tinh_34",
+   "ten": "Lào Cai",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Thái Nguyên",
+   "loai": "tinh_34",
+   "ten": "Thái Nguyên",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Phú Thọ",
+   "loai": "tinh_34",
+   "ten": "Phú Thọ",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Bắc Ninh",
+   "loai": "tinh_34",
+   "ten": "Bắc Ninh",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Hưng Yên",
+   "loai": "tinh_34",
+   "ten": "Hưng Yên",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Hải Phòng",
+   "loai": "tinh_34",
+   "ten": "Hải Phòng",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Ninh Bình",
+   "loai": "tinh_34",
+   "ten": "Ninh Bình",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Quảng Trị",
+   "loai": "tinh_34",
+   "ten": "Quảng Trị",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Đà Nẵng",
+   "loai": "tinh_34",
+   "ten": "Đà Nẵng",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Quảng Ngãi",
+   "loai": "tinh_34",
+   "ten": "Quảng Ngãi",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Gia Lai",
+   "loai": "tinh_34",
+   "ten": "Gia Lai",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Khánh Hòa",
+   "loai": "tinh_34",
+   "ten": "Khánh Hòa",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Lâm Đồng",
+   "loai": "tinh_34",
+   "ten": "Lâm Đồng",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Đắk Lắk",
+   "loai": "tinh_34",
+   "ten": "Đắk Lắk",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Thành phố Hồ Chí Minh",
+   "loai": "tinh_34",
+   "ten": "Thành phố Hồ Chí Minh",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Đồng Nai",
+   "loai": "tinh_34",
+   "ten": "Đồng Nai",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Tây Ninh",
+   "loai": "tinh_34",
+   "ten": "Tây Ninh",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Cần Thơ",
+   "loai": "tinh_34",
+   "ten": "Cần Thơ",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Vĩnh Long",
+   "loai": "tinh_34",
+   "ten": "Vĩnh Long",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Đồng Tháp",
+   "loai": "tinh_34",
+   "ten": "Đồng Tháp",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:Cà Mau",
+   "loai": "tinh_34",
+   "ten": "Cà Mau",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh:An Giang",
+   "loai": "tinh_34",
+   "ten": "An Giang",
+   "tu": "2025-07-01",
+   "den": null,
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "Nghị quyết về sắp xếp đơn vị hành chính cấp tỉnh, ngày 12/6/2025"
+  },
+  {
+   "id": "tinh_cu:Hà Giang",
+   "loai": "tinh_cu",
+   "ten": "Hà Giang",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Yên Bái",
+   "loai": "tinh_cu",
+   "ten": "Yên Bái",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bắc Kạn",
+   "loai": "tinh_cu",
+   "ten": "Bắc Kạn",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Vĩnh Phúc",
+   "loai": "tinh_cu",
+   "ten": "Vĩnh Phúc",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Hòa Bình",
+   "loai": "tinh_cu",
+   "ten": "Hòa Bình",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bắc Giang",
+   "loai": "tinh_cu",
+   "ten": "Bắc Giang",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Thái Bình",
+   "loai": "tinh_cu",
+   "ten": "Thái Bình",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Hải Dương",
+   "loai": "tinh_cu",
+   "ten": "Hải Dương",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Hà Nam",
+   "loai": "tinh_cu",
+   "ten": "Hà Nam",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Nam Định",
+   "loai": "tinh_cu",
+   "ten": "Nam Định",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Quảng Bình",
+   "loai": "tinh_cu",
+   "ten": "Quảng Bình",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Quảng Nam",
+   "loai": "tinh_cu",
+   "ten": "Quảng Nam",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Kon Tum",
+   "loai": "tinh_cu",
+   "ten": "Kon Tum",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bình Định",
+   "loai": "tinh_cu",
+   "ten": "Bình Định",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Ninh Thuận",
+   "loai": "tinh_cu",
+   "ten": "Ninh Thuận",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Đắk Nông",
+   "loai": "tinh_cu",
+   "ten": "Đắk Nông",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bình Thuận",
+   "loai": "tinh_cu",
+   "ten": "Bình Thuận",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Phú Yên",
+   "loai": "tinh_cu",
+   "ten": "Phú Yên",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bình Dương",
+   "loai": "tinh_cu",
+   "ten": "Bình Dương",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bà Rịa",
+   "loai": "tinh_cu",
+   "ten": "Bà Rịa",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bình Phước",
+   "loai": "tinh_cu",
+   "ten": "Bình Phước",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Long An",
+   "loai": "tinh_cu",
+   "ten": "Long An",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Sóc Trăng",
+   "loai": "tinh_cu",
+   "ten": "Sóc Trăng",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Hậu Giang",
+   "loai": "tinh_cu",
+   "ten": "Hậu Giang",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bến Tre",
+   "loai": "tinh_cu",
+   "ten": "Bến Tre",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Trà Vinh",
+   "loai": "tinh_cu",
+   "ten": "Trà Vinh",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Tiền Giang",
+   "loai": "tinh_cu",
+   "ten": "Tiền Giang",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Bạc Liêu",
+   "loai": "tinh_cu",
+   "ten": "Bạc Liêu",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Kiên Giang",
+   "loai": "tinh_cu",
+   "ten": "Kiên Giang",
+   "tu": null,
+   "den": "2025-06-30",
+   "can_cu": "202/2025/QH15",
+   "muc_xac_minh": "chi_muc",
+   "ghi_chu": "không còn là đơn vị cấp tỉnh từ 01/7/2025"
+  },
+  {
+   "id": "tinh_cu:Thừa Thiên Huế",
+   "loai": "tinh_cu",
+   "ten": "Thừa Thiên Huế",
+   "tu": null,
+   "den": "2024-12-31",
+   "can_cu": "1314/NQ-UBTVQH15",
+   "muc_xac_minh": "chi_muc_can_doi_chieu",
+   "ghi_chu": "thành phố Huế trực thuộc trung ương từ 01/01/2025; trích yếu trong chỉ mục nói về sắp xếp cấp huyện, xã của Huế, cần đối chiếu nội dung"
+  }
+ ]
+}

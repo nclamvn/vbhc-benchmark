@@ -4,14 +4,14 @@ Bốn nhóm lỗi, mỗi nhóm chỉ bắt khi kiểm được, còn lại để
   trich_dan   số ký hiệu văn bản trung ương 2020–2026 được viện dẫn: không có trong chỉ mục, sai ngày,
               ban hành sau ngày của văn bản đang soạn, hoặc mô tả không khớp trích yếu thật.
   vai         người ký không khớp cơ quan ban hành (Chủ tịch nước ký văn bản của Thủ tướng/Chính phủ/VPCP),
-              Thủ tướng Nguyễn Xuân Phúc sau 05/4/2021 hoặc Thủ tướng Phạm Minh Chính trước ngày đó.
+              Thủ tướng nêu tên ngoài nhiệm kỳ (nhiệm kỳ đọc từ sổ SOT sot/bo_may.json).
   thoi_diem   gọi tên bộ đã hợp nhất (từ 01/3/2025) hoặc cấp huyện (từ 01/7/2025) trong văn bản ban hành sau mốc.
   lap         một chuỗi 8 âm tiết lặp chiếm từ 20% bài trở lên.
 
 Dùng: python3 scripts/kiem_trung_thuc.py <chỉ mục .csv> <đáp án .jsonl> <tệp trả lời .jsonl>... [--tham-chieu]
 --tham-chieu chạy trên chính văn bản thật làm bài, để đo tỷ lệ báo nhầm của bộ kiểm.
 """
-import csv, json, re, sys, collections
+import csv, json, re, sys, os, collections
 
 def chuan(k):
     k = re.sub(r'^0+(?=\d)', '', k.strip())
@@ -68,26 +68,22 @@ def kiem_trich_dan(bai, I, ngay_vb, kh_ban_than):
         out.append((kh, 'dung'))
     return out
 
-# Nghị quyết 202/2025/QH15: từ 01/7/2025 còn 34 đơn vị cấp tỉnh; 29 tên dưới đây không còn là tỉnh. Huế thành thành phố trực thuộc trung ương từ 01/01/2025.
-TINH_CU = ['Hà Giang', 'Yên Bái', 'Bắc Kạn', 'Vĩnh Phúc', 'Hòa Bình', 'Bắc Giang', 'Thái Bình', 'Hải Dương', 'Hà Nam', 'Nam Định', 'Quảng Bình',
-           'Quảng Nam', 'Kon Tum', 'Bình Định', 'Ninh Thuận', 'Đắk Nông', 'Bình Thuận', 'Phú Yên', 'Bình Dương', 'Bà Rịa', 'Bình Phước', 'Long An',
-           'Sóc Trăng', 'Hậu Giang', 'Bến Tre', 'Trà Vinh', 'Tiền Giang', 'Bạc Liêu', 'Kiên Giang']
-BO_CU = ['Bộ Kế hoạch và Đầu tư', 'Bộ Giao thông vận tải', 'Bộ Giao thông Vận tải', 'Bộ Lao động - Thương binh và Xã hội',
-         'Bộ Lao động – Thương binh và Xã hội', 'Bộ Thông tin và Truyền thông', 'Bộ Tài nguyên và Môi trường',
-         'Bộ Nông nghiệp và Phát triển nông thôn', 'Bộ Nông nghiệp và Phát triển Nông thôn']
+# Tên bộ, tỉnh, Thủ tướng theo thời điểm đọc từ sổ SOT (sot/bo_may.json, scripts/sot_bo_may.py), không viết cứng ở đây.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sot_bo_may as SOT
 
 def kiem_khac(bai, co_quan, ngay_vb):
     v, t = [], []
     tw = any(x in co_quan for x in ('TTg', 'VPCP', 'NĐ-CP', 'NQ-CP'))
     if tw and re.search(r'(?<!Văn phòng )(?<!VP )Chủ tịch nước|^\s*\**\s*CHỦ TỊCH\b', bai, re.M):
         v.append('chu_tich_nuoc_ky_thay')
-    if ngay_vb and ngay_vb >= '2021-04-05' and re.search(r'Thủ tướng(?: Chính phủ)?\s+Nguyễn Xuân Phúc', bai):
-        v.append('thu_tuong_sai_nhiem_ky')
-    if ngay_vb and ngay_vb < '2021-04-05' and re.search(r'Thủ tướng(?: Chính phủ)?\s+Phạm Minh Chính', bai):
-        v.append('thu_tuong_sai_nhiem_ky')
-    if ngay_vb and ngay_vb >= '2025-03-01':
+    if ngay_vb:
+        for ten, tu, den in SOT.nhiem_ky_thu_tuong():
+            ngoai = (tu and ngay_vb < tu) or (den and ngay_vb > den)
+            if ngoai and re.search(r'Thủ tướng(?: Chính phủ)?\s+' + re.escape(ten), bai):
+                v.append('thu_tuong_sai_nhiem_ky'); break
+    if ngay_vb and SOT.ten_bo_da_doi(ngay_vb):
         cd = [m.end() for m in RE_KH.finditer(bai)]
-        for b in BO_CU:
+        for b in SOT.ten_bo_da_doi(ngay_vb):
             for m in re.finditer(re.escape(b), bai, re.I):
                 if re.match(r'\s*\(nay', bai[m.end():m.end() + 12]) or any(0 <= m.start() - e <= 160 for e in cd):
                     continue  # nhắc tên cũ khi dẫn văn bản cũ hoặc có chú "nay là" là đúng
@@ -97,13 +93,13 @@ def kiem_khac(bai, co_quan, ngay_vb):
         t.append('cap_huyen')
     if ngay_vb and ngay_vb >= '2025-07-01':
         cd = [m.end() for m in RE_KH.finditer(bai)]
-        for ten in TINH_CU:
+        for ten in [x for x in SOT.tinh_cu(ngay_vb) if x != 'Thừa Thiên Huế']:
             # chỉ tính khi tên đứng sau chữ "tỉnh" trong cùng vế câu (tên cũ còn sống làm tên phường, xã, công ty)
             m = next((m for m in re.finditer(r'(?<!\w)' + re.escape(ten) + r'(?!\w)', bai)
                       if re.search(r'(?i)\btỉnh\b(?:(?!\b(?:xã|phường|thị trấn|công ty|huyện)\b)[^.;])*$', bai[max(0, m.start() - 200):m.start()])
                       and not re.match(r'\s*\(?\s*(cũ|trước đây)', bai[m.end():m.end() + 14]) and not any(0 <= m.start() - e <= 160 for e in cd)), None)
             if m: t.append('tinh_cu:' + ten); break
-    if ngay_vb and ngay_vb >= '2025-01-01' and re.search(r'Thừa Thiên\s*[-–]?\s*Huế', bai):
+    if ngay_vb and 'Thừa Thiên Huế' in SOT.tinh_cu(ngay_vb) and re.search(r'Thừa Thiên\s*[-–]?\s*Huế', bai):
         t.append('tinh_cu:Thừa Thiên Huế')
     return v, t
 

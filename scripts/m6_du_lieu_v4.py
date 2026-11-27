@@ -13,6 +13,7 @@ Ba thay đổi, mỗi thay đổi nhắm một lỗi đã thấy ở bản v3:
 Cân lại: T3 300 (đã bão hòa).
 Dùng: VBHC_TOAN_VAN=<toan_van_v4.jsonl> python3 scripts/m6_du_lieu_v4.py   → m6b/train.jsonl, m6b/valid.jsonl, m6b/thong_ke.json
 """
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import sot_bo_may as SOT
 import json, re, os, sys, random, collections, copy, ast
 sys.path.insert(0, 'scripts'); import the_thuc_nd30 as v1, the_thuc_nd30_v2 as v2
 rng = random.Random(20261125); O = 'm6b'; os.makedirs(O, exist_ok=True)
@@ -51,9 +52,9 @@ def t4(d):
                      cu if d < MOC else moi))
     out.append((f'Văn bản hành chính ban hành {ngay_chu(d)}. Tại thời điểm đó, chính quyền địa phương được tổ chức mấy cấp? Trả lời ngắn.',
                  'Ba cấp: tỉnh, huyện, xã.' if d < '2025-07-01' else 'Hai cấp: tỉnh và xã (không còn cấp huyện).'))
-    if d < '2026-01-01':
+    if d < '2026-01-01':   # tập v4 dựng khi sổ SOT chưa có Thủ tướng nhiệm kỳ 2026; giữ mốc này để tái lập
         out.append((f'Văn bản của Thủ tướng Chính phủ ban hành {ngay_chu(d)}. Ai là Thủ tướng Chính phủ tại thời điểm đó? Chỉ trả lời họ tên.',
-                     'Nguyễn Xuân Phúc' if d < '2021-04-05' else 'Phạm Minh Chính'))
+                     SOT.thu_tuong(d)))
     return out
 
 def vua_fn():
