@@ -1,0 +1,29 @@
+{
+ "thu_muc": "m8c_6000",
+ "bai_soan": 2623,
+ "ty_le_loai": {
+  "Quyết định (cá biệt)": 0.313,
+  "Công văn": 0.287,
+  "Công điện": 0.134,
+  "Kế hoạch": 0.1,
+  "Thông báo": 0.096,
+  "Chỉ thị": 0.054,
+  "Báo cáo": 0.017
+ },
+ "tu_03_2025": 0.467,
+ "pii_may_kiem": {
+  "email": 0,
+  "so_dai_9_12": 91,
+  "sdt_dang_0xxx": 1,
+  "ong_ba_ten_con_sot": 797,
+  "dia_chi_con_sot": 4,
+  "cccd_cmnd": 0
+ },
+ "cong": {
+  "Kế hoạch ≥ 5%": true,
+  "Chỉ thị ≥ 5%": true,
+  "Báo cáo ≥ 2%": false,
+  "mọi loại ≤ 35%": true,
+  "từ 03/2025 ≥ 40%": true
+ }
+}

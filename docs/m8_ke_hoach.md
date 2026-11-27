@@ -144,3 +144,33 @@ Chỉ đọc robots.txt, trang chủ và trang đầu mục văn bản; không t
 **Đề xuất:**
 - Đợt C (M8.4) cào 3 cổng Quảng Ninh, Lai Châu, Đà Nẵng, ưu tiên kế hoạch, chỉ thị, báo cáo; mỗi cổng một bộ cào riêng theo cấu trúc trang, cùng năm lớp tiêu chuẩn.
 - Hạ ngưỡng M8 cho các loại hiếm: kế hoạch ≥ 5%, chỉ thị ≥ 5% (bù bằng chỉ thị tỉnh), báo cáo ≥ 2%; **bỏ tờ trình khỏi phạm vi M8** (để M9 nếu cần, từ tệp đính kèm dự thảo).
+
+## 7. Kết quả M8.4 · đợt cào C (27/11)
+
+Hai cổng tỉnh đã cào, theo đủ năm lớp tiêu chuẩn. Đà Nẵng chưa cào (cổng Liferay, cần bộ cào riêng).
+
+| Cổng | Chỉ mục | Tệp tải được | Vào kho v7 |
+|---|---|---|---|
+| Quảng Ninh (`scripts/m8_dot_c_qn.py`) | 655 dòng (300 kế hoạch, 300 báo cáo, 55 chỉ thị) | 461 PDF, 24 bỏ vì trên 6 MB | 710 cho cả hai cổng |
+| Lai Châu (`scripts/m8_dot_c_lc.py`) | 4.338 dòng, mọi loại; lấy 523 kế hoạch, chỉ thị, báo cáo từ 05/3/2020 có PDF | 517 PDF, 6 bỏ vì trên 6 MB | |
+
+- Xử lý (`scripts/m8_dot_c_xu_ly.py`): tên cơ quan ban hành đọc từ phần đầu văn bản vì cổng ghi theo đơn vị đăng tin (ví dụ huyện Ba Chẽ đăng dưới tên UBND tỉnh); loại 42 văn bản có ký hiệu lệch loại, 10 văn bản Đảng (theo HD 36, không theo NĐ 30), 208 văn bản quá 12 trang, 7 trùng tệp, 1 gần trùng bộ đề. 10 văn bản mới nhất để ngoài huấn luyện cho bộ đề M8.6.
+- Ngưỡng 6 MB kiểm trên 310 tệp đã tải trước khi áp: 0 tệp trên 6 MB có từ 6 trang trở xuống, nên không tệp nào trong số đó lọt khung 6.000 token.
+- Phát hiện về độ dài: kế hoạch và báo cáo cấp tỉnh dài, độ dài giữa khoảng 16.000 ký tự. Lọt khung 6.000 token chỉ khoảng 30% kế hoạch và 40% báo cáo của Quảng Ninh, Lai Châu ngắn hơn (khoảng 53% kế hoạch, 77% chỉ thị). Không cắt văn bản cho vừa khung.
+- Sửa lỗi che tên (bản `m8.4` của `scripts/m8_lam_sach.py`, 19 phép thử): "Nguyễn Hòa Bình" từng thành "[Họ và tên] Hòa Bình" vì phần đuôi trùng tên tỉnh cũ (88 bài trong v7b). Bản M8.1, M8.2 giữ nguyên để tái lập.
+
+| Cổng M8.4 | v7b (M8.2) | v7c (M8.4) | Đạt |
+|---|---|---|---|
+| Bài soạn văn bản | 2.136 | 2.623 | |
+| Kế hoạch | 0% | 10,0% | ✓ (≥ 5%) |
+| Chỉ thị | 3,2% | 5,4% | ✓ (≥ 5%) |
+| Báo cáo | 0% | 1,7% | ✗ (≥ 2%) |
+| Loại lớn nhất | quyết định 35,0% | quyết định 31,3% | ✓ (≤ 35%) |
+| Bài từ 03/2025 | 48,2% | 46,7% | ✓ (≥ 40%) |
+| Độ phủ tra cứu (k = 8) | 68,3% | 68,3% | ✗ (≥ 75%) |
+| Thông tin người dân (máy kiểm) | 0 | 0 | ✓, chờ kiểm tay 100 mẫu (`ket_qua/dot_cao/mau_kiem_tay_dot_c.md`) |
+
+- Số đo: `ket_qua/dot_cao/cong_m8c_6000.json` (`scripts/m8_kiem_cong.py`), mức kho `ket_qua/dot_cao/sau_dot_c.json`. Các dòng máy kiểm bắt được là họ tên cán bộ đi cùng chức vụ, tọa độ VN-2000 và số liên hệ của vườn quốc gia, không có người dân.
+- Độ phủ tra cứu không nhích vì nó đo trên 41 viện dẫn của bộ đề, phần lớn là nghị định trung ương. Văn bản tỉnh không thêm được. 13 viện dẫn trượt, 7 nằm trong thông báo kết quả chỉ đạo hằng tuần, có trích yếu không cho biết sẽ viện dẫn gì. Theo điều kiện dừng, không cào thêm để đẩy chỉ số này; việc nâng độ phủ chuyển sang M8.5 (sổ hiệu lực và cách tra).
+- Báo cáo thiếu 0,3 điểm (khoảng 10 bài). Hướng bù là Đà Nẵng, cổng có mục báo cáo chỉ đạo điều hành hằng tháng.
+- Kiểm tái lập bước 9: dựng lại kho v7, bảng đồng viện dẫn và tập v7c khớp từng byte; các bước 1–8 vẫn khớp.

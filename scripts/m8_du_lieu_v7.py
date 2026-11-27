@@ -22,6 +22,8 @@ import m7b_du_lieu_v6 as v6m   # hàm tu_lieu (đưa căn cứ thật vào tư l
 MAXTOK = int(os.environ.get('VBHC_MAX_TOKEN', '3000'))   # 3000 vừa max-seq 3072 như v4–v6; 6000 cần max-seq 6144 khi huấn luyện
 rng = random.Random(20261127); O = os.environ.get('VBHC_RA', 'm8'); os.makedirs(O, exist_ok=True)
 LOAI = ['Công văn', 'Thông báo', 'Quyết định (cá biệt)', 'Công điện', 'Chỉ thị']
+LOAI += [x for x in os.environ.get('VBHC_LOAI_THEM', '').split(',') if x]   # M8.4: thêm Kế hoạch, Báo cáo khi có đợt C
+if os.environ.get('VBHC_LOAI_THEM'): LS.BAN = 'm8.4'   # che tên bản sửa "[Họ và tên] Hòa Bình"
 
 def dt(c): d = c['doi_chieu']; return d if isinstance(d, dict) else eval(d)
 RE_SO = re.compile(r'(?im)^(?P<dau>[^\n]{0,40}?)\bS[ốóôoồổỗộờ][\s.]*[:;]?\s*(?P<so>[^\s,]{0,8}\s*/\s*[^\s,]+)')

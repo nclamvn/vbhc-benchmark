@@ -27,6 +27,8 @@ def la_dia_danh(chuoi):
     c = re.sub(r'\s+', ' ', chuoi).strip()
     return c.startswith(CAM_DAU) or any(c == d or c.startswith(d + ' ') or d.startswith(c) for d in DIA)
 
+BAN = 'm8.1'   # 'm8.4': sửa lỗi giữ địa danh đuôi khi phần trước chỉ còn họ ("Nguyễn Hòa Bình" → "[Họ và tên] Hòa Bình"); bản cũ giữ để tái lập M8.1, M8.2
+
 def che(t, giu_ten=()):
     """Thay họ tên đi sau chức danh, và họ tên trong khối nơi nhận, bằng "[Họ và tên]". Trả (văn bản, bộ đếm)."""
     n = collections.Counter()
@@ -34,6 +36,7 @@ def che(t, giu_ten=()):
         ten = re.sub(r'\s+', ' ', m.group('ten'))
         if ten in giu_ten or la_dia_danh(ten): n['giu'] += 1; return m.group(0)
         duoi = next((d for d in DIA if ten.endswith(' ' + d)), None)   # "Tô Lâm Hà Nội": giữ phần địa danh dính phía sau
+        if duoi and BAN != 'm8.1' and len(ten[:-len(duoi)].split()) < 2: duoi = None   # chỉ còn họ phía trước: cả cụm là họ tên
         n['che'] += 1; return m.group('dau') + '[Họ và tên]' + (' ' + duoi if duoi else '')
     t = re.sub(rf'(?P<dau>(?<![\w])(?:{CHUC_DAI}{DUOI}|(?<![-/]){CHUC_TAT})[ \t\n:]+)(?P<ten>{TEN})(?![a-zà-ỹđ])', thay, t)
     vt = t.find('Nơi nhận')
@@ -70,5 +73,11 @@ if __name__ == '__main__':
         ra, _ = che(vao, giu_ten={'Phạm Minh Chính'})
         ok = co in ra and khong not in ra
         sai += not ok; print('ĐẠT ' if ok else 'SAI ', repr(vao[:60]), '→', repr(ra[:80]))
+    THU_84 = [('Phó Thủ tướng Thường trực Chính phủ Nguyễn Hòa Bình.', '[Họ và tên].', 'Hòa Bình'), ('Tổng Bí thư Tô Lâm Hà Nội', '[Họ và tên] Hà Nội', 'Tô Lâm'),
+              ('Chủ tịch UBND tỉnh Hòa Bình', 'tỉnh Hòa Bình', '[Họ và tên]')]
+    BAN = 'm8.4'
+    for vao, co, khong in THU_84:   # bản M8.4
+        ra, _ = che(vao); ok = co in ra and khong not in ra
+        sai += not ok; print('ĐẠT ' if ok else 'SAI ', '[m8.4]', repr(vao[:60]), '→', repr(ra[:80]))
     if sai: sys.exit(2)
-    print('ĐẠT cả', len(THU), 'phép thử')
+    print('ĐẠT cả', len(THU) + len(THU_84), 'phép thử')

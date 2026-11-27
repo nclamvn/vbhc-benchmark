@@ -45,6 +45,16 @@ if [ -n "${VBHC_TOAN_VAN:-}" ]; then
       set -- $p; cmp -s $1 $2 && echo "   KHỚP $1" || { echo "   LỆCH $1"; LOI=1; }
     done
   fi
+  if [ -d data/dot_c/qn/text ] && [ -d data/dot_c/lc/text ]; then
+    echo "9. Dựng lại kho v7 (đợt cào C: Quảng Ninh, Lai Châu), bảng đồng viện dẫn và tập v7c, so từng byte"
+    cp m8/chia_tap_dot_c.json /tmp/goc_ctc.json; cp m8/dong_vien_dan_c.json /tmp/goc_dvdc.json; cp m8c_6000/valid.jsonl /tmp/goc_m8c_valid.jsonl; xz -dc m8c_6000/train.jsonl.xz > /tmp/goc_m8c_train.jsonl
+    python3 scripts/m8_dot_c_xu_ly.py ghep > /dev/null
+    VBHC_TOAN_VAN=data/stage4_v7/corpus.jsonl VBHC_CHIA_TAP_THEM=m8/chia_tap_dot_c.json VBHC_DVD_RA=m8/dong_vien_dan_c.json python3 scripts/tra_cuu.py --dung > /dev/null
+    VBHC_LOAI_THEM='Kế hoạch,Báo cáo' VBHC_DVD=m8/dong_vien_dan_c.json VBHC_TOAN_VAN=data/stage4_v7/corpus.jsonl VBHC_CHIA_TAP_THEM=m8/chia_tap_dot_c.json VBHC_MAX_TOKEN=6000 VBHC_RA=m8c_6000 python3 scripts/m8_du_lieu_v7.py > /dev/null 2>&1
+    for p in "m8/chia_tap_dot_c.json /tmp/goc_ctc.json" "m8/dong_vien_dan_c.json /tmp/goc_dvdc.json" "m8c_6000/valid.jsonl /tmp/goc_m8c_valid.jsonl" "m8c_6000/train.jsonl /tmp/goc_m8c_train.jsonl"; do
+      set -- $p; cmp -s $1 $2 && echo "   KHỚP $1" || { echo "   LỆCH $1"; LOI=1; }
+    done
+  fi
 fi
 [ $LOI = 0 ] && echo "=== TÁI LẬP ĐẠT" || echo "=== CÓ BƯỚC LỆCH"
 exit $LOI

@@ -51,11 +51,11 @@ def ds(han, toi_da):
 
 def tai(han):
     S = phien(); t0 = time.time(); mf = f'{D}/manifest.jsonl'
-    xong_tot = {json.loads(l)['vbId'] for l in open(mf, encoding='utf-8') if json.loads(l).get('file')} if os.path.exists(mf) else set()   # tải lại các lần hỏng
+    xong_tot = {json.loads(l)['vbId'] for l in open(mf, encoding='utf-8') if json.loads(l).get('file') or json.loads(l).get('bo_qua')} if os.path.exists(mf) else set()   # tải lại các lần hỏng
     out = open(mf, 'a', encoding='utf-8'); n = 0
     # máy chủ trả chậm (~100 KB/giây): ưu tiên chỉ thị, rồi báo cáo, rồi kế hoạch; mỗi loại tối đa TRAN văn bản
     R = [json.loads(l) for l in open(f'{D}/chi_muc.jsonl', encoding='utf-8')]
-    TRAN = {'Chỉ thị': 10**6, 'Báo cáo': 150, 'Kế hoạch': 150}; dem = {}
+    TRAN = {'Chỉ thị': 10**6, 'Báo cáo': 300, 'Kế hoạch': 300}; dem = {}   # M8.4: nâng trần sau khi đo tỷ lệ lọt khung 6000 token (KH ~30%, BC ~40%)
     R = sorted(R, key=lambda r: ['Chỉ thị', 'Báo cáo', 'Kế hoạch'].index(r['loai_van_ban']))
     for r in R:
         dem[r['loai_van_ban']] = dem.get(r['loai_van_ban'], 0) + 1
@@ -66,8 +66,11 @@ def tai(han):
         try:
             from urllib.parse import quote
             u = r['tep'].split('/Attachments/')[0] + '/Attachments/' + quote(r['tep'].split('/Attachments/')[1], safe='/')   # tên tệp có ngoặc, dấu cách
-            resp = S.get(u, timeout=90); rec['status'] = resp.status_code
-            if resp.status_code == 200 and resp.content[:4] == b'%PDF':
+            h = S.head(u, timeout=60); n_b = int(h.headers.get('content-length') or 0)
+            if n_b > 6_000_000:   # tệp quét trên 6 MB gần như luôn quá 12 trang hoặc quá khung 6000 token; bỏ, ghi lại lý do
+                rec.update(status=h.status_code, bo_qua='tep_qua_6MB', bytes_khai=n_b); out.write(json.dumps(rec, ensure_ascii=False) + '\n'); out.flush(); n += 1; time.sleep(1.0); continue
+            resp = S.get(u, timeout=180); rec['status'] = resp.status_code
+            if resp.status_code == 200 and b'%PDF' in resp.content[:1024]:
                 p = f"data/raw_pdf/qn-{r['vbId']}.pdf"; open(p, 'wb').write(resp.content)
                 rec.update(file=os.path.basename(p), bytes=len(resp.content), sha256=hashlib.sha256(resp.content).hexdigest())
         except Exception as e: rec['error'] = str(e)[:200]

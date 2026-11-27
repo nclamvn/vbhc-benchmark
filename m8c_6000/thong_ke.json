@@ -1,0 +1,64 @@
+{
+ "train": {
+  "tong": 3423,
+  "T1": 2623,
+  "T1_theo_loai": {
+   "Công văn": 752,
+   "Quyết định (cá biệt)": 820,
+   "Thông báo": 253,
+   "Kế hoạch": 261,
+   "Công điện": 351,
+   "Chỉ thị": 142,
+   "Báo cáo": 44
+  },
+  "T2": 300,
+  "T3": 300,
+  "T4": 200,
+  "xu_ly": {
+   "dau_sua": 1516,
+   "giu": 2580,
+   "che": 3663,
+   "rac_na": 17,
+   "co_dap_an": 1862,
+   "che_noi_nhan": 580,
+   "tra_cuu_that": 774,
+   "bo_qua_qua_dai": 13
+  }
+ },
+ "valid": {
+  "tong": 120,
+  "T1": 40,
+  "T1_theo_loai": {
+   "Quyết định (cá biệt)": 11,
+   "Công văn": 13,
+   "Công điện": 10,
+   "Thông báo": 5,
+   "Chỉ thị": 1
+  },
+  "T2": 30,
+  "T3": 30,
+  "T4": 20,
+  "xu_ly": {
+   "dau_sua": 24,
+   "rac_na": 0,
+   "co_dap_an": 29,
+   "giu": 32,
+   "che": 61,
+   "tra_cuu_that": 11,
+   "che_noi_nhan": 3,
+   "bo_qua_qua_dai": 0
+  }
+ },
+ "ly_do_loai_khoi_be": {
+  "dat": 2753,
+  "luat_the_thuc": 1192,
+  "so_khac": 298,
+  "khong_co_dong_so": 471,
+  "loai_hoac_tap": 1090,
+  "do_dai": 827,
+  "thieu_trang": 711,
+  "nhieu": 230,
+  "khong_co_dong_ngay": 248,
+  "trich_yeu": 56
+ }
+}
