@@ -1,0 +1,1109 @@
+{
+ "tong": {
+  "kho_hien_co": {
+   "n": 40,
+   "dung_so_pct": 22.5,
+   "dung_ngay_pct": 85.0,
+   "phu_trich_yeu_pct": 96.6,
+   "am_tiet_hop_le_pct": 98.4
+  },
+  "tesseract": {
+   "n": 40,
+   "dung_so_pct": 17.5,
+   "dung_ngay_pct": 60.0,
+   "phu_trich_yeu_pct": 97.8,
+   "am_tiet_hop_le_pct": 99.0,
+   "giay_moi_van_ban": 1.7
+  },
+  "ocria-nano": {
+   "n": 40,
+   "dung_so_pct": 10.0,
+   "dung_ngay_pct": 60.0,
+   "phu_trich_yeu_pct": 95.8,
+   "am_tiet_hop_le_pct": 91.1,
+   "giay_moi_van_ban": 1.1
+  }
+ },
+ "chi_tiet": [
+  {
+   "docid": "hy-17_NQ_HĐND-26042025",
+   "so": "17/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9908045977011494,
+    "so_am_tiet": 870
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9848484848484849,
+    "so_am_tiet": 858,
+    "giay": 1.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.8905529953917051,
+    "so_am_tiet": 868,
+    "giay": 1.4
+   }
+  },
+  {
+   "docid": "hy-22_NQ_HĐND-12072022",
+   "so": "22/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9893617021276596,
+    "so_am_tiet": 376
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9811320754716981,
+    "so_am_tiet": 371,
+    "giay": 0.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.8826666666666667,
+    "so_am_tiet": 375,
+    "giay": 0.6
+   }
+  },
+  {
+   "docid": "216555",
+   "so": "106/BTC-PTHT",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9767441860465116,
+    "am_tiet_hop_le": 0.9887005649717514,
+    "so_am_tiet": 1062
+   },
+   "tesseract": {
+    "dung_so": true,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9767441860465116,
+    "am_tiet_hop_le": 0.9958419958419958,
+    "so_am_tiet": 962,
+    "giay": 2.4
+   },
+   "ocria-nano": {
+    "dung_so": true,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9534883720930233,
+    "am_tiet_hop_le": 0.931321540062435,
+    "so_am_tiet": 961,
+    "giay": 1.4
+   }
+  },
+  {
+   "docid": "tn-73622",
+   "so": "38/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9953401677539608,
+    "so_am_tiet": 1073
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9954699886749717,
+    "so_am_tiet": 883,
+    "giay": 1.8
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.954954954954955,
+    "so_am_tiet": 888,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "tn-86852",
+   "so": "325/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9954441913439636,
+    "so_am_tiet": 439
+   },
+   "tesseract": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9954128440366973,
+    "so_am_tiet": 436,
+    "giay": 1.3
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9523809523809523,
+    "am_tiet_hop_le": 0.9157175398633257,
+    "so_am_tiet": 439,
+    "giay": 1.0
+   }
+  },
+  {
+   "docid": "217659",
+   "so": "2082/NQ-UBTVQH15",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9770992366412213,
+    "so_am_tiet": 393
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9921875,
+    "so_am_tiet": 384,
+    "giay": 0.9
+   },
+   "ocria-nano": {
+    "dung_so": true,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.8421052631578947,
+    "am_tiet_hop_le": 0.9093264248704663,
+    "so_am_tiet": 386,
+    "giay": 0.7
+   }
+  },
+  {
+   "docid": "hy-33_NQ_HĐND-13072022",
+   "so": "33/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.967741935483871,
+    "am_tiet_hop_le": 0.9915413533834586,
+    "so_am_tiet": 1064
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.967741935483871,
+    "am_tiet_hop_le": 0.9903147699757869,
+    "so_am_tiet": 826,
+    "giay": 1.7
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.967741935483871,
+    "am_tiet_hop_le": 0.9024970273483948,
+    "so_am_tiet": 841,
+    "giay": 1.1
+   }
+  },
+  {
+   "docid": "hy-13_NQ_HĐND-10042024",
+   "so": "13/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9792027729636048,
+    "so_am_tiet": 577
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9870848708487084,
+    "so_am_tiet": 542,
+    "giay": 1.4
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.8947368421052632,
+    "so_am_tiet": 570,
+    "giay": 1.1
+   }
+  },
+  {
+   "docid": "tn-74173",
+   "so": "47/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.96,
+    "am_tiet_hop_le": 0.9803921568627451,
+    "so_am_tiet": 867
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.96,
+    "am_tiet_hop_le": 0.9948364888123924,
+    "so_am_tiet": 581,
+    "giay": 1.5
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.96,
+    "am_tiet_hop_le": 0.8909710391822828,
+    "so_am_tiet": 587,
+    "giay": 1.0
+   }
+  },
+  {
+   "docid": "tn-78003",
+   "so": "104/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9921875,
+    "so_am_tiet": 1024
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9920318725099602,
+    "so_am_tiet": 753,
+    "giay": 2.4
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9055851063829787,
+    "so_am_tiet": 752,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "215127",
+   "so": "13417/BTC-PTHT",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9692937563971341,
+    "so_am_tiet": 977
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9940476190476191,
+    "so_am_tiet": 840,
+    "giay": 2.3
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9391408114558473,
+    "so_am_tiet": 838,
+    "giay": 1.5
+   }
+  },
+  {
+   "docid": "tn-73839",
+   "so": "98/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9976851851851852,
+    "so_am_tiet": 432
+   },
+   "tesseract": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9953703703703703,
+    "so_am_tiet": 432,
+    "giay": 1.1
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9473684210526315,
+    "am_tiet_hop_le": 0.9129411764705883,
+    "so_am_tiet": 425,
+    "giay": 1.0
+   }
+  },
+  {
+   "docid": "tn-75121",
+   "so": "104/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9629629629629629,
+    "am_tiet_hop_le": 0.9447674418604651,
+    "so_am_tiet": 1032
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9629629629629629,
+    "am_tiet_hop_le": 0.9964328180737217,
+    "so_am_tiet": 841,
+    "giay": 1.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.8888888888888888,
+    "am_tiet_hop_le": 0.9011904761904762,
+    "so_am_tiet": 840,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "tn-73746",
+   "so": "77/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9959919839679359,
+    "so_am_tiet": 998
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.992831541218638,
+    "so_am_tiet": 837,
+    "giay": 1.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9722222222222222,
+    "am_tiet_hop_le": 0.9307048984468339,
+    "so_am_tiet": 837,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "hy-03_NQ_HĐND-10042024",
+   "so": "03/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9666666666666667,
+    "am_tiet_hop_le": 0.9872122762148338,
+    "so_am_tiet": 782
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9666666666666667,
+    "am_tiet_hop_le": 0.988296488946684,
+    "so_am_tiet": 769,
+    "giay": 1.7
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9253539253539254,
+    "so_am_tiet": 777,
+    "giay": 1.1
+   }
+  },
+  {
+   "docid": "tn-73581",
+   "so": "36/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9955156950672646,
+    "so_am_tiet": 446
+   },
+   "tesseract": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9910112359550561,
+    "so_am_tiet": 445,
+    "giay": 1.3
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9090909090909091,
+    "am_tiet_hop_le": 0.9080717488789237,
+    "so_am_tiet": 446,
+    "giay": 1.0
+   }
+  },
+  {
+   "docid": "hy-20_NQ_HĐND-12072022",
+   "so": "20/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.8666666666666667,
+    "am_tiet_hop_le": 0.9904076738609112,
+    "so_am_tiet": 417
+   },
+   "tesseract": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9333333333333333,
+    "am_tiet_hop_le": 0.9903147699757869,
+    "so_am_tiet": 413,
+    "giay": 0.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9333333333333333,
+    "am_tiet_hop_le": 0.8816425120772947,
+    "so_am_tiet": 414,
+    "giay": 0.7
+   }
+  },
+  {
+   "docid": "219187",
+   "so": "12489/BTC-PTHT",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9868766404199475,
+    "so_am_tiet": 1143
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9962121212121212,
+    "so_am_tiet": 1056,
+    "giay": 2.6
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9200376293508937,
+    "so_am_tiet": 1063,
+    "giay": 1.6
+   }
+  },
+  {
+   "docid": "hy-49_NQ_HĐND-08122023",
+   "so": "49/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.989648033126294,
+    "so_am_tiet": 966
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9900621118012423,
+    "so_am_tiet": 805,
+    "giay": 1.7
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9761904761904762,
+    "am_tiet_hop_le": 0.8884758364312267,
+    "so_am_tiet": 807,
+    "giay": 1.1
+   }
+  },
+  {
+   "docid": "hy-39_NQ_HĐND-24082022",
+   "so": "39/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9826388888888888,
+    "so_am_tiet": 1152
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9810479375696767,
+    "so_am_tiet": 897,
+    "giay": 1.8
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.8844444444444445,
+    "so_am_tiet": 900,
+    "giay": 1.1
+   }
+  },
+  {
+   "docid": "tn-74209",
+   "so": "61/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.6153846153846154,
+    "am_tiet_hop_le": 0.9726224783861671,
+    "so_am_tiet": 694
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.6153846153846154,
+    "am_tiet_hop_le": 0.9932998324958124,
+    "so_am_tiet": 597,
+    "giay": 1.5
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.6153846153846154,
+    "am_tiet_hop_le": 0.908485856905158,
+    "so_am_tiet": 601,
+    "giay": 1.1
+   }
+  },
+  {
+   "docid": "217800",
+   "so": "59/NQ-UBTVQH16",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9582089552238806,
+    "so_am_tiet": 335
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9444444444444444,
+    "am_tiet_hop_le": 0.972809667673716,
+    "so_am_tiet": 331,
+    "giay": 0.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.8888888888888888,
+    "am_tiet_hop_le": 0.8597014925373134,
+    "so_am_tiet": 335,
+    "giay": 0.7
+   }
+  },
+  {
+   "docid": "hy-28_NQ_HĐND-13072022",
+   "so": "28/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9899497487437185,
+    "so_am_tiet": 796
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9873096446700508,
+    "so_am_tiet": 788,
+    "giay": 1.8
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9772727272727273,
+    "am_tiet_hop_le": 0.8915510718789408,
+    "so_am_tiet": 793,
+    "giay": 1.3
+   }
+  },
+  {
+   "docid": "218484",
+   "so": "289/NQ-UBTVQH16",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.980244590780809,
+    "so_am_tiet": 1063
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.983448275862069,
+    "so_am_tiet": 725,
+    "giay": 1.8
+   },
+   "ocria-nano": {
+    "dung_so": true,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.93296853625171,
+    "so_am_tiet": 731,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "hy-29_NQ_HĐND-13072022",
+   "so": "29/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9829406986190089,
+    "so_am_tiet": 1231
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9831223628691983,
+    "so_am_tiet": 948,
+    "giay": 1.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9143763213530656,
+    "so_am_tiet": 946,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "hy-07_NQ_HĐND-10042024",
+   "so": "07/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9910858995137763,
+    "so_am_tiet": 1234
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9912568306010929,
+    "so_am_tiet": 915,
+    "giay": 1.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9772727272727273,
+    "am_tiet_hop_le": 0.8835690968443961,
+    "so_am_tiet": 919,
+    "giay": 1.4
+   }
+  },
+  {
+   "docid": "tn-74083",
+   "so": "103/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9929577464788732,
+    "so_am_tiet": 568
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9911504424778761,
+    "so_am_tiet": 565,
+    "giay": 1.4
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9223985890652557,
+    "so_am_tiet": 567,
+    "giay": 1.0
+   }
+  },
+  {
+   "docid": "hy-20_NQ_HĐND-26042025",
+   "so": "20/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9642857142857143,
+    "am_tiet_hop_le": 0.9903961584633854,
+    "so_am_tiet": 833
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9642857142857143,
+    "am_tiet_hop_le": 0.9903030303030304,
+    "so_am_tiet": 825,
+    "giay": 1.9
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9423769507803121,
+    "so_am_tiet": 833,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "tn-74186",
+   "so": "48/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9866412213740458,
+    "so_am_tiet": 1048
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9910913140311804,
+    "so_am_tiet": 898,
+    "giay": 2.0
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9705882352941176,
+    "am_tiet_hop_le": 0.9166666666666666,
+    "so_am_tiet": 900,
+    "giay": 1.4
+   }
+  },
+  {
+   "docid": "tn-74627",
+   "so": "101/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.978978978978979,
+    "so_am_tiet": 999
+   },
+   "tesseract": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9948652118100129,
+    "so_am_tiet": 779,
+    "giay": 1.8
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9183937823834197,
+    "so_am_tiet": 772,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "hy-40_NQ_HĐND-24082022",
+   "so": "40/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9943566591422122,
+    "so_am_tiet": 886
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9929178470254958,
+    "so_am_tiet": 706,
+    "giay": 1.6
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9655172413793104,
+    "am_tiet_hop_le": 0.8847795163584637,
+    "so_am_tiet": 703,
+    "giay": 1.1
+   }
+  },
+  {
+   "docid": "219096",
+   "so": "611/BC-BTC",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.975609756097561,
+    "am_tiet_hop_le": 0.9821930646672915,
+    "so_am_tiet": 1067
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.975609756097561,
+    "am_tiet_hop_le": 0.9951690821256038,
+    "so_am_tiet": 1035,
+    "giay": 2.4
+   },
+   "ocria-nano": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.926829268292683,
+    "am_tiet_hop_le": 0.9385206532180596,
+    "so_am_tiet": 1041,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "hy-01_CĐ_SNNMT-11062025",
+   "so": "01/CĐ-SNNMT",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9375,
+    "am_tiet_hop_le": 0.9864406779661017,
+    "so_am_tiet": 590
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9375,
+    "am_tiet_hop_le": 0.9829931972789115,
+    "so_am_tiet": 588,
+    "giay": 1.5
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.9375,
+    "am_tiet_hop_le": 0.9380378657487092,
+    "so_am_tiet": 581,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "tn-74354",
+   "so": "75/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9936131386861314,
+    "so_am_tiet": 1096
+   },
+   "tesseract": {
+    "dung_so": true,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9934065934065934,
+    "so_am_tiet": 910,
+    "giay": 2.0
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9818181818181818,
+    "am_tiet_hop_le": 0.9058693244739756,
+    "so_am_tiet": 903,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "hy-22_NQ_HĐND-26042025",
+   "so": "22/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9896128423040604,
+    "so_am_tiet": 1059
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9922854387656702,
+    "so_am_tiet": 1037,
+    "giay": 2.1
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9386385426653883,
+    "so_am_tiet": 1043,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "hy-27_NQ_HĐND-12072023",
+   "so": "27/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9855072463768116,
+    "so_am_tiet": 483
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.980561555075594,
+    "so_am_tiet": 463,
+    "giay": 1.2
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9130434782608695,
+    "am_tiet_hop_le": 0.9230769230769231,
+    "so_am_tiet": 481,
+    "giay": 0.9
+   }
+  },
+  {
+   "docid": "tn-73763",
+   "so": "79/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9326568265682657,
+    "so_am_tiet": 1084
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9874285714285714,
+    "so_am_tiet": 875,
+    "giay": 2.1
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.96,
+    "am_tiet_hop_le": 0.9,
+    "so_am_tiet": 880,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "hy-77_TB_SKHĐT-29122023",
+   "so": "77/TB-SKHĐT",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 0.5333333333333333,
+    "am_tiet_hop_le": 0.9665551839464883,
+    "so_am_tiet": 299
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9849624060150376,
+    "so_am_tiet": 798,
+    "giay": 1.7
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9354037267080745,
+    "so_am_tiet": 805,
+    "giay": 1.1
+   }
+  },
+  {
+   "docid": "hy-51_NQ_HĐND-08122023",
+   "so": "51/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.9967078189300411,
+    "so_am_tiet": 1215
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": false,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.995243757431629,
+    "so_am_tiet": 841,
+    "giay": 1.8
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 1.0,
+    "am_tiet_hop_le": 0.8966745843230404,
+    "so_am_tiet": 842,
+    "giay": 1.2
+   }
+  },
+  {
+   "docid": "tn-77794",
+   "so": "09/NQ-HĐND",
+   "kho_hien_co": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9090909090909091,
+    "am_tiet_hop_le": 0.9823100936524454,
+    "so_am_tiet": 961
+   },
+   "tesseract": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9090909090909091,
+    "am_tiet_hop_le": 0.99375,
+    "so_am_tiet": 640,
+    "giay": 1.6
+   },
+   "ocria-nano": {
+    "dung_so": false,
+    "dung_ngay": true,
+    "phu_trich_yeu": 0.9090909090909091,
+    "am_tiet_hop_le": 0.9112149532710281,
+    "so_am_tiet": 642,
+    "giay": 1.1
+   }
+  }
+ ]
+}
