@@ -117,3 +117,30 @@ Mỗi mốc có một dòng trong `DECISIONS.md` khi đóng, kèm số đo trư�
 
 - Mức kho (tất cả văn bản, không chỉ tập huấn luyện): văn bản từ 03/2025 tăng từ 29,0% lên 38,4%.
 - Kiểm tái lập bước 8: dựng lại kho v6, bảng đồng viện dẫn và tập v7b khớp từng byte.
+
+## 6. Kết quả M8.3 · khảo sát nguồn (27/11, chưa cào)
+
+Chỉ đọc robots.txt, trang chủ và trang đầu mục văn bản; không tải văn bản.
+
+**Chỉ mục đã có (3 tỉnh):** kế hoạch 102, báo cáo 53, chỉ thị 33 dòng, gần hết đã có toàn văn. Không có tờ trình nào. Cổng trung ương: 18 kế hoạch, 3 báo cáo, 0 tờ trình trong 20.350 dòng.
+
+**32 cổng tỉnh, thành sau sáp nhập, nhìn từ máy làm việc:**
+- Truy cập được 13: Đà Nẵng, Hà Tĩnh, Phú Thọ, Huế, Quảng Ngãi, Đắk Lắk, Đồng Tháp, An Giang, Điện Biên, Quảng Ninh, Cà Mau, Lạng Sơn, Lai Châu.
+- Không kết nối được 13 (Hà Nội, Cần Thơ, Bắc Ninh, Thanh Hóa, Nghệ An, Lào Cai, Ninh Bình, Khánh Hòa, Lâm Đồng, Đồng Nai, Tây Ninh, Cao Bằng, Sơn La); bị chặn 403 ở 4 cổng (TP. Hồ Chí Minh, Hải Phòng, Tuyên Quang, Gia Lai), không thử lại theo quy tắc; Vĩnh Long cấm toàn bộ trong robots.txt.
+
+**Cổng có mục văn bản chỉ đạo điều hành và robots.txt cho phép:**
+
+| Cổng | Robots | Trang đầu mục văn bản | Dùng được |
+|---|---|---|---|
+| Quảng Ninh | không có robots.txt | nhiều kế hoạch, có chỉ thị, báo cáo | **Có** |
+| Đà Nẵng | cho phép toàn bộ | mục văn bản (portlet) | **Có**, cần dò cấu trúc |
+| Lai Châu | không có robots.txt | công văn, quyết định, có kế hoạch, chỉ thị, báo cáo | **Có** |
+| Đắk Lắk | cho phép (trừ tìm kiếm) | mục thông tin chỉ đạo điều hành | Có, cần dò |
+| Đồng Tháp | cấm `/documents/` | nhiều kế hoạch, có chỉ thị | **Không**: tệp văn bản nằm trong thư mục bị cấm |
+| Huế | cấm `*.aspx`, `*.html`, độ trễ 20 giây | nhiều kế hoạch, chỉ thị | **Không** thực tế |
+
+**Tờ trình:** không cổng nào công bố tờ trình như văn bản riêng. Tờ trình chỉ xuất hiện làm tệp đính kèm ở mục "lấy ý kiến dự thảo" (Hà Tĩnh, Điện Biên, Lạng Sơn, Huế), trang dựng bằng JavaScript. Số lượng ít và phải tải tệp .docx đính kèm.
+
+**Đề xuất:**
+- Đợt C (M8.4) cào 3 cổng Quảng Ninh, Lai Châu, Đà Nẵng, ưu tiên kế hoạch, chỉ thị, báo cáo; mỗi cổng một bộ cào riêng theo cấu trúc trang, cùng năm lớp tiêu chuẩn.
+- Hạ ngưỡng M8 cho các loại hiếm: kế hoạch ≥ 5%, chỉ thị ≥ 5% (bù bằng chỉ thị tỉnh), báo cáo ≥ 2%; **bỏ tờ trình khỏi phạm vi M8** (để M9 nếu cần, từ tệp đính kèm dự thảo).
