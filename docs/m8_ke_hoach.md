@@ -168,9 +168,25 @@ Hai cổng tỉnh đã cào, theo đủ năm lớp tiêu chuẩn. Đà Nẵng ch
 | Loại lớn nhất | quyết định 35,0% | quyết định 31,3% | ✓ (≤ 35%) |
 | Bài từ 03/2025 | 48,2% | 46,7% | ✓ (≥ 40%) |
 | Độ phủ tra cứu (k = 8) | 68,3% | 68,3% | ✗ (≥ 75%) |
-| Thông tin người dân (máy kiểm) | 0 | 0 | ✓, chờ kiểm tay 100 mẫu (`ket_qua/dot_cao/mau_kiem_tay_dot_c.md`) |
+| Thông tin người dân (máy kiểm) | 0 | 0 | ✓ |
+| Kiểm tay 100 mẫu (chuyên gia mô phỏng, AI) | 0/100 | 0/100 | ✓, xem mục 8 |
 
 - Số đo: `ket_qua/dot_cao/cong_m8c_6000.json` (`scripts/m8_kiem_cong.py`), mức kho `ket_qua/dot_cao/sau_dot_c.json`. Các dòng máy kiểm bắt được là họ tên cán bộ đi cùng chức vụ, tọa độ VN-2000 và số liên hệ của vườn quốc gia, không có người dân.
 - Độ phủ tra cứu không nhích vì nó đo trên 41 viện dẫn của bộ đề, phần lớn là nghị định trung ương. Văn bản tỉnh không thêm được. 13 viện dẫn trượt, 7 nằm trong thông báo kết quả chỉ đạo hằng tuần, có trích yếu không cho biết sẽ viện dẫn gì. Theo điều kiện dừng, không cào thêm để đẩy chỉ số này; việc nâng độ phủ chuyển sang M8.5 (sổ hiệu lực và cách tra).
 - Báo cáo thiếu 0,3 điểm (khoảng 10 bài). Hướng bù là Đà Nẵng, cổng có mục báo cáo chỉ đạo điều hành hằng tháng.
 - Kiểm tái lập bước 9: dựng lại kho v7, bảng đồng viện dẫn và tập v7c khớp từng byte; các bước 1–8 vẫn khớp.
+
+## 8. Nghiệm thu M8.4 do chuyên gia mô phỏng (AI) thay đầu mối (27/11)
+
+Đầu mối giao AI chủ động quyết tối đa. Phần kiểm tay và lựa chọn dưới đây là của **chuyên gia mô phỏng (AI)**, không có người thật tham gia.
+
+**Kiểm tay thông tin cá nhân, 200 mẫu** (`ket_qua/dot_cao/mau_kiem_tay_dot_b_da_dien.md`, `..._dot_c_da_dien.md`):
+- Đợt B: 0/100 văn bản còn thông tin người dân.
+- Đợt C: 0/100 văn bản còn thông tin người dân. 1/100 văn bản còn 3 số di động của cán bộ văn phòng, viết có dấu chấm (0982.874.890) nên bộ che của kho bỏ sót. Đã thêm che số di động vào bản `m8.4` của `scripts/m8_lam_sach.py` (21 phép thử). Tập v7c dựng lại còn 0 số di động.
+- Ghi nhận che thừa ở 2 văn bản đợt C: "tuyển sinh năm 2020" và các mốc năm sinh của nhóm tuổi thi đấu bị thay bằng [NGÀY SINH]. Đây là lỗi mất nội dung, không lộ thông tin. Để sửa ở bộ che của kho khi dựng kho v8.
+
+**Chọn hướng tiếp: nhận báo cáo 1,7% làm ngoại lệ có ghi, sang M8.5.** Có hai phương án. Một là viết bộ cào Đà Nẵng để bù khoảng 10 bài báo cáo. Hai là nhận báo cáo 1,7% rồi sang M8.5. Tiêu chí chọn là phương án nào đẩy được chỉ số đang kẹt và có lợi cho mô hình nhiều nhất trên mỗi giờ công.
+- Báo cáo thiếu 0,3 điểm. Bù đủ cũng không đổi được kết quả chấm nào, vì bộ đề hiện chưa có bài báo cáo.
+- Độ phủ tra cứu đứng ở 68,3% qua ba đợt cào. Đây là chỗ gắn trực tiếp với lỗi viện dẫn, điểm yếu chính của mô hình (M7). Cào thêm không nâng được, theo điều kiện dừng phải đổi cách làm.
+- Đà Nẵng dùng Liferay, cần bộ cào riêng. Báo cáo ở đó chủ yếu là báo cáo tháng dài, tỷ lệ lọt khung thấp như Quảng Ninh.
+- Ngoại lệ được ghi trong DECISIONS. Khi M8.6 có bộ đề mới mà loại báo cáo cho kết quả kém rõ, sẽ quay lại bù.

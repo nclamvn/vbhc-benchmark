@@ -29,6 +29,8 @@ def la_dia_danh(chuoi):
 
 BAN = 'm8.1'   # 'm8.4': sửa lỗi giữ địa danh đuôi khi phần trước chỉ còn họ ("Nguyễn Hòa Bình" → "[Họ và tên] Hòa Bình"); bản cũ giữ để tái lập M8.1, M8.2
 
+DI_DONG = re.compile(r'(?<![\d.,/])0[35789]\d{2}[. ]\d{3}[. ]\d{3}(?!\d|[.,/]\d)|(?<![\d.,/])0[35789]\d{8}(?!\d|[.,/]\d)')
+
 def che(t, giu_ten=()):
     """Thay họ tên đi sau chức danh, và họ tên trong khối nơi nhận, bằng "[Họ và tên]". Trả (văn bản, bộ đếm)."""
     n = collections.Counter()
@@ -47,6 +49,8 @@ def che(t, giu_ten=()):
             n['che_noi_nhan'] += 1; return '[Họ và tên]'
         t = t[:vt] + re.sub(rf'(?<![\w\[])(?:{HO})(?:[ \t\n]+{AM}){{2,3}}(?![a-zà-ỹđ])', thay2, t[vt:])
     t, a = re.subn(r'\s+na \d\b', '', t); n['rac_na'] += a
+    if BAN != 'm8.1':   # M8.4: số di động viết có dấu chấm (0982.874.890) lọt bộ che của kho; kiểm tay đợt C phát hiện
+        t, k = DI_DONG.subn('[SĐT]', t); n['che_sdt'] += k
     return t.replace('Công TTĐT', 'Cổng TTĐT').replace('CHỈ THÍ', 'CHỈ THỊ'), n
 
 THU = [  # (đầu vào, phải chứa, không được chứa)
@@ -74,7 +78,8 @@ if __name__ == '__main__':
         ok = co in ra and khong not in ra
         sai += not ok; print('ĐẠT ' if ok else 'SAI ', repr(vao[:60]), '→', repr(ra[:80]))
     THU_84 = [('Phó Thủ tướng Thường trực Chính phủ Nguyễn Hòa Bình.', '[Họ và tên].', 'Hòa Bình'), ('Tổng Bí thư Tô Lâm Hà Nội', '[Họ và tên] Hà Nội', 'Tô Lâm'),
-              ('Chủ tịch UBND tỉnh Hòa Bình', 'tỉnh Hòa Bình', '[Họ và tên]')]
+              ('Chủ tịch UBND tỉnh Hòa Bình', 'tỉnh Hòa Bình', '[Họ và tên]'),
+              ('liên hệ cán bộ Văn phòng (0982.874.890, 0971511638) để hỗ trợ', '([SĐT], [SĐT])', '0982'), ('Quyết định số 1234/QĐ-UBND ngày 05/3/2025, 12.980,1 m2', '1234/QĐ-UBND', '[SĐT]')]
     BAN = 'm8.4'
     for vao, co, khong in THU_84:   # bản M8.4
         ra, _ = che(vao); ok = co in ra and khong not in ra
