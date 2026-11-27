@@ -1,6 +1,6 @@
 {
  "ten": "Sổ bộ máy nhà nước theo thời điểm (SOT)",
- "phien_ban": "v1",
+ "phien_ban": "v1.1",
  "cap_nhat": "2026-11-27",
  "quy_uoc": {
   "tu/den": "ngày bắt đầu và kết thúc hiệu lực, null là không giới hạn",
@@ -1123,6 +1123,99 @@
    "can_cu": "1314/NQ-UBTVQH15",
    "muc_xac_minh": "chi_muc_can_doi_chieu",
    "ghi_chu": "thành phố Huế trực thuộc trung ương từ 01/01/2025; trích yếu trong chỉ mục nói về sắp xếp cấp huyện, xã của Huế, cần đối chiếu nội dung"
+  },
+  {
+   "id": "tptw:Hà Nội",
+   "loai": "thanh_pho_tw",
+   "ten": "Hà Nội",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": ""
+  },
+  {
+   "id": "tptw:Thành phố Hồ Chí Minh",
+   "loai": "thanh_pho_tw",
+   "ten": "Thành phố Hồ Chí Minh",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": ""
+  },
+  {
+   "id": "tptw:Hải Phòng",
+   "loai": "thanh_pho_tw",
+   "ten": "Hải Phòng",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": ""
+  },
+  {
+   "id": "tptw:Đà Nẵng",
+   "loai": "thanh_pho_tw",
+   "ten": "Đà Nẵng",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": ""
+  },
+  {
+   "id": "tptw:Cần Thơ",
+   "loai": "thanh_pho_tw",
+   "ten": "Cần Thơ",
+   "tu": null,
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "giu_nguyen",
+   "ghi_chu": ""
+  },
+  {
+   "id": "tptw:Huế",
+   "loai": "thanh_pho_tw",
+   "ten": "Huế",
+   "tu": "2025-01-01",
+   "den": null,
+   "can_cu": "1314/NQ-UBTVQH15",
+   "muc_xac_minh": "chi_muc_can_doi_chieu",
+   "ghi_chu": "thành phố trực thuộc trung ương từ 01/01/2025"
+  },
+  {
+   "id": "tptw:Đồng Nai",
+   "loai": "thanh_pho_tw",
+   "ten": "Đồng Nai",
+   "tu": "2026-04-30",
+   "den": null,
+   "can_cu": null,
+   "muc_xac_minh": "nguon_web",
+   "ghi_chu": "Nghị quyết của Quốc hội khóa XVI, hiệu lực 30/4/2026; chưa ghi số nghị quyết",
+   "nguon": "https://nhandan.vn/thanh-lap-thanh-pho-dong-nai-tu-3042026-post958064.html"
+  },
+  {
+   "id": "tptw:Quảng Ninh",
+   "loai": "thanh_pho_tw",
+   "ten": "Quảng Ninh",
+   "tu": "2026-09-01",
+   "den": null,
+   "can_cu": "36/2026/QH16",
+   "muc_xac_minh": "nguon_web",
+   "ghi_chu": "Nghị quyết 36/2026/QH16, hiệu lực 01/9/2026",
+   "nguon": "https://tapchicongthuong.vn/nghi-quyet-cua-quoc-hoi--thanh-lap-thanh-pho-quang-ninh-tu-ngay-1-9-2026-544480.htm"
+  },
+  {
+   "id": "tptw:Bắc Ninh",
+   "loai": "thanh_pho_tw",
+   "ten": "Bắc Ninh",
+   "tu": "2026-09-20",
+   "den": null,
+   "can_cu": "39/2026/QH16",
+   "muc_xac_minh": "nguon_web",
+   "ghi_chu": "Nghị quyết 39/2026/QH16 ngày 24/8/2026, hiệu lực 20/9/2026",
+   "nguon": "https://daibieunhandan.vn/xay-dung-bac-ninh-tro-thanh-do-thi-hien-dai-xanh-nhan-van-dam-da-hon-cot-va-van-hoa-kinh-bac-10431098.html"
   }
  ]
 }

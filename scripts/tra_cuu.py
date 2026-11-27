@@ -86,6 +86,8 @@ def bo_may(ngay):
     if SOT_BAN != 'v0' and SOT.pho_thu_tuong(ngay):
         d.append(f"- Phó Thủ tướng Chính phủ: {', '.join(SOT.pho_thu_tuong(ngay))}.")
     d.append('- Chính quyền địa phương: ' + SOT.cap_chinh_quyen(ngay) + '.')
+    if SOT_BAN not in ('v0', 'v1') and ngay >= '2025-07-01':   # từ v1.1 (M8.2 trở đi)
+        d.append(f"- Thành phố trực thuộc trung ương: {', '.join(SOT.thanh_pho_tw(ngay))}.")
     if SOT.tinh_34(ngay):
         d.append(f"- 34 đơn vị hành chính cấp tỉnh: {', '.join(SOT.tinh_34(ngay))}.")
     return '\n'.join(d)

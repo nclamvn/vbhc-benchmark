@@ -24,6 +24,10 @@ def thu_tuong(ngay):
 def pho_thu_tuong(ngay): return [r['ten'] for r in _loc('pho_thu_tuong', ngay)]
 def cap_chinh_quyen(ngay): return _loc('cap_chinh_quyen', ngay)[0]['ten']
 def tinh_34(ngay): return [r['ten'] for r in _loc('tinh_34', ngay)]
+def thanh_pho_tw(ngay): return [r['ten'] for r in _loc('thanh_pho_tw', ngay)]
+def tinh_da_len_thanh_pho(ngay):
+    """Tên các đơn vị đã từ tỉnh lên thành phố trực thuộc trung ương tại ngày đó (gọi 'tỉnh X' sau mốc là sai thời điểm)."""
+    return [r['ten'] for r in so()['ban_ghi'] if r['loai'] == 'thanh_pho_tw' and r['tu'] and r['tu'] >= '2026-01-01' and ngay >= r['tu']]
 def nhiem_ky_thu_tuong(): return [(r['ten'], r['tu'], r['den']) for r in so()['ban_ghi'] if r['loai'] == 'thu_tuong']
 def ten_bo_da_doi(ngay):
     """Tên đầy đủ (kèm biến thể) của các bộ, cơ quan ngang bộ đã không còn tại ngày đó."""

@@ -17,7 +17,7 @@ C, SP, de_T1, msg, lam_sach_v2, che_v2, nhieu, v1, v2 = G['C'], G['SP'], G['de_T
 if os.environ.get('VBHC_CHIA_TAP_THEM'):   # văn bản của các đợt cào M8 (chia tập riêng; nhãn 'de_moi' để ngoài huấn luyện)
     SP.update(json.load(open(os.environ['VBHC_CHIA_TAP_THEM'], encoding='utf-8')))
 import tra_cuu as tcu, kiem_trung_thuc as k, m8_lam_sach as LS, sot_bo_may as SOT
-tcu.SOT_BAN = 'v1'
+tcu.SOT_BAN = 'v1.1' if os.environ.get('VBHC_CHIA_TAP_THEM') else 'v1'   # M8.1 dựng với v1; từ M8.2 thêm dòng thành phố trực thuộc trung ương
 import m7b_du_lieu_v6 as v6m   # hàm tu_lieu (đưa căn cứ thật vào tư liệu) và che_ngoai_danh_sach của v5
 MAXTOK = int(os.environ.get('VBHC_MAX_TOKEN', '3000'))   # 3000 vừa max-seq 3072 như v4–v6; 6000 cần max-seq 6144 khi huấn luyện
 rng = random.Random(20261127); O = os.environ.get('VBHC_RA', 'm8'); os.makedirs(O, exist_ok=True)

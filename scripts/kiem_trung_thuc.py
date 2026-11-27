@@ -99,6 +99,8 @@ def kiem_khac(bai, co_quan, ngay_vb):
                       if re.search(r'(?i)\btỉnh\b(?:(?!\b(?:xã|phường|thị trấn|công ty|huyện)\b)[^.;])*$', bai[max(0, m.start() - 200):m.start()])
                       and not re.match(r'\s*\(?\s*(cũ|trước đây)', bai[m.end():m.end() + 14]) and not any(0 <= m.start() - e <= 160 for e in cd)), None)
             if m: t.append('tinh_cu:' + ten); break
+    for ten in (SOT.tinh_da_len_thanh_pho(ngay_vb) if ngay_vb else []):
+        if re.search(r'(?<![Tt]hành phố\s)\b[Tt]ỉnh\s+' + re.escape(ten) + r'(?!\s*\(cũ)', bai): t.append('tinh_da_len_thanh_pho:' + ten); break
     if ngay_vb and 'Thừa Thiên Huế' in SOT.tinh_cu(ngay_vb) and re.search(r'Thừa Thiên\s*[-–]?\s*Huế', bai):
         t.append('tinh_cu:Thừa Thiên Huế')
     return v, t
