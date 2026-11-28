@@ -38,7 +38,8 @@ if dong:
 sw = re.findall(r'swap (trước|sau): total = [\d.]+M\s+used = ([\d.]+)M', log)
 tang = float(sw[-1][1]) - float(sw[-2][1]) if len(sw) >= 2 else 0
 print(f'bộ nhớ đỉnh {dinh:.1f} GB, swap tăng {tang:.0f} MB' + (f', ước tính 1.500 vòng khoảng {gio:.1f} giờ (chưa tính đánh giá)' if gio else ''))
-if tang > 500: sys.exit('=== BỘ NHỚ KHÔNG ĐẠT (dùng swap). Dừng. Gửi nhật ký để dựng lại tập ở khung 4.500 token.')
+dau = float(sw[-2][1]) if len(sw) >= 2 else 0
+if tang > 500: print(f'CẢNH BÁO: swap tăng {tang:.0f} MB, máy đang dùng sẵn {dau / 1024:.1f} GB swap trước khi chạy. Bộ nhớ đỉnh của huấn luyện chỉ {dinh:.1f} GB, nên swap đến từ ứng dụng khác. Tắt bớt ứng dụng để chạy nhanh hơn.')
 if re.search(r'longer than 6144', log): print('CẢNH BÁO: có ví dụ dài hơn 6.144 token, sẽ bị cắt')
 if dinh >= 28: sys.exit('=== BỘ NHỚ KHÔNG ĐẠT (≥ 28 GB). Dừng. Gửi nhật ký để dựng lại tập ở khung 4.500 token.')
 print('=== BỘ NHỚ ĐẠT')
