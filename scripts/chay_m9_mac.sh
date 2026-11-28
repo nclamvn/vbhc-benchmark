@@ -19,19 +19,26 @@ QW="mlx-community/Qwen3-8B-4bit"; V6="$R/m7b/tot_nhat_v6"
 CHUNG="--batch-size 1 --num-layers 16 --max-seq-length 6144 --grad-checkpoint --mask-prompt"
 # A. thử bộ nhớ
 if ! grep -q "=== BỘ NHỚ ĐẠT" "$KQ/nhat_ky.txt"; then
-  echo "=== THỬ BỘ NHỚ BẮT ĐẦU"; rm -rf "$KQ/thu_bo_nho"
-  caffeinate -i mlx_lm.lora --model "$QW" --train --data m8c_6000 -c m8c_6000/qlora_qwen3_v7.yaml --resume-adapter-file "$V6/adapters.safetensors" \
+  echo "=== THỬ BỘ NHỚ BẮT ĐẦU"; rm -rf "$KQ/thu_bo_nho"; echo "swap trước: $(sysctl -n vm.swapusage)"
+  caffeinate -i python3 scripts/m9_lora.py --model "$QW" --train --data m8c_6000 -c m8c_6000/qlora_qwen3_v7.yaml --resume-adapter-file "$V6/adapters.safetensors" \
     --iters 20 $CHUNG --steps-per-report 5 --steps-per-eval 1000 --val-batches 1 --save-every 1000 --adapter-path "$KQ/thu_bo_nho" \
   || { echo "LỖI khi thử bộ nhớ (có thể thiếu bộ nhớ). Gửi tệp $KQ/nhat_ky.txt"; exit 1; }
+  echo "swap sau: $(sysctl -n vm.swapusage)"
   python3 - "$KQ/nhat_ky.txt" <<'PY' || exit 1
 import re, sys
 log = re.sub(r'\x1b\[[0-9;]*m', '', open(sys.argv[1], encoding='utf-8', errors='ignore').read().replace('\r', '\n'))
 log = log[log.rindex('=== THỬ BỘ NHỚ BẮT ĐẦU'):]
 mem = [float(x) for x in re.findall(r'Peak mem ([\d.]+) GB', log)]
-it = [float(x) for x in re.findall(r'It/sec ([\d.]+)', log)]
+dong = [(int(a), float(b), float(c)) for a, b, c in re.findall(r'^\s*(\d+)\s+[\d.]+\s+\S+\s+([\d.]+)\s+([\d.]+)k\s*$', log, re.M)]   # vòng, tok/s, nghìn token đã học
 if not mem: sys.exit('LỖI: không đọc được bộ nhớ đỉnh. Gửi nhật ký.')
-dinh = max(mem); toc = sum(it) / len(it) if it else 0
-print(f'bộ nhớ đỉnh {dinh:.1f} GB, {toc:.3f} vòng/giây' + (f', ước tính 1.500 vòng khoảng {1500 / toc / 3600:.1f} giờ' if toc else ''))
+dinh = max(mem); gio = None
+if dong:
+    tb_tok = dong[-1][2] * 1000 / dong[-1][0]; toc = sum(x[1] for x in dong) / len(dong); gio = 1500 * tb_tok / toc / 3600
+    print(f'trung bình {tb_tok:.0f} token mỗi vòng, {toc:.0f} token/giây')
+sw = re.findall(r'swap (trước|sau): total = [\d.]+M\s+used = ([\d.]+)M', log)
+tang = float(sw[-1][1]) - float(sw[-2][1]) if len(sw) >= 2 else 0
+print(f'bộ nhớ đỉnh {dinh:.1f} GB, swap tăng {tang:.0f} MB' + (f', ước tính 1.500 vòng khoảng {gio:.1f} giờ (chưa tính đánh giá)' if gio else ''))
+if tang > 500: sys.exit('=== BỘ NHỚ KHÔNG ĐẠT (dùng swap). Dừng. Gửi nhật ký để dựng lại tập ở khung 4.500 token.')
 if re.search(r'longer than 6144', log): print('CẢNH BÁO: có ví dụ dài hơn 6.144 token, sẽ bị cắt')
 if dinh >= 28: sys.exit('=== BỘ NHỚ KHÔNG ĐẠT (≥ 28 GB). Dừng. Gửi nhật ký để dựng lại tập ở khung 4.500 token.')
 print('=== BỘ NHỚ ĐẠT')
@@ -44,7 +51,7 @@ if ! grep -q "=== V7 HUẤN LUYỆN XONG" "$KQ/nhat_ky.txt"; then
   CUOI=$(ls "$AD"/0*_adapters.safetensors 2>/dev/null | sort | tail -1)
   if [ -n "$CUOI" ]; then DA=$(basename "$CUOI" | sed 's/_adapters.safetensors//;s/^0*//'); TIEP="$CUOI"; CON=$((1500 - DA)); echo "tiếp từ vòng $DA, còn $CON vòng"; fi
   echo "=== V7 HUẤN LUYỆN BẮT ĐẦU (đã xong ${DA:-0})"
-  caffeinate -i mlx_lm.lora --model "$QW" --train --data m8c_6000 -c m8c_6000/qlora_qwen3_v7.yaml --resume-adapter-file "$TIEP" \
+  caffeinate -i python3 scripts/m9_lora.py --model "$QW" --train --data m8c_6000 -c m8c_6000/qlora_qwen3_v7.yaml --resume-adapter-file "$TIEP" \
     --iters "$CON" $CHUNG --steps-per-report 50 --steps-per-eval 300 --val-batches 60 --save-every 300 --adapter-path "$AD.phan_${DA:-0}" \
   || { echo "LỖI khi tinh chỉnh v7. Chạy lại cùng lệnh để tiếp."; exit 1; }
   mkdir -p "$AD"; cp "$AD.phan_${DA:-0}/adapter_config.json" "$AD/"
