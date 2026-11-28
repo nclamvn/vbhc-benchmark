@@ -72,8 +72,9 @@ class TraCuu:
             if len(kq) == k_: break
         return kq
 
+import os
 import sot_bo_may as SOT
-SOT_BAN = 'v0'   # v0: giữ đúng khối bộ máy đã dùng khi dựng tập v5, v6 (không nêu Thủ tướng từ 2026). v1: đọc đủ từ sổ SOT, có Thủ tướng và Phó Thủ tướng khi sổ có
+SOT_BAN = os.environ.get('VBHC_SOT_BAN', 'v0')   # M9: chấm v7 với khối bộ máy v1.1 như lúc dựng tập v7c. v0: giữ đúng khối bộ máy đã dùng khi dựng tập v5, v6 (không nêu Thủ tướng từ 2026). v1: đọc đủ từ sổ SOT, có Thủ tướng và Phó Thủ tướng khi sổ có
 BO_CU, BO_MOI = SOT.bo('2025-02-28'), SOT.bo('2025-03-01')
 NGANG_BO_CU, NGANG_BO_MOI = SOT.ngang_bo('2025-02-28'), SOT.ngang_bo('2025-03-01')
 TINH_34 = SOT.tinh_34('2025-07-01')

@@ -13,7 +13,7 @@ def dien(bai, ds, nguong=0.6):
         return f'{kh.replace("QĐ-TTG", "QĐ-TTg")} ngày {int(d)}/{int(mth)}/{y}{m.group(3)}'
     return RE.sub(thay, bai)
 if __name__ == '__main__':
-    TC = t.TraCuu(); D = {json.loads(l)['id']: json.loads(l) for l in open('m3/test_de.jsonl', encoding='utf-8')}
+    TC = t.TraCuu(); D = {json.loads(l)['id']: json.loads(l) for l in open(os.environ.get('VBHC_DE', 'm3/test_de.jsonl'), encoding='utf-8')}
     with open(sys.argv[2], 'w', encoding='utf-8') as f:
         for l in open(sys.argv[1], encoding='utf-8'):
             r = json.loads(l); t.lam_giau_de(D[r['id']]['de'], TC, 8); r['tra_loi'] = dien(r['tra_loi'], t.lam_giau_de.ds)

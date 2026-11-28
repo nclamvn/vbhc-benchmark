@@ -1,0 +1,11 @@
+# M9: tiếp từ bản v6 trên tập v7c (kho v7, khung 6.000 token, có kế hoạch, chỉ thị, báo cáo), 1.500 vòng, khoảng 0,44 lượt dữ liệu.
+# Giữ công thức v6: rank 16, scale 20, dropout 0,05, 16 lớp; LR khởi động 50 vòng rồi cosine 1e-5 → 1e-6.
+lora_parameters:
+  rank: 16
+  dropout: 0.05
+  scale: 20.0
+lr_schedule:
+  name: cosine_decay
+  warmup: 50
+  warmup_init: 1.0e-7
+  arguments: [1.0e-5, 1500, 1.0e-6]
