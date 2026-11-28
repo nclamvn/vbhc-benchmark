@@ -16,11 +16,12 @@ cd "$GOC" || exit 1; source .venv/bin/activate
 python3 -c "n=sum(1 for _ in open('m8c_6000/train.jsonl'));print('tệp huấn luyện v7c:',n,'ví dụ')"
 QW="mlx-community/Qwen3-8B-4bit"; V6="$R/m7b/tot_nhat_v6"
 [ -f "$V6/adapters.safetensors" ] || { echo "LỖI: thiếu adapter v6 ở $V6"; exit 1; }
+export MLX_MAX_OPS_PER_BUFFER=${MLX_MAX_OPS_PER_BUFFER:-2} MLX_MAX_MB_PER_BUFFER=${MLX_MAX_MB_PER_BUFFER:-256}   # chia việc GPU thành lệnh ngắn: tránh macOS ngắt vì "Impacting Interactivity"
 CHUNG="--batch-size 1 --num-layers 16 --max-seq-length 6144 --grad-checkpoint --mask-prompt"
 # A. thử bộ nhớ
 if ! grep -q "=== BỘ NHỚ ĐẠT" "$KQ/nhat_ky.txt"; then
   echo "=== THỬ BỘ NHỚ BẮT ĐẦU"; rm -rf "$KQ/thu_bo_nho"; echo "swap trước: $(sysctl -n vm.swapusage)"
-  caffeinate -dimsu python3 scripts/m9_lora.py --model "$QW" --train --data m8c_6000 -c m8c_6000/qlora_qwen3_v7.yaml --resume-adapter-file "$V6/adapters.safetensors" \
+  caffeinate -ims python3 scripts/m9_lora.py --model "$QW" --train --data m8c_6000 -c m8c_6000/qlora_qwen3_v7.yaml --resume-adapter-file "$V6/adapters.safetensors" \
     --iters 20 $CHUNG --steps-per-report 5 --steps-per-eval 1000 --val-batches 1 --save-every 1000 --adapter-path "$KQ/thu_bo_nho" \
   || { echo "LỖI khi thử bộ nhớ (có thể thiếu bộ nhớ). Gửi tệp $KQ/nhat_ky.txt"; exit 1; }
   echo "swap sau: $(sysctl -n vm.swapusage)"
@@ -48,6 +49,7 @@ fi
 # B. tinh chỉnh v7 (tiếp từ checkpoint gần nhất nếu bị ngắt)
 AD="$KQ/adapter_v7"
 if ! grep -q "=== V7 HUẤN LUYỆN XONG" "$KQ/nhat_ky.txt"; then
+ for LAN in 1 2 3 4 5 6; do
   # tìm checkpoint mới nhất trong mọi phần đã chạy (phần k: số vòng trong tệp + k = vòng toàn cục), dựng lịch LR cho phần còn lại
   read DA TIEP LR <<< "$(python3 - "$AD" "$V6/adapters.safetensors" <<'PY'
 import glob, math, os, re, sys
@@ -68,34 +70,45 @@ PY
     echo "tiếp từ vòng $DA ($TIEP), còn $CON vòng, LR bắt đầu $LR"
   fi
   echo "=== V7 HUẤN LUYỆN BẮT ĐẦU (đã xong $DA)"
-  caffeinate -dimsu python3 scripts/m9_lora.py --model "$QW" --train --data m8c_6000 -c "$CFG" --resume-adapter-file "$TIEP" \
-    --iters "$CON" $CHUNG --steps-per-report 50 --steps-per-eval 300 --val-batches 60 --save-every 150 --adapter-path "$AD.phan_$DA" \
-  || { echo "LỖI khi tinh chỉnh v7. Chạy lại cùng lệnh để tiếp."; exit 1; }
+  caffeinate -ims python3 scripts/m9_lora.py --model "$QW" --train --data m8c_6000 -c "$CFG" --resume-adapter-file "$TIEP" \
+    --iters "$CON" $CHUNG --steps-per-report 50 --steps-per-eval 300 --val-batches 20 --save-every 150 --adapter-path "$AD.phan_$DA" \
+  && break
+  echo "=== lần $LAN lỗi, nghỉ 60 giây rồi tiếp từ checkpoint gần nhất"; sleep 60
+  [ $LAN = 6 ] && { echo "LỖI: tinh chỉnh v7 lỗi 6 lần. Gửi nhật ký."; exit 1; }
+ done
   mkdir -p "$AD"; cp "$AD.phan_$DA/adapter_config.json" "$AD/"
   for d in "$AD".phan_*; do k=${d##*_}
     for f in "$d"/0*_adapters.safetensors; do n=$(basename "$f" | sed 's/_adapters.safetensors//;s/^0*//'); cp "$f" "$AD/$(printf '%07d' $(( n + k )))_adapters.safetensors"; done
   done
   echo "=== V7 HUẤN LUYỆN XONG"
 fi
-python3 - "$KQ" "$V6/adapters.safetensors" <<'PY' || exit 1
-import re, sys, shutil, os, json, math
-kq, v6 = sys.argv[1], sys.argv[2]; ad = f'{kq}/adapter_v7'
-log = re.sub(r'\x1b\[[0-9;]*m', '', open(f'{kq}/nhat_ky.txt', encoding='utf-8', errors='ignore').read().replace('\r', '\n'))
-v = {}
-for m in re.finditer(r'=== V7 HUẤN LUYỆN BẮT ĐẦU \(đã xong (\d+)\)', log):
-    doan = log[m.end():]; doan = doan[:doan.find('=== V7 HUẤN LUYỆN BẮT ĐẦU') if '=== V7 HUẤN LUYỆN BẮT ĐẦU' in doan else len(doan)]
-    for i, x in re.findall(r'^\s*(\d+)\s+val\s+([\d.]+|nan)', doan, re.M): v[int(i) + int(m[1]) if int(i) > 1 else int(m[1]) + 1] = float(x)
-tep = {i: (v6 if i == 1 else f'{ad}/{i:07d}_adapters.safetensors') for i in v}
-co = {i: x for i, x in v.items() if not math.isnan(x) and os.path.exists(tep[i])}
-if not co: sys.exit('LỖI: không có checkpoint hữu hạn')
-best = min(co, key=co.get); os.makedirs(f'{kq}/tot_nhat_v7', exist_ok=True)
-shutil.copy(tep[best], f'{kq}/tot_nhat_v7/adapters.safetensors'); shutil.copy(f'{ad}/adapter_config.json', f'{kq}/tot_nhat_v7/adapter_config.json')
-json.dump({'val_loss_v7c_60vd': v, 'chon_vong': best, 'ghi_chu': 'vòng 1 = bản v6 đo trên tập thẩm định v7c'}, open(f'{kq}/chon_checkpoint_v7.json', 'w'), indent=1)
-print('val loss', v, '→ chọn vòng', best)
+# chọn checkpoint: đo mọi ứng viên trên cùng 60 ví dụ thẩm định (hạt giống cố định); val trong lúc huấn luyện bốc ngẫu nhiên nên không so được
+if [ ! -f "$KQ/chon_checkpoint_v7.json" ]; then
+  mkdir -p "$KQ/chon/du_lieu"; cp m8c_6000/valid.jsonl "$KQ/chon/du_lieu/test.jsonl"; cp m8c_6000/valid.jsonl "$KQ/chon/du_lieu/valid.jsonl"; head -1 m8c_6000/valid.jsonl > "$KQ/chon/du_lieu/train.jsonl"
+  for V in 0 300 600 900 1200 1500; do
+    [ -s "$KQ/chon/loss_$V.txt" ] && continue
+    D="$KQ/chon/vong_$V"; mkdir -p "$D"; cp "$AD/adapter_config.json" "$D/"
+    if [ $V = 0 ]; then cp "$V6/adapters.safetensors" "$D/"; else [ -f "$AD/$(printf '%07d' $V)_adapters.safetensors" ] || continue; cp "$AD/$(printf '%07d' $V)_adapters.safetensors" "$D/adapters.safetensors"; fi
+    echo "đo vòng $V"
+    for LAN in 1 2 3; do caffeinate -ims python3 scripts/m9_lora.py --model "$QW" --test --data "$KQ/chon/du_lieu" --adapter-path "$D" --batch-size 1 --max-seq-length 6144 --test-batches 60 --seed 0 > "$KQ/chon/log_$V.txt" 2>&1 && break; sleep 60; done
+    grep -o "Test loss [0-9.]*" "$KQ/chon/log_$V.txt" | awk '{print $3}' > "$KQ/chon/loss_$V.txt"; echo "vòng $V: $(cat "$KQ/chon/loss_$V.txt")"
+  done
+  python3 - "$KQ" <<'PY' || exit 1
+import glob, json, os, shutil, sys
+kq = sys.argv[1]; L = {}
+for f in glob.glob(f'{kq}/chon/loss_*.txt'):
+    v = open(f).read().strip()
+    if v: L[int(f.rsplit('_', 1)[1][:-4])] = float(v)
+if not L: sys.exit('LỖI: không đo được checkpoint nào')
+best = min(L, key=L.get); os.makedirs(f'{kq}/tot_nhat_v7', exist_ok=True)
+for x in ('adapters.safetensors', 'adapter_config.json'): shutil.copy(f'{kq}/chon/vong_{best}/{x}', f'{kq}/tot_nhat_v7/{x}')
+json.dump({'loss_60_vi_du_tham_dinh_co_dinh': dict(sorted(L.items())), 'chon_vong': best, 'ghi_chu': 'vòng 0 = v6; đo bằng mlx_lm.lora --test, seed 0, 60 ví dụ'}, open(f'{kq}/chon_checkpoint_v7.json', 'w'), indent=1)
+print('loss theo vòng', dict(sorted(L.items())), '→ chọn vòng', best)
 PY
+fi
 # C. chấm (mỗi tệp chạy xong thì bỏ qua khi chạy lại)
 P="--nhiem-vu T1 --phat-lap 1.1 --cua-so-lap 64 --chan-lap-khoi --tra-cuu"
-chay() { [ -s "$KQ/$1" ] && [ "$(wc -l < "$KQ/$1")" -ge "$2" ] && { echo "đã có $1"; return; }; shift 2; caffeinate -dimsu env "$@"; }
+chay() { [ -s "$KQ/$1" ] && [ "$(wc -l < "$KQ/$1")" -ge "$2" ] && { echo "đã có $1"; return; }; shift 2; caffeinate -ims env "$@"; }
 chay p20_v7_sot0.jsonl 41 python3 scripts/chay_mlx.py --model "$QW" --adapter "$KQ/tot_nhat_v7" --ra "$KQ/p20_v7_sot0.jsonl" $P
 chay p20_v7.jsonl 41 VBHC_SOT_BAN=v1.1 VBHC_DVD=m8/dong_vien_dan_c.json python3 scripts/chay_mlx.py --model "$QW" --adapter "$KQ/tot_nhat_v7" --ra "$KQ/p20_v7.jsonl" $P
 chay p20_v6_sot11.jsonl 41 VBHC_SOT_BAN=v1.1 VBHC_DVD=m8/dong_vien_dan_c.json python3 scripts/chay_mlx.py --model "$QW" --adapter "$V6" --ra "$KQ/p20_v6_sot11.jsonl" $P

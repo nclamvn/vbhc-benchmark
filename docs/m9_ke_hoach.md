@@ -11,7 +11,7 @@ Mô hình v7 (Qwen3-8B 4-bit, QLoRA giữ công thức v6, tiếp từ v6) học
 | # | Đo gì | Cổng | Ghi chú |
 |---|---|---|---|
 | A | Bộ nhớ đỉnh, 20 vòng ở khung 6.144 token | dưới 28 GB, không swap | không đạt thì dựng lại tập ở khung 4.500 và đo lại tỷ lệ loại hiếm |
-| B | Huấn luyện 1.500 vòng (khoảng 0,44 lượt), chọn checkpoint theo val loss | có checkpoint hữu hạn | `m8c_6000/qlora_qwen3_v7.yaml` |
+| B | Huấn luyện 1.500 vòng (khoảng 0,44 lượt), chọn checkpoint theo loss trên cùng 60 ví dụ thẩm định cố định (v6 và các vòng 300 đến 1.500) | có checkpoint hữu hạn | `m8c_6000/qlora_qwen3_v7.yaml`. Val trong lúc huấn luyện bốc ngẫu nhiên 60 trong 120 ví dụ mỗi lần nên chỉ để theo dõi |
 | C1 | Bài sạch, 41 bài T1, giao thức 2.1 | không thấp hơn v6 | so cùng điều kiện |
 | C2 | Viện dẫn sai mỗi bài | không cao hơn v6 | |
 | C3 | Căn cứ đúng chỗ | tăng so với v6 | v6 đã công bố 50,0% |
